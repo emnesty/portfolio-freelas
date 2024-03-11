@@ -1,8 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronRightIcon } from "@heroicons/react/20/solid";
-import Image from "next/image";
+import { AnimatedTooltip } from "../components/ui/animatedTooltip";
+
+const people = [
+  {
+    id: 1,
+    name: "Luciano Silva",
+    designation: "Designer de Produto",
+    image: "/images/avatar.png",
+  },
+];
 
 const navigation = [
   { name: "Product", href: "#" },
@@ -116,16 +124,8 @@ export default function HeroSection() {
       <div className="relative isolate pt-8">
         <div className="mx-auto max-w-7xl px-6 py-16 sm:py-22 lg:flex lg:items-center lg:gap-x-10 lg:px-8 lg:py-22">
           <div className="mx-auto max-w-4xl lg:mx-0 lg:flex-auto">
-            <div className="flex">
-              <Image
-                src={"/images/avatar.png"}
-                alt={"Image Avatar Luciano SIlva"}
-                width={48}
-                height={40}
-                data-aos="fade-zoom-in"
-                data-aos-easing="ease-in-back"
-                data-aos-offset="0"
-              />
+            <div className="flex flex-row mb-10 w-full">
+              <AnimatedTooltip items={people} />
             </div>
             <h1
               className="mt-10 max-w-[730px] text-4xl tracking-tight text-white sm:text-6xl"

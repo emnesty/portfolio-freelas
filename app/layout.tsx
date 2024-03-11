@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Sora } from "next/font/google";
 import "./globals.css";
 import AOSInit from "./components/AOSInit";
+import { useTranslation } from "next-i18next";
 
 const sora = Sora({
   weight: "400",
@@ -18,6 +19,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const { t } = useTranslation();
   return (
     <html
       lang="pt-BR"
