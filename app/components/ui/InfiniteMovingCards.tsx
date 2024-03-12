@@ -71,11 +71,19 @@ export const InfiniteMovingCards = ({
   };
   return (
     <div className="mx-auto max-w-7xl px-6 lg:px-8">
-      <div className="mb-5 mr-auto max-w-2xl min-sm:max-w-8 lg:mx-0">
-        <h2 className="text-xl tracking-tight text-white sm:text-4xl">
+      <div className="mb-5 mr-auto max-w-2xl max-sm:max-w-[24rem] lg:mx-0">
+        <h2
+          data-aos="fade-up"
+          data-aos-duration="1300"
+          className="text-xl tracking-tight text-white sm:text-4xl"
+        >
           Recomendações e depoimentos
         </h2>
-        <p className="mt-6 text-lg leading-8 text-gray-300">
+        <p
+          data-aos="fade-up"
+          data-aos-duration="1200"
+          className="mt-6 text-lg leading-8 text-gray-300"
+        >
           Depoimentos e recomendações de colegas de trabalho.
         </p>
       </div>
