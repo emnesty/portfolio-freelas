@@ -124,7 +124,11 @@ export default function HeroSection() {
       <div className="relative isolate pt-8">
         <div className="mx-auto max-w-7xl px-6 py-16 sm:py-22 lg:flex lg:items-center lg:gap-x-10 lg:px-8 lg:py-22">
           <div className="mx-auto max-w-4xl lg:mx-0 lg:flex-auto">
-            <div className="flex flex-row mb-10 w-full">
+            <div
+              className="flex flex-row mb-10 w-full"
+              data-aos="fade-up"
+              data-aos-duration="1100"
+            >
               <AnimatedTooltip items={people} />
             </div>
             <h1
@@ -149,7 +153,7 @@ export default function HeroSection() {
                 className="text-texthero2 font-bold underline"
               >
                 AmbevTech
-              </a>
+              </a>{" "}
               e freelancer nas horas vagas.
             </p>
             <div
