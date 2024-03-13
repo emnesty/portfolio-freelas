@@ -1,34 +1,32 @@
 "use client";
 
-import { InboxIcon, TrashIcon, UsersIcon } from "@heroicons/react/24/outline";
 import { useRef, useState } from "react";
-import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { cn } from "@/utils/cn";
 import { DirectionAwareHover } from "../components/ui/directionAwareHover";
+import { projetosData } from "../../app/data/projetosData";
+import Link from "next/link";
 
 const projects = [
   {
     title: "Projeto 1",
     description: "Descrição breve do Projeto 1.",
-    imageUrl: "/path/to/your/project1-image.jpg",
+    imageUrl: "/images/eu.jpeg",
   },
   {
     title: "Projeto 2",
     description: "Descrição breve do Projeto 2.",
-    imageUrl: "/path/to/your/project2-image.jpg",
+    imageUrl: "/images/eu.jpeg",
   },
   {
     title: "Projeto 3",
     description: "Descrição breve do Projeto 3.",
-    imageUrl: "/path/to/your/project3-image.jpg",
+    imageUrl: "/images/eu.jpeg",
   },
   // Adicione mais projetos conforme necessário
 ];
 
 export default function ProjectsSection() {
-  const imageUrl = "/images/eu.jpeg";
-
   return (
     <div className="bg-bgsecondary py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -55,17 +53,23 @@ export default function ProjectsSection() {
             data-aos-duration="900"
             className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3"
           >
-            {projects.map((projects) => (
-              <div key={projects.title} className="flex flex-col">
-                <div className="h-[22rem] relative flex items-center justify-center">
-                  <DirectionAwareHover imageUrl={imageUrl}>
-                    <p className="font-bold text-xl">{projects.title}</p>
-                    <p className="font-normal text-sm">
-                      {projects.description}
-                    </p>
-                  </DirectionAwareHover>
-                </div>
-              </div>
+            {projetosData.map((project) => (
+              <Link
+                legacyBehavior
+                key={project.id}
+                href={`/projetos/${project.slug}`}
+              >
+                <a className="flex flex-col cursor-pointer">
+                  <div className="h-[22rem] relative flex items-center justify-center">
+                    <DirectionAwareHover imageUrl={project.imgsrc}>
+                      <p className="font-bold text-xl">{project.title}</p>
+                      <p className="font-normal text-sm">
+                        {project.description}
+                      </p>
+                    </DirectionAwareHover>
+                  </div>
+                </a>
+              </Link>
             ))}
           </dl>
         </div>
