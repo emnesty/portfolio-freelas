@@ -71,7 +71,7 @@ export const InfiniteMovingCards = ({
   };
   return (
     <div className="mx-auto max-w-7xl px-6 lg:px-8">
-      <div className="mb-5 mr-auto max-w-2xl max-sm:max-w-[24rem] lg:mx-0">
+      {/* <div className="mb-5 mr-auto max-w-2xl max-sm:max-w-[24rem] lg:mx-0">
         <h2
           data-aos="fade-up"
           data-aos-duration="1300"
@@ -86,7 +86,7 @@ export const InfiniteMovingCards = ({
         >
           Depoimentos e recomendações de colegas de trabalho.
         </p>
-      </div>
+      </div> */}
       <div
         data-aos="fade-up"
         data-aos-duration="1100"

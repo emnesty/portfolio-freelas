@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { AnimatedTooltip } from "../components/ui/animatedTooltip";
+import { AnimatedTooltip } from "./ui/animatedTooltip";
 
 const people = [
   {
