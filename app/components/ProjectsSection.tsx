@@ -28,7 +28,7 @@ const projects = [
 
 export default function ProjectsSection() {
   return (
-    <div className="bg-bgsecondary py-24 sm:py-32">
+    <div className="bg-herobackground py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0">
           <h2
@@ -64,7 +64,7 @@ export default function ProjectsSection() {
                     <DirectionAwareHover imageUrl={project.imgsrc}>
                       <p className="font-bold text-xl">{project.title}</p>
                       <p className="font-normal text-sm">
-                        {project.description}
+                        {project.projectname}
                       </p>
                     </DirectionAwareHover>
                   </div>

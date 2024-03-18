@@ -162,10 +162,7 @@ export default function HeroSection() {
               data-aos-duration="800"
             >
               <button className="px-16 max-sm:px-14  max-sm:w-full py-4  bg-gradient-to-b from-purple-500 to-purple-600 text-black font-bold hover:from-purple-600 hover:to-purple-700 focus:ring-2 focus:ring-purple-400 hover:shadow-xl transition-all duration-300">
-                Entrar em contato
-              </button>
-              <button className="px-6 py-2  text-white  font-bold transform hover:-translate-y-1 transition duration-400">
-                Projetos concluídos <span aria-hidden="true"> →</span>
+                Projetos concluídos
               </button>
             </div>
           </div>

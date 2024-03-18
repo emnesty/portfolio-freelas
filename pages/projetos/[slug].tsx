@@ -16,6 +16,7 @@ interface Projeto {
   descriptiondetails: string;
   descriptiondetails2: string;
   descriptiondetails3: string;
+  videoUrl?: string;
 }
 
 // Definição da interface para as props da página
@@ -33,27 +34,62 @@ const ProjetoDetalhes = ({ projeto }: ProjetoProps) => {
       <Head>
         <title>{projeto.title}</title>
       </Head>
-      <div className="bg-white py-24">
-        <div className="container mx-auto px-6 lg:px-8">
-          <h1 className="text-3xl font-bold">{projeto.projectname}</h1>
-          <p>{projeto.description}</p>
-          <Image
-            src={projeto.imgsrc}
-            alt={projeto.title}
-            width={500}
-            height={300}
-          />
-          <div>
-            <Link legacyBehavior href={projeto.urlsite}>
-              <a target="_blank" rel="noopener noreferrer">
-                Visitar site do projeto
-              </a>
-            </Link>
-            <Link legacyBehavior href={projeto.urlgithub}>
-              <a target="_blank" rel="noopener noreferrer">
-                Ver no GitHub
-              </a>
-            </Link>
+      <div className="bg-herobackground py-24 sm:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="container mx-auto px-6 lg:px-8">
+            <h1 className="mt-2 text-3xl font-bold tracking-tight text-slate-50 sm:text-4xl">
+              {projeto.projectname}
+            </h1>
+            <div className="w-full mt-5 grid max-w-xl grid-cols-1 text-base leading-7 text-slate-50 lg:max-w-none lg:grid-cols-1">
+              <div>
+                <p className="mt-4">{projeto.description}</p>
+                <p className="mt-8">{projeto.descriptiondetails}</p>
+              </div>
+              <div className="mt-10 flex gap-4">
+                <Link legacyBehavior href={projeto.urlsite}>
+                  <a
+                    className=" bg-purple-600 px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-purple-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Site do projeto <span aria-hidden="true"> →</span>
+                  </a>
+                </Link>
+                <Link legacyBehavior href={projeto.urlgithub}>
+                  <a
+                    className=" bg-purple-600 px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-purple-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    GitHub <span aria-hidden="true"> →</span>
+                  </a>
+                </Link>
+              </div>
+            </div>
+            <div className="relative overflow-hidden pt-16 lg:pt-20">
+              <div className="mx-auto max-w-7xl ">
+                <img
+                  className="mb-[-12%] rounded-xl shadow-2xl ring-1 ring-gray-900/10"
+                  src={projeto.imgsrc}
+                  alt={projeto.title}
+                />
+              </div>
+            </div>
+          </div>
+          <div className="py-12" data-aos="fade-up">
+            <div className="mx-auto max-w-7xl px-6 lg:px-8">
+              {projeto.videoUrl && (
+                <div className="aspect-w-16 aspect-h-9 h-full w-full rounded-lg">
+                  <iframe
+                    src={projeto.videoUrl}
+                    width="640"
+                    height="360"
+                    allow="autoplay; fullscreen; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>
