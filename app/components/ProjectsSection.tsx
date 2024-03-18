@@ -1,8 +1,5 @@
 "use client";
 
-import { useRef, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { cn } from "@/utils/cn";
 import { DirectionAwareHover } from "../components/ui/directionAwareHover";
 import { projetosData } from "../../app/data/projetosData";
 import Link from "next/link";
@@ -33,7 +30,7 @@ export default function ProjectsSection() {
         <div className="mx-auto max-w-2xl lg:mx-0">
           <h2
             data-aos="fade-up"
-            data-aos-duration="1100"
+            data-aos-duration="1200"
             className="text-3xl font-bold tracking-tight text-white sm:text-4xl"
           >
             Projetos recentes

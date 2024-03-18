@@ -37,17 +37,27 @@ const ProjetoDetalhes = ({ projeto }: ProjetoProps) => {
       <div className="bg-herobackground py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="container mx-auto px-6 lg:px-8">
-            <h1 className="mt-2 text-3xl font-bold tracking-tight text-slate-50 sm:text-4xl">
+            <h1
+              data-aos="fade-up"
+              data-aos-duration="1200"
+              className="mt-2 text-3xl font-bold tracking-tight text-slate-50 sm:text-4xl"
+            >
               {projeto.projectname}
             </h1>
             <div className="w-full mt-5 grid max-w-xl grid-cols-1 text-base leading-7 text-slate-50 lg:max-w-none lg:grid-cols-1">
               <div>
-                <p className="mt-4">{projeto.description}</p>
-                <p className="mt-8">{projeto.descriptiondetails}</p>
+                <p data-aos="fade-up" data-aos-duration="1100" className="mt-4">
+                  {projeto.description}
+                </p>
+                <p data-aos="fade-up" data-aos-duration="1000" className="mt-8">
+                  {projeto.descriptiondetails}
+                </p>
               </div>
               <div className="mt-10 flex gap-4">
                 <Link legacyBehavior href={projeto.urlsite}>
                   <a
+                    data-aos="fade-up"
+                    data-aos-duration="900"
                     className=" bg-purple-600 px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-purple-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -57,6 +67,8 @@ const ProjetoDetalhes = ({ projeto }: ProjetoProps) => {
                 </Link>
                 <Link legacyBehavior href={projeto.urlgithub}>
                   <a
+                    data-aos="fade-up"
+                    data-aos-duration="900"
                     className=" bg-purple-600 px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-purple-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -69,6 +81,8 @@ const ProjetoDetalhes = ({ projeto }: ProjetoProps) => {
             <div className="relative overflow-hidden pt-16 lg:pt-20">
               <div className="mx-auto max-w-7xl ">
                 <img
+                  data-aos="fade-up"
+                  data-aos-duration="700"
                   className="mb-[-12%] rounded-xl shadow-2xl ring-1 ring-gray-900/10"
                   src={projeto.imgsrc}
                   alt={projeto.title}
