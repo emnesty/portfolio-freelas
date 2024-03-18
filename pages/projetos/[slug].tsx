@@ -98,7 +98,7 @@ const ProjetoDetalhes = ({ projeto }: ProjetoProps) => {
                     src={projeto.videoUrl}
                     width="640"
                     height="360"
-                    allow="autoplay; fullscreen; picture-in-picture"
+                    allow="autoplay fullscreen picture-in-picture"
                     allowFullScreen
                   ></iframe>
                 </div>
