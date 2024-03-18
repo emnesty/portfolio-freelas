@@ -65,7 +65,7 @@ const ProjetoDetalhes = ({ projeto }: ProjetoProps) => {
                     Site do projeto <span aria-hidden="true"> →</span>
                   </a>
                 </Link>
-                <Link legacyBehavior href={projeto.urlgithub}>
+                {/* <Link legacyBehavior href={projeto.urlgithub}>
                   <a
                     data-aos="fade-up"
                     data-aos-duration="900"
@@ -75,7 +75,7 @@ const ProjetoDetalhes = ({ projeto }: ProjetoProps) => {
                   >
                     GitHub <span aria-hidden="true"> →</span>
                   </a>
-                </Link>
+                </Link> */}
               </div>
             </div>
             <div className="relative overflow-hidden pt-16 lg:pt-20">
