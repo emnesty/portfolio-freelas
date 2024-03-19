@@ -41,7 +41,7 @@ export const metadata: Metadata = {
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
       <AOSInit />
     </>
   );

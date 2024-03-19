@@ -4,7 +4,7 @@ export const projetosData = [
   {
     id: 1,
     slug: "projeto-neon",
-    title: "Projeto Neon Landing Page",
+    title: "Estudo - Neon Landing Page",
     projectname: "Landing Page inspirada no banco Neon",
     category: "Desenvolvimento",
     badge: "CSS/SASS",
@@ -23,7 +23,7 @@ export const projetosData = [
   {
     id: 2,
     slug: "projeto-pokemon",
-    title: "Projeto Pokedex",
+    title: "Projeto Front-End - Pokedex",
     projectname: "Consumindo e exibindo dados de uma API",
     category: "Desenvolvimento",
     badge: "CSS/SASS",
@@ -41,7 +41,7 @@ export const projetosData = [
   {
     id: 3,
     slug: "projeto-blizzard",
-    title: "Blizzard Landing Page",
+    title: "Projeto Front-End - Blizzard Landing Page",
     projectname: "Landing Page Blizzard, World of Warcraft",
     category: "Desenvolvimento",
     badge: "HTML5",
@@ -59,8 +59,8 @@ export const projetosData = [
   },
   {
     id: 4,
-    title: " App ZoeBank",
     slug: "projeto-zoebank",
+    title: "Projeto UI - App ZoeBank",
     projectname: "Criação de App para uma Fintech",
     category: "Design",
     badge: "Figma",
@@ -76,5 +76,45 @@ export const projetosData = [
     descriptiondetails3: "",
     videoUrl: "https://player.vimeo.com/video/861019159",
   },
+  {
+    id: 5,
+    slug: "projeto-lpitau",
+    title: "Estudo Itaú Landing Page",
+    projectname: "Criação de LP de estudo Banco Itaú",
+    category: "Design",
+    badge: "Figma",
+    badge2: "",
+    badge3: "",
+    description:
+      "Landing Page desenvolvida durante estudos de HTML, CSS/SASS e JavaScript",
+    imgsrc: "/images/projetos/itaulp.webp",
+    urlsite: "https://landing-page-itau-tailwind.vercel.app/",
+    urlgithub: "",
+    descriptiondetails: "",
+    descriptiondetails2: "",
+    descriptiondetails3: "",
+    videoUrl: "",
+  },
+  {
+    id: 6,
+    slug: "projeto-america-software",
+    title: "Projeto UI - America Frota",
+    projectname: "Redesign de aplicação Web",
+    category: "Design",
+    badge: "Figma",
+    badge2: "",
+    badge3: "",
+    description:
+      "Redesign completo da aplicação, feita no Figma e totalmente navegável, com diversas interações complexas entre mais de 50 telas",
+    imgsrc: "/images/projetos/americaprojeto.jpg",
+    urlsite: "",
+    urlgithub: "",
+    descriptiondetails: "",
+    descriptiondetails2: "",
+    descriptiondetails3: "",
+    videoUrl:
+      "https://player.vimeo.com/video/904837560?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+  },
+
   // Adicione mais projetos conforme necessário
 ];

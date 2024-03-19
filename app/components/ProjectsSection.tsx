@@ -4,25 +4,6 @@ import { DirectionAwareHover } from "../components/ui/directionAwareHover";
 import { projetosData } from "../../app/data/projetosData";
 import Link from "next/link";
 
-const projects = [
-  {
-    title: "Projeto 1",
-    description: "Descrição breve do Projeto 1.",
-    imageUrl: "/images/eu.jpeg",
-  },
-  {
-    title: "Projeto 2",
-    description: "Descrição breve do Projeto 2.",
-    imageUrl: "/images/eu.jpeg",
-  },
-  {
-    title: "Projeto 3",
-    description: "Descrição breve do Projeto 3.",
-    imageUrl: "/images/eu.jpeg",
-  },
-  // Adicione mais projetos conforme necessário
-];
-
 export default function ProjectsSection() {
   return (
     <div className="bg-herobackground py-24 sm:py-32">
