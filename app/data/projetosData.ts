@@ -4,7 +4,7 @@ export const projetosData = [
   {
     id: 1,
     slug: "projeto-neon",
-    title: "Estudo - Neon Landing Page",
+    title: "Neon Landing Page",
     projectname: "Landing Page inspirada no banco Neon",
     category: "Desenvolvimento",
     badge: "CSS/SASS",
@@ -23,7 +23,7 @@ export const projetosData = [
   {
     id: 2,
     slug: "projeto-pokemon",
-    title: "Projeto Front-End - Pokedex",
+    title: "Projeto - Pokedex",
     projectname: "Consumindo e exibindo dados de uma API",
     category: "Desenvolvimento",
     badge: "CSS/SASS",
@@ -41,7 +41,7 @@ export const projetosData = [
   {
     id: 3,
     slug: "projeto-blizzard",
-    title: "Projeto Front-End - Blizzard Landing Page",
+    title: "Projeto - Blizzard Landing Page",
     projectname: "Landing Page Blizzard, World of Warcraft",
     category: "Desenvolvimento",
     badge: "HTML5",
@@ -79,7 +79,7 @@ export const projetosData = [
   {
     id: 5,
     slug: "projeto-lpitau",
-    title: "Estudo Itaú Landing Page",
+    title: "Itaú Landing Page",
     projectname: "Criação de LP de estudo Banco Itaú",
     category: "Design",
     badge: "Figma",

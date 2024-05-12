@@ -12,10 +12,19 @@ const config: Config = {
   theme: {
     extend: {
       animation: {
+        aurora: "aurora 60s linear infinite",
         scroll:
           "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
       },
       keyframes: {
+        aurora: {
+          from: {
+            backgroundPosition: "50% 50%, 50% 50%",
+          },
+          to: {
+            backgroundPosition: "350% 50%, 350% 50%",
+          },
+        },
         scroll: {
           to: {
             transform: "translate(calc(-50% - 0.5rem))",
@@ -31,7 +40,10 @@ const config: Config = {
         black: "#000000",
       },
       backgroundImage: {
-        "hero-background": "url('/images/Background pattern2.svg')",
+        "gradient-to-b-light":
+          "linear-gradient(180deg, var(--neutral-50), var(--neutral-100))",
+        "gradient-to-b-dark":
+          "linear-gradient(180deg, var(--zinc-800), var(--zinc-900))",
       },
     },
   },
