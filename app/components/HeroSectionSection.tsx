@@ -29,7 +29,7 @@ export default function HeroSection() {
   return (
     <AuroraBackground>
       <motion.div
-        initial={{ opacity: 0.0, y: 40 }}
+        initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{
           delay: 0.3,
@@ -40,50 +40,55 @@ export default function HeroSection() {
         <div className="relative isolate pt-8">
           <div className="mx-auto flex flex-col max-w-7xl px-6 py-16 sm:py-22 lg:flex lg:items-center lg:gap-x-10 lg:px-8 lg:py-22">
             <div className="mx-auto max-w-4xl lg:mx-0 lg:flex-auto">
-              <div
-                className="flex flex-row mb-10 w-full"
-                data-aos="fade-up"
-                data-aos-duration="1100"
-              >
-                <AnimatedTooltip items={people} />
+              <div className="flex -space-x-2 justify-center items-center p-4 overflow-hidden">
+                <img
+                  className="inline-block h-8 w-8 rounded-full ring-2 ring-white"
+                  src="../images/caiopic.jpeg"
+                  alt=""
+                />
+                <img
+                  className="inline-block h-8 w-8 rounded-full ring-2 ring-white"
+                  src="../images/marllonpic.jpeg"
+                  alt=""
+                />
+                <img
+                  className="inline-block h-8 w-8 rounded-full ring-2 ring-white"
+                  src="../images/aureapic.jpeg"
+                  alt=""
+                />
+                <img
+                  className="inline-block h-8 w-8 rounded-full ring-2 ring-white"
+                  src="../images/xandepic.jpeg"
+                  alt=""
+                />
+                <span className="pl-6 dark:text-slate-600  text-slate-400">
+                  Mais de 20+ recomendações
+                </span>
               </div>
               <h1
-                className="mt-10 max-w-[730px] text-4xl tracking-tight dark:text-slate-200 text-slate-950 sm:text-6xl"
+                className="mt-10 max-w-[730px] text-center text-4xl tracking-tight dark:text-slate-200 text-slate-950 sm:text-6xl"
                 data-aos="fade-up"
                 data-aos-duration="1000"
               >
                 Designer de Produto e Desenvolvedor Frontend
               </h1>
-              <p
-                className="mt-6 w-full max-w-lg text-lg leading-8 dark:text-texthero text-slate-950"
-                data-aos="fade-up"
-                data-aos-duration="900"
-              >
-                — Me chamo{" "}
-                <span className="dark:text-texthero2 text-slate-950 font-bold">
-                  Luciano Silva
-                </span>
-                . Sou Designer de Produto na{" "}
-                <a
-                  href="https://ambevtech.com.br"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-texthero2 font-bold underline"
+              <div className=" w-full flex items-center justify-center">
+                <p
+                  className="mt-6 w-full max-w-lg  text-center text-lg leading-8 dark:text-texthero text-slate-950"
+                  data-aos="fade-up"
+                  data-aos-duration="900"
                 >
-                  AmbevTech
-                </a>{" "}
-                e freelancer nas horas vagas.
-              </p>
+                  Com 10+ anos de experiência, desenvolvo ideias e produtos
+                  digitais com inovação e criatividade.
+                </p>
+              </div>
               <div
-                className="mt-10 flex max-sm:flex-col max-sm:gap-10 items-center gap-x-6"
+                className="mt-10 flex max-sm:flex-col max-sm:gap-10 items-center  justify-center gap-x-6"
                 data-aos="fade-up"
                 data-aos-duration="800"
               >
-                {/* <button className="px-16 max-sm:px-14 max-sm:w-full py-4 bg-gradient-to-b from-purple-500 to-purple-600 text-black font-bold hover:from-purple-600 hover:to-purple-700 focus:ring-2 focus:ring-purple-400 hover:shadow-xl transition-all duration-300">
-                  Projetos concluídos
-                </button> */}
                 <button className="group/button relative inline-flex items-center justify-center overflow-hidden rounded-md bg-gradient-to-b from-purple-500 to-purple-600 px-16 max-sm:px-14 max-sm:w-full py-4 text-xs font-normal text-white transition-all duration-300 ease-in-out hover:scale-104 hover:shadow-lg hover:shadow-purple-500/30">
-                  <span className="text-sm">Projetos recentes</span>
+                  <span className="text-sm">Projetos concluídos</span>
                   <div className="absolute inset-0 flex h-full w-full justify-center [transform:skew(-13deg)_translateX(-100%)] group-hover/button:duration-1000 group-hover/button:[transform:skew(-13deg)_translateX(100%)]">
                     <div className="relative h-full w-8 bg-white/20" />
                   </div>
