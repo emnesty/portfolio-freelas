@@ -6,6 +6,7 @@ import { AuroraBackground } from "./ui/AuroraBackground";
 import { motion } from "framer-motion";
 import Lottie from "lottie-react";
 import arrowAnimation from "../../public/ArrowDownLottie.json";
+import BadgeWelcome from "./ui/hello-badge";
 
 const people = [
   {
@@ -40,7 +41,26 @@ export default function HeroSection() {
         <div className="relative isolate pt-8">
           <div className="mx-auto flex flex-col max-w-7xl px-6 py-16 sm:py-22 lg:flex lg:items-center lg:gap-x-10 lg:px-8 lg:py-22">
             <div className="mx-auto max-w-4xl lg:mx-0 lg:flex-auto">
-              <div className="flex -space-x-2 justify-center items-center p-4 overflow-hidden">
+              <div
+                className="flex justify-center items-center pt-6"
+                data-aos="fade-up"
+                data-aos-duration="1050"
+              >
+                <BadgeWelcome />
+              </div>
+
+              <h1
+                className="mt-10 max-w-[730px] text-center text-4xl tracking-tight dark:text-slate-200 text-slate-950 sm:text-6xl"
+                data-aos="fade-up"
+                data-aos-duration="1000"
+              >
+                Designer de Produto e Desenvolvedor Frontend
+              </h1>
+              <div
+                className="flex -space-x-2 justify-center items-center p-4 overflow-hidden"
+                data-aos="fade-up"
+                data-aos-duration="950"
+              >
                 <img
                   className="inline-block h-8 w-8 rounded-full ring-2 ring-white"
                   src="../images/caiopic.jpeg"
@@ -62,16 +82,9 @@ export default function HeroSection() {
                   alt=""
                 />
                 <span className="pl-6 dark:text-slate-600  text-slate-400">
-                  Mais de 20+ recomendações
+                  45+ Recomendações
                 </span>
               </div>
-              <h1
-                className="mt-10 max-w-[730px] text-center text-4xl tracking-tight dark:text-slate-200 text-slate-950 sm:text-6xl"
-                data-aos="fade-up"
-                data-aos-duration="1000"
-              >
-                Designer de Produto e Desenvolvedor Frontend
-              </h1>
               <div className=" w-full flex items-center justify-center">
                 <p
                   className="mt-6 w-full max-w-lg  text-center text-lg leading-8 dark:text-texthero text-slate-950"
