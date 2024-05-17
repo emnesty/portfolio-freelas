@@ -82,7 +82,7 @@ export default function HeroSection() {
                   alt=""
                 />
                 <span className="pl-6 dark:text-slate-600  text-slate-400">
-                  45+ Recomendações
+                  +45 Recomendações
                 </span>
               </div>
               <div className=" w-full flex items-center justify-center">
