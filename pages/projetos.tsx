@@ -1,7 +1,7 @@
 // pages/projetos.tsx
 import Link from "next/link";
 import { projetosData } from "../app/data/projetosData";
-import { DirectionAwareHover } from "@/app/components/ui/directionAwareHover";
+import { DirectionAwareHover } from "@/app/components/ui/direction-aware-hover";
 import Head from "next/head";
 
 const ProjetosPage = () => {

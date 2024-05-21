@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { AnimatedTooltip } from "./ui/animatedTooltip";
-import { AuroraBackground } from "./ui/AuroraBackground";
+import { AuroraBackground } from "./ui/aurora-background";
 import { motion } from "framer-motion";
 import Lottie from "lottie-react";
 import arrowAnimation from "../../public/ArrowDownLottie.json";
@@ -100,12 +99,12 @@ export default function HeroSection() {
                 data-aos="fade-up"
                 data-aos-duration="800"
               >
-                <button className="group/button relative inline-flex items-center justify-center overflow-hidden rounded-md bg-gradient-to-b from-purple-500 to-purple-600 px-16 max-sm:px-14 max-sm:w-full py-4 text-xs font-normal text-white transition-all duration-300 ease-in-out hover:scale-104 hover:shadow-lg hover:shadow-purple-500/30">
+                {/* <button className="group/button relative inline-flex items-center justify-center overflow-hidden rounded-md bg-gradient-to-b from-purple-500 to-purple-600 px-16 max-sm:px-14 max-sm:w-full py-4 text-xs font-normal text-white transition-all duration-300 ease-in-out hover:scale-104 hover:shadow-lg hover:shadow-purple-500/30">
                   <span className="text-sm">Projetos concluídos</span>
                   <div className="absolute inset-0 flex h-full w-full justify-center [transform:skew(-13deg)_translateX(-100%)] group-hover/button:duration-1000 group-hover/button:[transform:skew(-13deg)_translateX(100%)]">
                     <div className="relative h-full w-8 bg-white/20" />
                   </div>
-                </button>
+                </button> */}
               </div>
             </div>
             <Lottie
