@@ -6,6 +6,8 @@ import { motion } from "framer-motion";
 import Lottie from "lottie-react";
 import arrowAnimation from "../../public/ArrowDownLottie.json";
 import BadgeWelcome from "./ui/hello-badge";
+import { AnimatedTooltip } from "./ui/animated-tooltip";
+import Image from "next/image";
 
 const people = [
   {
@@ -44,68 +46,79 @@ export default function HeroSection() {
                 className="flex justify-center items-center pt-6"
                 data-aos="fade-up"
                 data-aos-duration="1050"
-              >
-                <BadgeWelcome />
-              </div>
+              ></div>
 
               <h1
-                className="mt-10 max-w-[730px] text-center text-4xl tracking-tight dark:text-slate-200 text-slate-950 sm:text-6xl"
+                className="mt-10 w-full text-center sm:text-left font-bold text-2xl tracking-tight dark:text-slate-200 text-slate-950 sm:text-7xl"
                 data-aos="fade-up"
                 data-aos-duration="1000"
               >
                 Designer de Produto e Desenvolvedor Frontend
               </h1>
-              <div
-                className="flex -space-x-2 justify-center items-center p-4 overflow-hidden"
-                data-aos="fade-up"
-                data-aos-duration="950"
-              >
-                <img
-                  className="inline-block h-8 w-8 rounded-full ring-2 ring-white"
-                  src="../images/caiopic.jpeg"
-                  alt=""
-                />
-                <img
-                  className="inline-block h-8 w-8 rounded-full ring-2 ring-white"
-                  src="../images/marllonpic.jpeg"
-                  alt=""
-                />
-                <img
-                  className="inline-block h-8 w-8 rounded-full ring-2 ring-white"
-                  src="../images/aureapic.jpeg"
-                  alt=""
-                />
-                <img
-                  className="inline-block h-8 w-8 rounded-full ring-2 ring-white"
-                  src="../images/xandepic.jpeg"
-                  alt=""
-                />
-                <span className="pl-6 dark:text-slate-600  text-slate-400">
-                  +45 Recomendações
-                </span>
-              </div>
-              <div className=" w-full flex items-center justify-center">
-                <p
-                  className="mt-6 w-full max-w-lg  text-center text-lg leading-8 dark:text-texthero text-slate-950"
+              <div className="flex w-full sm:text-left text-center">
+                <div
+                  className="flex -space-x-2 justify-center items-center p-4 overflow-hidden"
                   data-aos="fade-up"
-                  data-aos-duration="900"
+                  data-aos-duration="950"
                 >
-                  Com 10+ anos de experiência, desenvolvo ideias e produtos
-                  digitais com inovação e criatividade.
-                </p>
+                  <img
+                    className="inline-block h-8 w-8 rounded-full ring-2 ring-white"
+                    src="../images/caiopic.jpeg"
+                    alt=""
+                  />
+                  <img
+                    className="inline-block h-8 w-8 rounded-full ring-2 ring-white"
+                    src="../images/marllonpic.jpeg"
+                    alt=""
+                  />
+                  <img
+                    className="inline-block h-8 w-8 rounded-full ring-2 ring-white"
+                    src="../images/aureapic.jpeg"
+                    alt=""
+                  />
+                  <img
+                    className="inline-block h-8 w-8 rounded-full ring-2 ring-white"
+                    src="../images/xandepic.jpeg"
+                    alt=""
+                  />
+                  <span className="pl-6 dark:text-slate-600  text-slate-400">
+                    +45 Recomendações
+                  </span>
+                </div>
               </div>
+
               <div
+                className="flex w-full gap-4 items-center justify-center sm:justify-start mt-4"
+                data-aos="fade-up"
+                data-aos-duration="900"
+              >
+                <div className="w-full max-w-12 max-sm:hidden lg:block">
+                  <Image
+                    src={"/images/avatar.png"}
+                    alt={"My Avatar Image"}
+                    width={100}
+                    height={100}
+                  />
+                </div>
+                <div className="flex items-center justify-center">
+                  <p className="w-full max-w-[33rem] md:text-left max-sm:text-center text-lg leading-8 dark:text-texthero text-slate-950">
+                    Com 10+ anos de experiência, desenvolvo ideias e produtos
+                    digitais com inovação e criatividade.
+                  </p>
+                </div>
+              </div>
+              {/* <div
                 className="mt-10 flex max-sm:flex-col max-sm:gap-10 items-center  justify-center gap-x-6"
                 data-aos="fade-up"
                 data-aos-duration="800"
               >
-                {/* <button className="group/button relative inline-flex items-center justify-center overflow-hidden rounded-md bg-gradient-to-b from-purple-500 to-purple-600 px-16 max-sm:px-14 max-sm:w-full py-4 text-xs font-normal text-white transition-all duration-300 ease-in-out hover:scale-104 hover:shadow-lg hover:shadow-purple-500/30">
+                <button className="group/button relative inline-flex items-center justify-center overflow-hidden rounded-md bg-gradient-to-b from-purple-500 to-purple-600 px-16 max-sm:px-14 max-sm:w-full py-4 text-xs font-normal text-white transition-all duration-300 ease-in-out hover:scale-104 hover:shadow-lg hover:shadow-purple-500/30">
                   <span className="text-sm">Projetos concluídos</span>
                   <div className="absolute inset-0 flex h-full w-full justify-center [transform:skew(-13deg)_translateX(-100%)] group-hover/button:duration-1000 group-hover/button:[transform:skew(-13deg)_translateX(100%)]">
                     <div className="relative h-full w-8 bg-white/20" />
                   </div>
-                </button> */}
-              </div>
+                </button>
+              </div> */}
             </div>
             <Lottie
               animationData={arrowAnimation}
