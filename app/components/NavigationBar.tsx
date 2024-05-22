@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { NavigationBar } from "../components/ui/floating-navbar";
-import { IconHome, IconMessage, IconUser } from "@tabler/icons-react";
+import { IconHome, IconUser } from "@tabler/icons-react";
 
 export function NavigationMenu() {
   const navItems = [

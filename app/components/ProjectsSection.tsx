@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function ProjectsSection() {
   return (
-    <section id="projetos" className="about">
+    <section id="projetos">
       <div className="bg-zinc-50 dark:bg-zinc-900 py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="w-full flex flex-col items-center">
