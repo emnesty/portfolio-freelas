@@ -49,13 +49,13 @@ export default function HeroSection() {
               ></div>
 
               <h1
-                className="mt-10 w-full text-center sm:text-left font-bold text-2xl tracking-tight dark:text-slate-200 text-slate-950 sm:text-7xl"
+                className="mt-10 w-full text-center font-bold text-4xl tracking-tight dark:text-slate-200 text-slate-950 sm:text-7xl"
                 data-aos="fade-up"
                 data-aos-duration="1000"
               >
                 Designer de Produto e Desenvolvedor Frontend
               </h1>
-              <div className="flex w-full sm:text-left text-center">
+              <div className="flex w-full items-center justify-center text-center p-8">
                 <div
                   className="flex -space-x-2 justify-center items-center p-4 overflow-hidden"
                   data-aos="fade-up"
@@ -88,7 +88,7 @@ export default function HeroSection() {
               </div>
 
               <div
-                className="flex w-full gap-4 items-center justify-center sm:justify-start mt-4"
+                className="flex w-full gap-4 items-center justify-center mt-4"
                 data-aos="fade-up"
                 data-aos-duration="900"
               >
