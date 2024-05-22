@@ -3,6 +3,7 @@ import InfiniteMovingCardsSection from "../app/components/InfiniteMovingCardsSec
 import ProjectsSection from "./components/ProjectsSection";
 import { NavigationMenu } from "./components/NavigationBar";
 import AboutSection from "./components/AboutSection";
+import StacksNew from "./components/StackSectionNew";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <HeroSection />
       <InfiniteMovingCardsSection />
       <AboutSection />
+      <StacksNew />
       <ProjectsSection />
     </>
   );
