@@ -15,7 +15,7 @@ const stacks = [
     id: 2,
     name: "Framer",
     description: "Ferramenta de Design No-Code",
-    iconPath: "images/framericon.svg",
+    iconPath: "images/framer-svgrepo-com.svg",
     linkUrl: "https://framer.com/",
   },
   {
