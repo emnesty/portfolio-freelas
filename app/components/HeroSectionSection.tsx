@@ -49,7 +49,7 @@ export default function HeroSection() {
               ></div>
 
               <h1
-                className="mt-10 w-full text-center font-bold text-4xl tracking-tight dark:text-slate-200 text-slate-950 sm:text-7xl"
+                className="mt-10 w-full text-center font-bold text-2xl tracking-tight dark:text-slate-200 text-slate-950 sm:text-7xl"
                 data-aos="fade-up"
                 data-aos-duration="1000"
               >
