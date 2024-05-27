@@ -66,7 +66,6 @@ const ProjetosPage = () => {
                   <a className="flex flex-col cursor-pointer">
                     <div className="h-[22rem] relative flex items-center justify-center">
                       <DirectionAwareHover imageUrl={project.imgsrc}>
-                        {/* Exibe a tag com base na categoria do projeto */}
                         <div className="pb-2">
                           <span className="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10">
                             {project.category}

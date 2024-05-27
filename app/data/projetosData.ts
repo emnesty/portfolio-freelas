@@ -1,5 +1,3 @@
-// src/data/projetosData.ts
-
 export const projetosData = [
   {
     id: 1,
@@ -13,6 +11,11 @@ export const projetosData = [
     description:
       "Página desenvolvida utilizando HTML, CSS/SASS e JavaScript durante o curso Codeboost, esta página foi o meu primeiro projeto real onde pude aplicar tudo que aprendi durante todas as aulas e vídeos assisti, começar a aprender pelo HTML e CSS fez toda diferença para que eu pudesse entender mais a frente toda a estrutura necessária para construir páginas agradaveis e acessíveis.",
     imgsrc: "/images/projetos/neonlp.webp",
+    images: [
+      "/images/projetos/neon/Neon 1.png",
+      "/images/projetos/neon/Neon 2.png",
+      "/images/projetos/neon/Neon 3.png",
+    ],
     urlsite: "https://lp-neon-ten.vercel.app/",
     urlgithub: "https://github.com/emnesty/lp-neon",
     descriptiondetails: "Para as animações: Animate On Scroll Library",
@@ -32,6 +35,7 @@ export const projetosData = [
     description:
       "Projeto de uma Pokedex feita com CSS, JavaScript e HTML, consumindo API para listagem dos Pokemons dinamicamente",
     imgsrc: "/images/projetos/pokemonlp.webp",
+    images: [],
     urlsite: "https://projeto-pokemon-r1vm.vercel.app/",
     urlgithub: "https://github.com/emnesty/projeto-pokemon",
     descriptiondetails: "",
@@ -50,6 +54,7 @@ export const projetosData = [
     description:
       "Essa página teve algumas particularidades, foi feita durante o curso codeboost e nela pude entender um pouco mais afundo o poder do JavaScript, particulamente o menu suspenso com vários detalhes e interações divertidas de fazer, além disso pude por em prática o flexbox em todo seu esplendor durante o desenvolvimento desse projeto.",
     imgsrc: "/images/projetos/blizzardlp.webp",
+    images: [],
     urlsite: "https://projeto-blizzard-omega.vercel.app/",
     urlgithub: "https://github.com/emnesty/projeto-blizzard",
     descriptiondetails: "Para as animações: Animate On Scroll Library",
@@ -69,6 +74,7 @@ export const projetosData = [
     description:
       "Criação completamente do Zero de um app para uma Fintech, com diversas funções e fluxos, incluindo depósitos, pix, extrato entre muitas outras.",
     imgsrc: "/images/projetos/zoeprojeto.jpg",
+    images: [],
     urlsite: "",
     urlgithub: "",
     descriptiondetails: "",
@@ -88,6 +94,7 @@ export const projetosData = [
     description:
       "Landing Page desenvolvida durante estudos de HTML, CSS/SASS e JavaScript",
     imgsrc: "/images/projetos/itaulp.webp",
+    images: [],
     urlsite: "https://landing-page-itau-tailwind.vercel.app/",
     urlgithub: "",
     descriptiondetails: "",
@@ -107,6 +114,7 @@ export const projetosData = [
     description:
       "Redesign completo da aplicação, feita no Figma e totalmente navegável, com diversas interações complexas entre mais de 50 telas",
     imgsrc: "/images/projetos/americaprojeto.jpg",
+    images: [],
     urlsite: "",
     urlgithub: "",
     descriptiondetails: "",
