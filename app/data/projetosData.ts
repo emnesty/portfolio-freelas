@@ -35,7 +35,11 @@ export const projetosData = [
     description:
       "Projeto de uma Pokedex feita com CSS, JavaScript e HTML, consumindo API para listagem dos Pokemons dinamicamente",
     imgsrc: "/images/projetos/pokemonlp.webp",
-    images: [],
+    images: [
+      "/images/projetos/pokemon/Pokemon 1.png",
+      "/images/projetos/pokemon/Pokemon 2.png",
+      "/images/projetos/pokemon/Pokemon 3.png",
+    ],
     urlsite: "https://projeto-pokemon-r1vm.vercel.app/",
     urlgithub: "https://github.com/emnesty/projeto-pokemon",
     descriptiondetails: "",

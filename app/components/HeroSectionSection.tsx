@@ -81,7 +81,7 @@ export default function HeroSection() {
                     src="../images/xandepic.jpeg"
                     alt=""
                   />
-                  <span className="pl-6 dark:text-slate-600  text-slate-400">
+                  <span className="pl-6 dark:text-slate-500  text-slate-400">
                     +45 Recomendações
                   </span>
                 </div>

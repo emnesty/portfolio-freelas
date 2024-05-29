@@ -54,7 +54,7 @@ const ProjetoDetalhes = ({ projeto }: ProjetoProps) => {
               className="rounded-md object-contain"
               style={{ height: "400px", width: "600px" }}
             />
-            <div className="absolute bottom-0 bg-zinc-50 h-40 w-full [mask-image:linear-gradient(to_bottom,transparent,white)]" />
+            <div className="absolute bottom-0 bg-zinc-50 dark:bg-zinc-900 h-40 w-full [mask-image:linear-gradient(to_bottom,transparent,white)] dark:[mask-image:linear-gradient(to_bottom,transparent,black)]" />
           </motion.div>
           <div className="flex flex-row justify-center my-8 flex-wrap">
             {projeto.images.map((image, idx) => (
@@ -71,7 +71,9 @@ const ProjetoDetalhes = ({ projeto }: ProjetoProps) => {
             ))}
           </div>
           <div className="flex lg:flex-row justify-between items-center flex-col mt-20">
-            <h1 className="font-black text-2xl mb-2 pb-1">{projeto.title}</h1>
+            <h1 className="dark:text-slate-200 text-slate-950 text-2xl mb-2 pb-1">
+              {projeto.title}
+            </h1>
             <div className="flex space-x-2 md:mb-1 mt-2 md:mt-0">
               {projeto.badge && (
                 <span className="text-xs md:text-xs lg:text-xs bg-gray-50 px-2 py-1 rounded-sm text-secondary">
@@ -91,9 +93,11 @@ const ProjetoDetalhes = ({ projeto }: ProjetoProps) => {
             </div>
           </div>
           <div>
-            <p className="w-full mt-4">{projeto.description}</p>
+            <p className="w-ful dark:text-slate-200 text-slate-950 mt-4">
+              {projeto.description}
+            </p>
           </div>
-          <div className="prose prose-sm md:prose-base max-w-none text-neutral-600 mt-4">
+          <div className="prose prose-sm md:prose-base max-w-none dark:text-slate-200 text-slate-950 mt-4">
             <p>{projeto.descriptiondetails}</p>
             <p>{projeto.descriptiondetails2}</p>
             <p>{projeto.descriptiondetails3}</p>
@@ -103,7 +107,7 @@ const ProjetoDetalhes = ({ projeto }: ProjetoProps) => {
               <a
                 href={projeto.urlsite}
                 target="__blank"
-                className="inline-flex items-center gap-1 group/button rounded-full hover:scale-105 focus:outline-none transition ring-offset-gray-900 bg-gray-800 text-white shadow-lg shadow-black/20 sm:backdrop-blur-sm group-hover/button:bg-gray-50/15 group-hover/button:scale-105 focus-visible:ring-1 focus-visible:ring-offset-2 ring-gray-50/60 text-sm font-medium px-4 py-2 mt-auto origin-left"
+                className="inline-flex items-center gap-1 group/button rounded-full hover:scale-105 focus:outline-none transition ring-offset-gray-900 bg-gray-800 dark:text-slate-200 text-slate-950 shadow-lg shadow-black/20 sm:backdrop-blur-sm group-hover/button:bg-gray-50/15 group-hover/button:scale-105 focus-visible:ring-1 focus-visible:ring-offset-2 ring-gray-50/60 text-sm font-medium px-4 py-2 mt-auto origin-left"
               >
                 Live Preview
                 <svg
@@ -128,7 +132,7 @@ const ProjetoDetalhes = ({ projeto }: ProjetoProps) => {
               <a
                 href={projeto.urlgithub}
                 target="__blank"
-                className="inline-flex items-center gap-1 group/button rounded-full hover:scale-105 focus:outline-none transition ring-offset-gray-900 bg-gray-800 text-white shadow-lg shadow-black/20 sm:backdrop-blur-sm group-hover/button:bg-gray-50/15 group-hover/button:scale-105 focus-visible:ring-1 focus-visible:ring-offset-2 ring-gray-50/60 text-sm font-medium px-4 py-2 mt-auto origin-left"
+                className="inline-flex items-center gap-1 group/button rounded-full hover:scale-105 focus:outline-none transition ring-offset-gray-900 bg-gray-800 dark:text-slate-200 text-slate-950 shadow-lg shadow-black/20 sm:backdrop-blur-sm group-hover/button:bg-gray-50/15 group-hover/button:scale-105 focus-visible:ring-1 focus-visible:ring-offset-2 ring-gray-50/60 text-sm font-medium px-4 py-2 mt-auto origin-left"
               >
                 GitHub Repo
                 <svg
