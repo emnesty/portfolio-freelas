@@ -11,10 +11,10 @@ export function ProjectsCarrousel() {
   useEffect(() => {
     gsap.fromTo(
       "#animated-image",
-      { x: "30%" },
+      { x: "70%" },
       {
         x: "0%",
-        duration: 2.5,
+        duration: 3.5,
         ease: "circ.out",
         scrollTrigger: {
           trigger: "#animated-image",
@@ -28,12 +28,12 @@ export function ProjectsCarrousel() {
 
   return (
     <div className="bg-zinc-50 dark:bg-zinc-900 py-24 sm:py-32 overflow-x-hidden">
-      <div className="py-20 bg-white max-md:pl-5">
+      <div className="py-20 bg-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mt-4 ml-8 text-4xl font-semibold tracking-tighter leading-10 text-gray-900 max-md:max-w-full">
+          <div className="text-4xl font-semibold tracking-tighter leading-10 text-gray-900 max-md:max-w-full">
             <h1>Analytics that feels like it’s from the future</h1>
           </div>
-          <div className="mt-5 ml-8 text-xl leading-8 text-slate-600 w-[768px] max-md:max-w-full">
+          <div className="text-xl leading-8 text-slate-600 w-[768px] max-md:max-w-full">
             <p>
               Powerful, self-serve product and growth analytics to help you
               convert, engage, and retain more users. Trusted by over 4,000
@@ -42,12 +42,12 @@ export function ProjectsCarrousel() {
           </div>
         </div>
         <div className="flex gap-4 self-center pr-2.5 mt-16 -ml-6 max-md:mt-10">
-          <div className="w-full h-96">
+          <div>
             <img
               id="animated-image"
               loading="lazy"
               src="/images/app.svg"
-              className="h-full"
+              className="h-full sm:max-w-none max-sm:max-w-[81rem]"
             />
           </div>
         </div>
