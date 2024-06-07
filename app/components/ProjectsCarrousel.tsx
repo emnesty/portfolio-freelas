@@ -7,15 +7,14 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-
 export function ProjectsCarrousel() {
   useEffect(() => {
     gsap.fromTo(
       "#animated-image",
-      { x: "40%" }, 
+      { x: "30%" },
       {
-        x: "0%", 
-        duration:2.5,
+        x: "0%",
+        duration: 2.5,
         ease: "circ.out",
         scrollTrigger: {
           trigger: "#animated-image",
@@ -28,9 +27,7 @@ export function ProjectsCarrousel() {
   }, []);
 
   return (
-    <div
-      className="bg-zinc-50 dark:bg-zinc-900 py-24 sm:py-32 overflow-x-hidden"
-    >
+    <div className="bg-zinc-50 dark:bg-zinc-900 py-24 sm:py-32 overflow-x-hidden">
       <div className="py-20 bg-white max-md:pl-5">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mt-4 ml-8 text-4xl font-semibold tracking-tighter leading-10 text-gray-900 max-md:max-w-full">
@@ -44,13 +41,13 @@ export function ProjectsCarrousel() {
             </p>
           </div>
         </div>
-        <div className="flex gap-4 self-center pr-2.5 mt-16 -ml-6 max-md:flex-wrap max-md:mt-10">
-          <div className="flex flex-col justify-center rounded-lg">
+        <div className="flex gap-4 self-center pr-2.5 mt-16 -ml-6 max-md:mt-10">
+          <div className="flex flex-row w-full rounded-lg">
             <img
               id="animated-image"
               loading="lazy"
               src="/images/app.svg"
-              className="w-full"
+              className="w-full h-full"
             />
           </div>
         </div>
