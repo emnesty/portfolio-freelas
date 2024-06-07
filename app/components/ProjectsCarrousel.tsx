@@ -42,12 +42,12 @@ export function ProjectsCarrousel() {
           </div>
         </div>
         <div className="flex gap-4 self-center pr-2.5 mt-16 -ml-6 max-md:mt-10">
-          <div className="flex flex-row w-full rounded-lg">
+          <div className="w-full h-96">
             <img
               id="animated-image"
               loading="lazy"
               src="/images/app.svg"
-              className="w-full h-full"
+              className="h-full"
             />
           </div>
         </div>
