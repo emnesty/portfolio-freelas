@@ -3,7 +3,11 @@ import React from "react";
 import { NavigationBar } from "../components/ui/floating-navbar";
 import { IconHome, IconStack2, IconUser } from "@tabler/icons-react";
 
+
 export function NavigationMenu() {
+
+
+
   const navItems = [
     {
       name: "Home",

@@ -88,8 +88,6 @@ export const InfiniteMovingCards = ({
         </p>
       </div> */}
       <div
-        data-aos="fade-up"
-        data-aos-duration="1100"
         ref={containerRef}
         className={cn(
           "scroller relative z-20  max-w-7xl overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",

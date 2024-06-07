@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Sora } from "next/font/google";
 import "./globals.css";
-import AOSInit from "./components/AOSInit";
+import { SmoothScroll } from './components/SmoothScroll';
+
 
 const sora = Sora({
   weight: "400",
@@ -51,11 +52,14 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className="scroll-smooth"
-      style={{ scrollBehavior: "smooth" }}
+      // className="scroll-smooth"
+      // style={{ scrollBehavior: "smooth" }}
     >
-      <AOSInit />
-      <body className={sora.className}>{children}</body>
+      <body className={sora.className}>
+        <SmoothScroll>
+          {children}
+        </SmoothScroll>
+      </body>
     </html>
   );
 }

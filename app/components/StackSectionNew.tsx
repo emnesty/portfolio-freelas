@@ -36,11 +36,9 @@ const stacks = [
 
 const StacksNew = () => {
   return (
-    <section className="bg-zinc-50 dark:bg-zinc-900 scroll-mt-20" id="stack">
+    <section  className="bg-zinc-50 dark:bg-zinc-900 scroll-mt-20" id="stack">
       <div
         className="mx-auto max-w-7xl sm:px-6 lg:px-8"
-        data-aos="fade-up"
-        data-aos-duration="900"
       >
         <div className="flex items-center flex-col w-full px-5 pt-24 pb-24">
           <h1 className="w-full text-center text-3xl font-bold leading-8 dark:text-slate-200 text-slate-950">

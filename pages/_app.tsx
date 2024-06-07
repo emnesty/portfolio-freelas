@@ -1,6 +1,5 @@
 import "../app/globals.css"; // O caminho correto para o seu arquivo CSS do Tailwind
 import type { AppProps } from "next/app";
-import AOSInit from "../app/components/AOSInit";
 import { Metadata } from "next";
 import { NavigationMenu } from "../app/components/NavigationBar";
 
@@ -44,7 +43,6 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <NavigationMenu />
       <Component {...pageProps} />
-      <AOSInit />
     </>
   );
 }

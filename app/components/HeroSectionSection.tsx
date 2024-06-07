@@ -39,13 +39,11 @@ export default function HeroSection() {
           ease: "easeInOut",
         }}
       >
-        <div className="relative isolate pt-8">
+        <div  className="relative isolate pt-8">
           <div className="mx-auto flex flex-col max-w-7xl px-6 py-16 sm:py-22 lg:flex lg:items-center lg:gap-x-10 lg:px-8 lg:py-22">
             <div className="mx-auto max-w-4xl lg:mx-0 lg:flex-auto">
               <div
                 className="flex justify-center items-center pt-6"
-                data-aos="fade-up"
-                data-aos-duration="1050"
               ></div>
 
               <h1

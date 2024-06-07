@@ -2,14 +2,13 @@ import React from "react";
 
 const AboutSection = () => {
   return (
-    <section
+    <section 
       id="about"
       className="bg-zinc-50 dark:bg-zinc-900 pt-16 pb-16 scroll-mt-20"
+      
     >
       <div
         className="mx-auto max-w-7xl sm:px-6 lg:px-8"
-        data-aos="fade-up"
-        data-aos-duration="1000"
       >
         <div className="flex flex-col justify-center">
           <div className="flex flex-col justify-between w-full max-md:max-w-full max-sm:p-5">
@@ -19,7 +18,7 @@ const AboutSection = () => {
                   <div className="relative aspect-[2/1] h-full md:-mx-8 xl:mx-0 xl:aspect-auto">
                     <img
                       className="absolute inset-0 h-full w-full rounded-lg object-cover shadow-2xl bg-neutral-950"
-                      src="images/profile.jpg"
+                      src="images/profile.png"
                       alt=""
                     />
                   </div>
