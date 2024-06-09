@@ -11,9 +11,9 @@ export function ProjectsCarrousel() {
   useEffect(() => {
     gsap.fromTo(
       "#animated-image",
-      { x: "50%" },
+      { x: "70%" },
       {
-        x: "0%",
+        x: "-30%",
         duration: 3.5,
         ease: "circ.out",
         scrollTrigger: {
