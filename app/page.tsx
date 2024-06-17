@@ -5,18 +5,17 @@ import { NavigationMenu } from "./components/NavigationBar";
 import AboutSection from "./components/AboutSection";
 import StacksNew from "./components/StackSectionNew";
 import { ProjectsCarrousel } from "./components/ProjectsCarrousel";
+import ProjectsSection from "./components/ProjectsSection";
 
 export default function Home() {
-
   return (
-    < >
+    <>
       <NavigationMenu />
       <HeroSection />
       <InfiniteMovingCardsSection />
       <AboutSection />
       <StacksNew />
-      <ProjectsCarrousel />
-      <AboutSection />
+      <ProjectsSection />
     </>
   );
 }
