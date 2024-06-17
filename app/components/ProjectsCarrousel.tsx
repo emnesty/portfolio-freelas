@@ -11,7 +11,7 @@ export function ProjectsCarrousel() {
   useEffect(() => {
     gsap.fromTo(
       "#animated-image",
-      { x: "60%" },
+      { x: "40%" },
       {
         x: "-20%",
         duration: 3.5,
@@ -28,7 +28,7 @@ export function ProjectsCarrousel() {
 
   return (
     <div className="bg-zinc-50 dark:bg-zinc-900 py-24 sm:py-32 overflow-x-hidden">
-      <div className="py-20">
+      <div className="py-20 bg-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-4xl font-semibold tracking-tighter leading-10 text-gray-900 max-md:max-w-full">
             <h1>Analytics that feels like it’s from the future</h1>
