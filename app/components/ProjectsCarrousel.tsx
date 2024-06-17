@@ -11,7 +11,7 @@ export function ProjectsCarrousel() {
   useEffect(() => {
     gsap.fromTo(
       "#animated-image",
-      { x: "50%" },
+      { x: "70%" },
       {
         x: "0%",
         duration: 3.5,
@@ -47,7 +47,7 @@ export function ProjectsCarrousel() {
               id="animated-image"
               loading="lazy"
               src="/images/app.svg"
-              className="h-full max-w-none"
+              className="h-full sm:max-w-none max-sm:max-w-[81rem]"
             />
           </div>
         </div>
