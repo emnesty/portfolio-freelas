@@ -47,7 +47,7 @@ export function ProjectsCarrousel() {
               id="animated-image"
               loading="lazy"
               src="/images/app.svg"
-              className="h-full max-w-[2048px]"
+              className="h-full max-w-none"
             />
           </div>
         </div>
