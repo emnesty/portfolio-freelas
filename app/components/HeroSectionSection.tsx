@@ -49,7 +49,13 @@ export default function HeroSection() {
               data-aos="fade-up"
               data-aos-duration="1000"
             >
-              Designer de Produto e Desenvolvedor Front-end
+              UX/UI Designer{" "}
+              <img
+                className="inline-block lg:h-16 lg:w-16 h-6 w-6 rounded-full"
+                src="/images/avatar-novo.png"
+                alt=""
+              />
+              <span className="text-blue-500"> Desenvolvedor Front-End</span>
             </h1>
             <div
               className="flex w-full gap-4 items-center justify-start mt-4"
@@ -57,9 +63,10 @@ export default function HeroSection() {
               data-aos-duration="900"
             >
               <div className="flex items-start justify-start">
-                <p className="w-full max-w-[33rem] md:text-left max-sm:text-left text-zinc-600 text-lg leading-8 text-slate-750">
-                  Com 10+ anos de experiência, desenvolvo ideias e produtos
-                  digitais com inovação e criatividade.
+                <p className="w-full max-w-[50rem] md:text-left max-sm:text-left text-zinc-600 text-lg leading-8 text-slate-750">
+                  Com 10+ anos de experiência em empresas tech, conquistei
+                  grande experiência mantendo e construindo produtos digitais
+                  com consistência, clareza e inovação
                 </p>
               </div>
             </div>

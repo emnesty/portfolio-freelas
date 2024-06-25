@@ -16,6 +16,7 @@ interface Projeto {
   badge3: string;
   urlsite: string;
   urlgithub: string;
+  urlfigma: string;
   descriptiondetails: string;
   descriptiondetails2: string;
   descriptiondetails3: string;
@@ -40,7 +41,7 @@ const ProjetoDetalhes = ({ projeto }: ProjetoProps) => {
       <Head>
         <title>{projeto.title}</title>
       </Head>
-      <div className="bg-zinc-50  py-24 sm:py-32">
+      <div className="bg-zinc-50 py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -70,21 +71,21 @@ const ProjetoDetalhes = ({ projeto }: ProjetoProps) => {
               </button>
             ))}
           </div>
-          <div className="flex lg:flex-row justify-between items-center flex-col mt-20">
+          <div className="flex lg:flex-row gap-4 items-center flex-col mt-20">
             <h1 className="font-black text-2xl mb-2 pb-1">{projeto.title}</h1>
             <div className="flex space-x-2 md:mb-1 mt-2 md:mt-0">
               {projeto.badge && (
-                <span className="text-xs md:text-xs lg:text-xs bg-gray-50 px-2 py-1 rounded-sm text-secondary">
+                <span className="text-xs md:text-xs lg:text-xs bg-gray-300 px-2 py-1 rounded-lg text-secondary">
                   {projeto.badge}
                 </span>
               )}
               {projeto.badge2 && (
-                <span className="text-xs md:text-xs lg:text-xs bg-gray-50 px-2 py-1 rounded-sm text-secondary">
+                <span className="text-xs md:text-xs lg:text-xs bg-gray-300 px-2 py-1 rounded-lg text-secondary">
                   {projeto.badge2}
                 </span>
               )}
               {projeto.badge3 && (
-                <span className="text-xs md:text-xs lg:text-xs bg-gray-50 px-2 py-1 rounded-sm text-secondary">
+                <span className="text-xs md:text-xs lg:text-xs bg-gray-300 px-2 py-1 rounded-lg text-secondary">
                   {projeto.badge3}
                 </span>
               )}
@@ -134,6 +135,33 @@ const ProjetoDetalhes = ({ projeto }: ProjetoProps) => {
                   className="rounded-md flex gap-2 items-center bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
                 >
                   GitHub Repo
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform"
+                  >
+                    <path d="M5 12h14"></path>
+                    <path d="M13 18l6-6"></path>
+                    <path d="M13 6l6 6"></path>
+                  </svg>
+                </a>
+              </button>
+            )}
+            {projeto.urlfigma && (
+              <button>
+                <a
+                  href={projeto.urlfigma}
+                  target="__blank"
+                  className="rounded-md flex gap-2 items-center bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                >
+                  Figma Prototype
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
