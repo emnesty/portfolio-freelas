@@ -2,14 +2,11 @@ import React from "react";
 
 const AboutSection = () => {
   return (
-    <section 
+    <section
       id="about"
-      className="bg-zinc-50 dark:bg-zinc-900 pt-16 pb-16 scroll-mt-20"
-      
+      className="bg-zinc-50 dark:bg-zinc-900 pt-[14rem] pb-16 scroll-mt-20"
     >
-      <div
-        className="mx-auto max-w-7xl sm:px-6 lg:px-8"
-      >
+      <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="flex flex-col justify-center">
           <div className="flex flex-col justify-between w-full max-md:max-w-full max-sm:p-5">
             <div className="rounded-lg bg-neutral-950 pb-20 sm:pb-24 xl:pb-0">

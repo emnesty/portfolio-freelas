@@ -9,19 +9,19 @@ export default function ProjectsSection() {
     <section id="projetos">
       <div className="bg-zinc-50 dark:bg-zinc-900 py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="w-full flex flex-col items-center">
+          <div className="w-full flex flex-col items-start">
             <div className="mx-auto max-w-2xl lg:mx-0">
               <h2
                 data-aos="fade-up"
                 data-aos-duration="1200"
-                className="text-3xl text-center font-bold tracking-tight dark:text-slate-200 text-slate-950 sm:text-4xl"
+                className="text-3xl text-left font-bold tracking-tight dark:text-slate-200 text-slate-950 sm:text-4xl"
               >
                 Projetos recentes
               </h2>
               <p
                 data-aos="fade-up"
                 data-aos-duration="1000"
-                className="mt-6 mb-20 text-center text-lg leading-8 dark:text-slate-200 text-slate-950"
+                className="mt-6 mb-20 text-left text-lg leading-8 dark:text-slate-200 text-slate-950"
               >
                 Aqui estão listados meus projetos, você pode visualizar em
                 detalhes cada um deles para saber mais.

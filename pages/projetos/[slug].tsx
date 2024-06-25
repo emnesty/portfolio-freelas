@@ -40,7 +40,7 @@ const ProjetoDetalhes = ({ projeto }: ProjetoProps) => {
       <Head>
         <title>{projeto.title}</title>
       </Head>
-      <div className="bg-zinc-50 dark:bg-zinc-900 py-24 sm:py-32">
+      <div className="bg-zinc-50  py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -100,54 +100,58 @@ const ProjetoDetalhes = ({ projeto }: ProjetoProps) => {
           </div>
           <div className="flex gap-4 mt-4">
             {projeto.urlsite && (
-              <a
-                href={projeto.urlsite}
-                target="__blank"
-                className="inline-flex items-center gap-1 group/button rounded-full hover:scale-105 focus:outline-none transition ring-offset-gray-900 bg-gray-800 text-white shadow-lg shadow-black/20 sm:backdrop-blur-sm group-hover/button:bg-gray-50/15 group-hover/button:scale-105 focus-visible:ring-1 focus-visible:ring-offset-2 ring-gray-50/60 text-sm font-medium px-4 py-2 mt-auto origin-left"
-              >
-                Live Preview
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform"
+              <button>
+                <a
+                  href={projeto.urlsite}
+                  target="__blank"
+                  className="rounded-md flex gap-2 items-center bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
                 >
-                  <path d="M5 12h14"></path>
-                  <path d="M13 18l6-6"></path>
-                  <path d="M13 6l6 6"></path>
-                </svg>
-              </a>
+                  Live Preview
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform"
+                  >
+                    <path d="M5 12h14"></path>
+                    <path d="M13 18l6-6"></path>
+                    <path d="M13 6l6 6"></path>
+                  </svg>
+                </a>
+              </button>
             )}
             {projeto.urlgithub && (
-              <a
-                href={projeto.urlgithub}
-                target="__blank"
-                className="inline-flex items-center gap-1 group/button rounded-full hover:scale-105 focus:outline-none transition ring-offset-gray-900 bg-gray-800 text-white shadow-lg shadow-black/20 sm:backdrop-blur-sm group-hover/button:bg-gray-50/15 group-hover/button:scale-105 focus-visible:ring-1 focus-visible:ring-offset-2 ring-gray-50/60 text-sm font-medium px-4 py-2 mt-auto origin-left"
-              >
-                GitHub Repo
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform"
+              <button>
+                <a
+                  href={projeto.urlgithub}
+                  target="__blank"
+                  className="rounded-md flex gap-2 items-center bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
                 >
-                  <path d="M5 12h14"></path>
-                  <path d="M13 18l6-6"></path>
-                  <path d="M13 6l6 6"></path>
-                </svg>
-              </a>
+                  GitHub Repo
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform"
+                  >
+                    <path d="M5 12h14"></path>
+                    <path d="M13 18l6-6"></path>
+                    <path d="M13 6l6 6"></path>
+                  </svg>
+                </a>
+              </button>
             )}
           </div>
         </div>
