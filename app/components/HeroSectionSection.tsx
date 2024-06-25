@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { Container } from "./Container";
 import { FadeIn } from "./FadeIn";
 import { GridPattern } from "./GridPattern";
@@ -44,11 +43,7 @@ export default function HeroSection() {
                 </span>
               </div>
             </div>
-            <h1
-              className="w-full text-left font-bold text-2xl tracking-tight  text-slate-850 sm:text-8xl"
-              data-aos="fade-up"
-              data-aos-duration="1000"
-            >
+            <h1 className="w-full text-left font-bold text-4xl tracking-tight  text-slate-850 sm:text-8xl">
               UX/UI Designer{" "}
               <img
                 className="inline-block lg:h-16 lg:w-16 h-6 w-6 rounded-full"
@@ -57,11 +52,7 @@ export default function HeroSection() {
               />
               <span className="text-blue-500"> Desenvolvedor Front-End</span>
             </h1>
-            <div
-              className="flex w-full gap-4 items-center justify-start mt-4"
-              data-aos="fade-up"
-              data-aos-duration="900"
-            >
+            <div className="flex w-full gap-4 items-center justify-start mt-4">
               <div className="flex items-start justify-start">
                 <p className="w-full max-w-[50rem] md:text-left max-sm:text-left text-zinc-600 text-lg leading-8 text-slate-750">
                   Com 10+ anos de experiência em empresas tech, conquistei
