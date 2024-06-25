@@ -66,7 +66,7 @@ export default function HeroSection() {
                 <p className="w-full max-w-[50rem] md:text-left max-sm:text-left text-zinc-600 text-lg leading-8 text-slate-750">
                   Com 10+ anos de experiência em empresas tech, conquistei
                   grande experiência mantendo e construindo produtos digitais
-                  com consistência, clareza e inovação
+                  com consistência, clareza e inovação.
                 </p>
               </div>
             </div>
