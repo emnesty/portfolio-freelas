@@ -13,29 +13,17 @@ export default function ProjectsSection() {
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="w-full flex flex-col items-start">
               <div className="mx-auto max-w-2xl lg:mx-0">
-                <h2
-                  data-aos="fade-up"
-                  data-aos-duration="1200"
-                  className="text-3xl text-left font-bold tracking-tight dark:text-slate-200 text-slate-950 sm:text-4xl"
-                >
+                <h2 className="text-3xl text-left font-bold tracking-tight dark:text-slate-200 text-slate-950 sm:text-4xl">
                   Projetos recentes
                 </h2>
-                <p
-                  data-aos="fade-up"
-                  data-aos-duration="1000"
-                  className="mt-6 mb-20 text-left text-lg leading-8 dark:text-slate-200 text-slate-950"
-                >
+                <p className="mt-6 mb-20 text-left text-lg leading-8 dark:text-slate-200 text-slate-950">
                   Aqui estão listados meus projetos, você pode visualizar em
                   detalhes cada um deles para saber mais.
                 </p>
               </div>
             </div>
             <div className="mx-auto max-w-2xl lg:max-w-none">
-              <dl
-                data-aos="fade-up"
-                data-aos-duration="900"
-                className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3"
-              >
+              <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
                 {projetosData.map((project) => (
                   <Link
                     legacyBehavior
@@ -61,11 +49,7 @@ export default function ProjectsSection() {
                 ))}
               </dl>
             </div>
-            <div
-              className="pt-20 flex items-center justify-center"
-              data-aos="fade-up"
-              data-aos-duration="900"
-            >
+            <div className="pt-20 flex items-center justify-center">
               <Link href="/projetos">
                 <button className=" hover:bg-blue-600] px-8 py-4 bg-blue-500 rounded-md text-white font-light transition duration-200 ease-linear">
                   Visualizar todos os projetos

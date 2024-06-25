@@ -62,11 +62,7 @@ export default function HeroSection() {
               </div>
             </div>
             <div className="flex w-full items-left justify-start text-center">
-              <div
-                className="flex -space-x-2 justify-center items-center mt-4 mb-4 overflow-hidden"
-                data-aos="fade-up"
-                data-aos-duration="950"
-              >
+              <div className="flex -space-x-2 justify-center items-center mt-4 mb-4 overflow-hidden">
                 <img
                   className="inline-block h-8 w-8 rounded-full ring-2 ring-white"
                   src="../images/caiopic.jpeg"
