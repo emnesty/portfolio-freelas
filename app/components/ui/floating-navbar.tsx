@@ -46,6 +46,7 @@ export const NavigationBar = ({
                 "hover:bg-gray-100 dark:hover:bg-gray-800",
                 "text-gray-800 dark:text-white"
               )}
+              aria-label={item.name} // Adiciona um rótulo acessível
             >
               {item.icon}
               <span

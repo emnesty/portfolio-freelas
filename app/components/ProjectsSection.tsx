@@ -23,7 +23,7 @@ export default function ProjectsSection() {
               </div>
             </div>
             <div className="mx-auto max-w-2xl lg:max-w-none">
-              <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
+              <div className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
                 {projetosData.map((project) => (
                   <Link
                     legacyBehavior
@@ -47,11 +47,11 @@ export default function ProjectsSection() {
                     </a>
                   </Link>
                 ))}
-              </dl>
+              </div>
             </div>
             <div className="pt-20 flex items-center justify-center">
               <Link href="/projetos">
-                <button className=" hover:bg-blue-600] px-8 py-4 bg-blue-500 rounded-md text-white font-light transition duration-200 ease-linear">
+                <button className="hover:bg-blue-600 px-8 py-4 bg-blue-500 rounded-md text-white font-light transition duration-200 ease-linear">
                   Visualizar todos os projetos
                 </button>
               </Link>
