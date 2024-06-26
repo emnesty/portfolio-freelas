@@ -40,6 +40,11 @@ export const metadata: Metadata = {
     description:
       "Olá, sou Luciano Silva, um UX/UI Designer e Desenvolvedor Frontend com experiência em grandes empresas de tecnologia. Neste portfólio, você poderá explorar meus trabalhos criativos, recomendações e habilidades adquiridas ao longo da minha jornada profissional. Sinta-se à vontade para se conectar comigo no LinkedIn e explorar meus projetos no Github para ter uma visão mais aprofundada do meu expertise técnico e criativo.",
     siteName: "Luciano Silva UX/UI Designer - Front-End Developer",
+    images: [
+      {
+        url: "https://www.lucianosilva.cc/images/opengraph-image.jpg",
+      },
+    ],
   },
 };
 

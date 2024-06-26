@@ -46,11 +46,10 @@ const AboutSection = () => {
                       </div>
                       <blockquote className="text-xl font-semibold leading-8 text-white sm:text-2xl sm:leading-9">
                         <p>
-                          Hoje atuando como UX/UI Designer, com mais de 10 anos
-                          de experiência, adquiri vasta experiência no mercado e
-                          conquistei meu espaço com um olhar sempre no detalhe,
-                          sempre me comprometendo com a excelência em tudo que
-                          executo.
+                          Hoje atuando como UX/UI Designer, possuo mais de 10
+                          anos de experiência em empresas tech, conquistei meu
+                          espaço com um olhar sempre no detalhe, sempre me
+                          comprometendo com a excelência em tudo que executo.
                         </p>
                       </blockquote>
                       <figcaption className="mt-8 text-base">
@@ -58,7 +57,7 @@ const AboutSection = () => {
                           Luciano Silva
                         </div>
                         <div className="mt-1 text-gray-400">
-                          UX/UI Designer | Frontend Developer
+                          UX/UI Designer | Front-End Developer
                         </div>
                       </figcaption>
                     </figure>
