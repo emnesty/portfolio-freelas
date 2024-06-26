@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Sora } from "next/font/google";
 import "./globals.css";
 import { SmoothScroll } from "./components/SmoothScroll";
+import Head from "next/head";
 
 const sora = Sora({
   weight: "400",
@@ -54,11 +55,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="pt-BR"
-      // className="scroll-smooth"
-      // style={{ scrollBehavior: "smooth" }}
-    >
+    <html lang="pt-BR">
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://lucianosilva.cc/" />
+      </Head>
       <body className={sora.className}>
         <SmoothScroll>{children}</SmoothScroll>
       </body>

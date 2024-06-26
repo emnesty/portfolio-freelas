@@ -43,6 +43,13 @@ const ProjetosPage = () => {
                 Aqui estão listados meus projetos, você pode visualizar em
                 detalhes cada um deles para saber mais.
               </p>
+              <div className="flex items-center justify-center">
+                <Link href="/">
+                  <button className="rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
+                    Voltar para o inicio
+                  </button>
+                </Link>
+              </div>
             </div>
           </div>
           <div className="p-8 mb-12" data-aos="fade-up" data-aos-duration="900">

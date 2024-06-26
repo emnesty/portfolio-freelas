@@ -3,6 +3,7 @@ import { projetosData } from "../../app/data/projetosData";
 import Head from "next/head";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 interface Projeto {
   id: number;
@@ -100,6 +101,13 @@ const ProjetoDetalhes = ({ projeto }: ProjetoProps) => {
             <p>{projeto.descriptiondetails3}</p>
           </div>
           <div className="flex gap-4 mt-4">
+            <div className="flex items-center justify-center">
+              <Link href="/projetos">
+                <button className="rounded-md flex gap-2 items-center bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
+                  Voltar para projetos
+                </button>
+              </Link>
+            </div>
             {projeto.urlsite && (
               <button>
                 <a
