@@ -17,10 +17,8 @@ export default function Home() {
       <NavigationMenu />
       <HeroSection />
       <PrimaryFeatures />
-      {/* <SecondaryFeatures /> */}
       <AboutSection />
       <InfiniteMovingCardsSection />
-      {/* <StacksNew /> */}
       <ProjectsSection />
       <Footer />
     </>

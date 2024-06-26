@@ -71,8 +71,8 @@ const ProjetoDetalhes = ({ projeto }: ProjetoProps) => {
               </button>
             ))}
           </div>
-          <div className="flex lg:flex-row gap-4 items-center flex-col mt-20">
-            <h1 className="font-black text-2xl mb-2 pb-1">{projeto.title}</h1>
+          <div className="flex lg:flex-row gap-4 items-start flex-col mt-20">
+            <h1 className="font-black text-2xl mb-2">{projeto.title}</h1>
             <div className="flex space-x-2 md:mb-1 mt-2 md:mt-0">
               {projeto.badge && (
                 <span className="text-xs md:text-xs lg:text-xs bg-gray-300 px-2 py-1 rounded-lg text-secondary">

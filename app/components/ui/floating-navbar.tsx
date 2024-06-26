@@ -2,6 +2,7 @@
 
 import React from "react";
 import { cn } from "@/utils/cn";
+import Link from "next/link";
 
 export const NavigationBar = ({
   navItems,
@@ -18,12 +19,14 @@ export const NavigationBar = ({
     e: React.MouseEvent<HTMLAnchorElement>,
     href: string
   ) => {
-    e.preventDefault();
-    const targetId = href.replace(/.*\#/, "");
-    const elem = document.getElementById(targetId);
-    elem?.scrollIntoView({
-      behavior: "smooth",
-    });
+    if (href.startsWith("/#")) {
+      e.preventDefault();
+      const targetId = href.replace(/.*\#/, "");
+      const elem = document.getElementById(targetId);
+      elem?.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
   };
 
   return (
@@ -35,19 +38,26 @@ export const NavigationBar = ({
         )}
       >
         {navItems.map((item, index) => (
-          <a
-            key={index}
-            href={item.link}
-            onClick={(e) => handleClick(e, item.link)}
-            className={cn(
-              "flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200",
-              "hover:bg-gray-100 dark:hover:bg-gray-800",
-              "text-gray-800 dark:text-white"
-            )}
-          >
-            {item.icon}
-            <span className="ml-2">{item.name}</span>
-          </a>
+          <Link key={index} href={item.link} passHref legacyBehavior>
+            <a
+              onClick={(e) => handleClick(e, item.link)}
+              className={cn(
+                "flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200",
+                "hover:bg-gray-100 dark:hover:bg-gray-800",
+                "text-gray-800 dark:text-white"
+              )}
+            >
+              {item.icon}
+              <span
+                className={cn("ml-2", {
+                  "hidden md:inline":
+                    item.name === "Projetos" || item.name === "Sobre",
+                })}
+              >
+                {item.name}
+              </span>
+            </a>
+          </Link>
         ))}
       </nav>
     </header>

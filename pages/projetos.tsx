@@ -24,7 +24,7 @@ const ProjetosPage = () => {
           content="Confira os projetos desenvolvidos por Luciano Silva."
         />
       </Head>
-      <div className="bg-zinc-50 dark:bg-zinc-900 py-24 sm:py-32">
+      <div className="bg-white dark:bg-neutral-950 py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="flex flex-col items-center justify-center">
             <div className="w-full max-w-xl mx-auto lg:mx-0 mb-6">

@@ -2,6 +2,7 @@ import "../app/globals.css"; // O caminho correto para o seu arquivo CSS do Tail
 import type { AppProps } from "next/app";
 import { Metadata } from "next";
 import { NavigationMenu } from "../app/components/NavigationBar";
+import Footer from "@/app/components/Footer";
 
 export const metadata: Metadata = {
   title: "Luciano Silva UX/UI Designer - Front-End Developer",
@@ -43,6 +44,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <NavigationMenu />
       <Component {...pageProps} />
+      <Footer />
     </>
   );
 }
