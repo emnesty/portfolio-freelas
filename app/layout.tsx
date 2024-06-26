@@ -3,6 +3,7 @@ import { Sora } from "next/font/google";
 import "./globals.css";
 import { SmoothScroll } from "./components/SmoothScroll";
 import Head from "next/head";
+import { Analytics } from "@vercel/analytics/react";
 
 const sora = Sora({
   weight: "400",
@@ -63,6 +64,7 @@ export default function RootLayout({
       </Head>
       <body className={sora.className}>
         <SmoothScroll>{children}</SmoothScroll>
+        <Analytics />
       </body>
     </html>
   );
