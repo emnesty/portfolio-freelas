@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Sora } from "next/font/google";
 import "./globals.css";
-import { SmoothScroll } from './components/SmoothScroll';
-
+import { SmoothScroll } from "./components/SmoothScroll";
 
 const sora = Sora({
   weight: "400",
@@ -56,9 +55,7 @@ export default function RootLayout({
       // style={{ scrollBehavior: "smooth" }}
     >
       <body className={sora.className}>
-        <SmoothScroll>
-          {children}
-        </SmoothScroll>
+        <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>
   );

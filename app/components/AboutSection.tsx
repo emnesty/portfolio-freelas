@@ -3,20 +3,20 @@ import { FadeIn } from "./FadeIn";
 
 const AboutSection = () => {
   return (
-    <FadeIn>
-      <section
-        id="about"
-        className="bg-zinc-50 dark:bg-zinc-900 pt-[14rem] pb-16 scroll-mt-20"
-      >
+    <section
+      id="about"
+      className="bg-white dark:bg-neutral-950 pt-[14rem] pb-16 scroll-mt-20"
+    >
+      <FadeIn>
         <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="flex flex-col justify-center">
             <div className="flex flex-col justify-between w-full max-md:max-w-full max-sm:p-5">
-              <div className="rounded-lg bg-neutral-950 pb-20 sm:pb-24 xl:pb-0">
+              <div className="rounded-lg bg-neutral-900 pb-20 sm:pb-24 xl:pb-0">
                 <div className="mx-auto flex max-w-7xl flex-col items-center gap-x-8 gap-y-10 px-6 sm:gap-y-8 lg:px-8 xl:flex-row xl:items-stretch">
                   <div className="-mt-8 w-full max-w-2xl xl:-mb-8 xl:w-96 xl:flex-none">
                     <div className="relative aspect-[2/1] h-full md:-mx-8 xl:mx-0 xl:aspect-auto">
                       <img
-                        className="absolute inset-0 h-full w-full rounded-lg object-cover shadow-2xl bg-neutral-950"
+                        className="absolute inset-0 h-full w-full rounded-lg object-cover shadow-2xl bg-neutral-900"
                         src="images/profile.png"
                         alt=""
                       />
@@ -68,8 +68,8 @@ const AboutSection = () => {
             </div>
           </div>
         </div>
-      </section>
-    </FadeIn>
+      </FadeIn>
+    </section>
   );
 };
 

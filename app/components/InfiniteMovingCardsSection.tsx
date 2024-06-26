@@ -6,15 +6,15 @@ import { FadeIn } from "./FadeIn";
 
 export default function InfiniteMovingCardsSection() {
   return (
-    <FadeIn>
-      <div className="h-[25rem] pb-24 pt-8 flex flex-col rounded-sm antialiased bg-zinc-50 dark:bg-zinc-900 text-slate-950 dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+    <div className="h-[25rem] pb-24 pt-8 flex flex-col rounded-sm antialiased bg-white dark:bg-neutral-950 text-slate-950 dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+      <FadeIn>
         <InfiniteMovingCards
           items={testimonials}
           direction="right"
           speed="slow"
         />
-      </div>
-    </FadeIn>
+      </FadeIn>
+    </div>
   );
 }
 

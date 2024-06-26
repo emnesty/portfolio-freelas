@@ -7,16 +7,16 @@ import { FadeIn } from "./FadeIn";
 
 export default function ProjectsSection() {
   return (
-    <FadeIn>
-      <section id="projetos">
-        <div className="bg-zinc-50 dark:bg-zinc-900 py-24 sm:py-32">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <section id="projetos">
+      <div className="bg-white dark:bg-neutral-950 py-24 sm:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <FadeIn>
             <div className="w-full flex flex-col items-start">
               <div className="mx-auto max-w-2xl lg:mx-0">
                 <h2 className="text-3xl text-left font-bold tracking-tight dark:text-slate-200 text-slate-950 sm:text-4xl">
                   Projetos recentes
                 </h2>
-                <p className="mt-6 mb-20 text-left text-lg leading-8 dark:text-slate-200 text-slate-950">
+                <p className="mt-6 mb-20 text-left text-lg leading-8 dark:text-slate-100 text-slate-400">
                   Aqui estão listados meus projetos, você pode visualizar em
                   detalhes cada um deles para saber mais.
                 </p>
@@ -56,9 +56,9 @@ export default function ProjectsSection() {
                 </button>
               </Link>
             </div>
-          </div>
+          </FadeIn>
         </div>
-      </section>
-    </FadeIn>
+      </div>
+    </section>
   );
 }

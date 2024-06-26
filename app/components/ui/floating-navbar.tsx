@@ -1,7 +1,7 @@
 "use client";
-import React, { useState } from "react";
+
+import React from "react";
 import { cn } from "@/utils/cn";
-import Link from "next/link";
 
 export const NavigationBar = ({
   navItems,
@@ -14,34 +14,42 @@ export const NavigationBar = ({
   }[];
   className?: string;
 }) => {
-  const [visible, setVisible] = useState(true);
+  const handleClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    e.preventDefault();
+    const targetId = href.replace(/.*\#/, "");
+    const elem = document.getElementById(targetId);
+    elem?.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
 
   return (
     <header>
-      <div
+      <nav
         className={cn(
-          "flex max-w-fit fixed top-10 inset-x-0 mx-auto border border-transparent dark:border-white/[0.2] rounded-md dark:bg-black bg-white bg-opacity-75 backdrop-blur-md shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] pr-2 pl-8 py-2 items-center justify-center space-x-4",
+          "flex max-w-fit fixed top-10 inset-x-0 mx-auto border border-transparent dark:border-white/[0.2] rounded-md dark:bg-black bg-white bg-opacity-75 backdrop-blur-md shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] px-4 py-2 items-center justify-center space-x-4",
           className
         )}
       >
-        {navItems.map((navItem, idx) => (
-          <Link
-            key={`link=${idx}`}
-            href={navItem.link}
+        {navItems.map((item, index) => (
+          <a
+            key={index}
+            href={item.link}
+            onClick={(e) => handleClick(e, item.link)}
             className={cn(
-              "relative dark:text-neutral-50 items-center flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500"
+              "flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200",
+              "hover:bg-gray-100 dark:hover:bg-gray-800",
+              "text-gray-800 dark:text-white"
             )}
           >
-            <span className="block sm:hidden">{navItem.icon}</span>
-            <span className="hidden sm:block text-sm">{navItem.name}</span>
-          </Link>
+            {item.icon}
+            <span className="ml-2">{item.name}</span>
+          </a>
         ))}
-        <Link href="/projetos">
-          <button className="hover:bg-blue-600 px-8 py-2 bg-blue-500 rounded-md text-white font-light transition duration-200 ease-linear">
-            Projetos
-          </button>
-        </Link>
-      </div>
+      </nav>
     </header>
   );
 };

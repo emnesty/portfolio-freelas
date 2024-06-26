@@ -1,28 +1,23 @@
-"use client";
 import React from "react";
 import { NavigationBar } from "../components/ui/floating-navbar";
-import { IconHome, IconStack2, IconUser } from "@tabler/icons-react";
-
+import { Home, User, Briefcase, BookOpen, MessageCircle } from "lucide-react";
 
 export function NavigationMenu() {
-
-
-
   const navItems = [
     {
-      name: "Home",
-      link: "/#home",
-      icon: <IconHome className="h-4 w-4 text-neutral-500 dark:text-white" />,
+      name: "Luciano Silva",
+      link: "#home",
+      icon: <Home size={16} />,
     },
     {
       name: "Sobre",
-      link: "/#about",
-      icon: <IconUser className="h-4 w-4 text-neutral-500 dark:text-white" />,
+      link: "#about",
+      icon: <User size={16} />,
     },
     {
-      name: "Stack",
-      link: "/#stack",
-      icon: <IconStack2 className="h-4 w-4 text-neutral-500 dark:text-white" />,
+      name: "Projetos",
+      link: "#projetos",
+      icon: <Briefcase size={16} />,
     },
   ];
 
