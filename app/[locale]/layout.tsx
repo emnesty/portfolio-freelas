@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { Sora } from "next/font/google";
 import "./globals.css";
-import { SmoothScroll } from "./components/SmoothScroll";
+import { SmoothScroll } from "../components/SmoothScroll";
 import Head from "next/head";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { notFound } from "next/navigation";
 
 const sora = Sora({
   weight: "400",
@@ -51,13 +52,20 @@ export const metadata: Metadata = {
   },
 };
 
+const locales = ["pt", "en"];
+
 export default function RootLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: { locale: string };
 }>) {
+  if (!locales.includes(params.locale)) {
+    notFound();
+  }
   return (
-    <html lang="pt-BR">
+    <html lang="{locale}">
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow" />

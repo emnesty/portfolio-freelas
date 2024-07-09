@@ -1,4 +1,5 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {};
+import { getRequestConfig } from "next-intl/server";
 
-export default nextConfig;
+export default getRequestConfig(async ({ Locale }) => ({
+  messages: (await import(`./messages/${locale}.json`)).default,
+}));

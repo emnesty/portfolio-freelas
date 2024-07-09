@@ -5,6 +5,7 @@ import { Container } from "./Container";
 import { FadeIn } from "./FadeIn";
 import { GridPattern } from "./GridPattern";
 import { MapPin } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 const people = [
   {
@@ -15,15 +16,8 @@ const people = [
   },
 ];
 
-const navigation = [
-  { name: "Product", href: "#" },
-  { name: "Features", href: "#" },
-  { name: "Marketplace", href: "#" },
-  { name: "Company", href: "#" },
-];
-
 export default function HeroSection() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const t = useTranslations("HeroSection");
 
   return (
     <section id="home">
@@ -40,7 +34,7 @@ export default function HeroSection() {
                 <div className="flex items-center mb-4">
                   <MapPin className="w-5 h-5 mr-2" />
                   <span className="text-sm uppercase tracking-wider">
-                    Santa Catarina - Brasil
+                    {t("location")}
                   </span>
                 </div>
               </div>
