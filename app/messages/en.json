@@ -1,9 +1,18 @@
 {
+  "Navigation": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects"
+  },
   "HeroSection": {
     "location": "Santa Catarina - Brazil",
     "title": "UX/UI Designer",
-    "subtitle": "Front-End Developer",
+    "subtitle": "Frontend Developer",
     "description": "With 10+ years of experience in tech companies, I have gained significant expertise in maintaining and building digital products with consistency, clarity, and innovation.",
-    "recommendations": "+45 Recommendations"
+    "recommendations": "+45 Recommendations",
+    "language": "English"
+  },
+  "Features": {
+    "title": "Creating consistent and professional experiences"
   }
 }
