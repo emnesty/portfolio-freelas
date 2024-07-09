@@ -4,6 +4,7 @@ import Head from "next/head";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 interface Projeto {
   id: number;
@@ -25,16 +26,16 @@ interface Projeto {
   images: string[];
 }
 
-// Definição da interface para as props da página
 interface ProjetoProps {
   projeto: Projeto;
 }
 
 const ProjetoDetalhes = ({ projeto }: ProjetoProps) => {
   const [activeImage, setActiveImage] = useState(projeto.images[0]);
+  const t = useTranslations("Project");
 
   if (!projeto) {
-    return <div>Projeto não encontrado</div>;
+    return <div>{t("notFound")}</div>;
   }
 
   return (
@@ -104,7 +105,7 @@ const ProjetoDetalhes = ({ projeto }: ProjetoProps) => {
             <div className="flex items-center justify-center">
               <Link href="/projetos">
                 <button className="rounded-md flex gap-2 items-center bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
-                  Voltar para projetos
+                  {t("backToProjects")}
                 </button>
               </Link>
             </div>
@@ -115,7 +116,7 @@ const ProjetoDetalhes = ({ projeto }: ProjetoProps) => {
                   target="__blank"
                   className="rounded-md flex gap-2 items-center bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
                 >
-                  Live Preview
+                  {t("livePreview")}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -142,7 +143,7 @@ const ProjetoDetalhes = ({ projeto }: ProjetoProps) => {
                   target="__blank"
                   className="rounded-md flex gap-2 items-center bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
                 >
-                  GitHub Repo
+                  {t("githubRepo")}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -169,7 +170,7 @@ const ProjetoDetalhes = ({ projeto }: ProjetoProps) => {
                   target="__blank"
                   className="rounded-md flex gap-2 items-center bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
                 >
-                  Figma Prototype
+                  {t("figmaPrototype")}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -197,7 +198,8 @@ const ProjetoDetalhes = ({ projeto }: ProjetoProps) => {
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const slug = context.params?.slug;
+  const { params, locale } = context;
+  const slug = params?.slug;
 
   if (typeof slug !== "string") {
     return { notFound: true };
@@ -205,17 +207,21 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   const projeto = projetosData.find((p) => p.slug === slug);
 
+  // Use a importação dinâmica para carregar as mensagens de localização
+  const messages = (await import(`/app/messages/${locale}.json`)).default;
+
   if (!projeto) {
     return { notFound: true };
   }
 
-  return { props: { projeto } };
+  return { props: { projeto, messages } };
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = projetosData.map((projeto) => ({
-    params: { slug: projeto.slug },
-  }));
+  const paths = projetosData.flatMap((projeto) => [
+    { params: { slug: projeto.slug }, locale: "en" },
+    { params: { slug: projeto.slug }, locale: "pt" },
+  ]);
 
   return { paths, fallback: "blocking" };
 };

@@ -3,6 +3,8 @@ import type { AppProps } from "next/app";
 import { Metadata } from "next";
 import { NavigationMenu } from "../app/components/NavigationBar";
 import Footer from "@/app/components/Footer";
+import { useRouter } from "next/router";
+import { NextIntlClientProvider } from "next-intl";
 
 export const metadata: Metadata = {
   title: "Luciano Silva UX/UI Designer - Front-End Developer",
@@ -40,11 +42,16 @@ export const metadata: Metadata = {
 };
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const { locale } = useRouter();
+  const messages = require(`/app/messages/${locale}.json`);
+
   return (
     <>
-      <NavigationMenu />
-      <Component {...pageProps} />
-      <Footer />
+      <NextIntlClientProvider locale={locale} messages={messages}>
+        <NavigationMenu />
+        <Component {...pageProps} />
+        <Footer />
+      </NextIntlClientProvider>
     </>
   );
 }
