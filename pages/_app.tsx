@@ -1,4 +1,4 @@
-import "../app/globals.css"; // O caminho correto para o seu arquivo CSS do Tailwind
+import "../app/[locale]/globals.css";
 import type { AppProps } from "next/app";
 import { Metadata } from "next";
 import { NavigationMenu } from "../app/components/NavigationBar";

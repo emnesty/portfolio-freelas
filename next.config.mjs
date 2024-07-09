@@ -1,5 +1,8 @@
-import { getRequestConfig } from "next-intl/server";
+import createNextIntlPlugin from "next-intl/plugin";
 
-export default getRequestConfig(async ({ Locale }) => ({
-  messages: (await import(`./messages/${locale}.json`)).default,
-}));
+const withNextIntl = createNextIntlPlugin();
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {};
+
+export default withNextIntl(nextConfig);

@@ -1,20 +1,9 @@
-"use client";
-
 import { useState } from "react";
 import { Container } from "./Container";
 import { FadeIn } from "./FadeIn";
 import { GridPattern } from "./GridPattern";
 import { MapPin } from "lucide-react";
 import { useTranslations } from "next-intl";
-
-const people = [
-  {
-    id: 1,
-    name: "Luciano Silva",
-    designation: "Designer de Produto",
-    image: "/images/avatar.png",
-  },
-];
 
 export default function HeroSection() {
   const t = useTranslations("HeroSection");
