@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
 import { Sora } from "next/font/google";
 import "./globals.css";
-import { SmoothScroll } from "../components/SmoothScroll";
+import { SmoothScroll } from "./components/SmoothScroll";
 import Head from "next/head";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { notFound } from "next/navigation";
-import { NextIntlClientProvider } from "next-intl";
 
 const sora = Sora({
   weight: "400",
@@ -53,42 +51,23 @@ export const metadata: Metadata = {
   },
 };
 
-const locales = ["pt", "en"];
-
-export default async function RootLayout({
+export default function RootLayout({
   children,
-  params,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-  params: { locale: string };
-}) {
-  const { locale } = params;
-
-  if (!locales.includes(locale)) {
-    notFound();
-  }
-
-  let messages;
-  try {
-    messages = (await import(`../messages/${locale}.json`)).default;
-  } catch (error) {
-    notFound();
-  }
-
+}>) {
   return (
-    <html lang={locale}>
-      <NextIntlClientProvider locale={locale} messages={messages}>
-        <Head>
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <meta name="robots" content="index, follow" />
-          <link rel="canonical" href="https://lucianosilva.cc/" />
-        </Head>
-        <body className={sora.className}>
-          <SmoothScroll>{children}</SmoothScroll>
-          <Analytics />
-          <SpeedInsights />
-        </body>
-      </NextIntlClientProvider>
+    <html lang="pt-BR">
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://lucianosilva.cc/" />
+      </Head>
+      <body className={sora.className}>
+        <SmoothScroll>{children}</SmoothScroll>
+        <Analytics />
+        <SpeedInsights />
+      </body>
     </html>
   );
 }

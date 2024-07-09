@@ -16,7 +16,6 @@ import { CircleBackground } from "@/app/components/CircleBackground";
 import { Container } from "@/app/components/Container";
 import { PhoneFrame } from "@/app/components/PhoneFrame";
 import { FadeIn } from "./FadeIn";
-import { useTranslations } from "next-intl";
 
 const MotionImage = motion.img;
 
@@ -378,7 +377,6 @@ function FeaturesMobile() {
 }
 
 export function PrimaryFeatures() {
-  const t = useTranslations("Features");
   return (
     <section
       id="features"
@@ -389,7 +387,7 @@ export function PrimaryFeatures() {
         <FadeIn>
           <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-3xl">
             <h2 className="text-3xl font-medium tracking-tight text-white">
-              {t("title")}
+              Criando experiências consistentes e profissionais
             </h2>
             <p className="mt-2 text-lg text-gray-400">
               Criação de interfaces Mobile e Web, traduzindo ídeias em

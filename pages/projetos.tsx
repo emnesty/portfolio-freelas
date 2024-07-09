@@ -4,12 +4,9 @@ import { projetosData } from "../app/data/projetosData";
 import { DirectionAwareHover } from "@/app/components/ui/direction-aware-hover";
 import Head from "next/head";
 import BarUnderline from "@/app/components/ui/tab-underline";
-import { GetStaticProps } from "next";
-import { useTranslations } from "next-intl";
 
-const ProjetosPage = ({ messages }: { messages: any }) => {
+const ProjetosPage = () => {
   const [selectedTab, setSelectedTab] = useState<string>("Todos");
-  const t = useTranslations("Projects");
 
   const filteredProjects =
     selectedTab === "Todos"
@@ -19,8 +16,13 @@ const ProjetosPage = ({ messages }: { messages: any }) => {
   return (
     <>
       <Head>
-        <title>{t("title")}</title>
-        <meta name="description" content={t("description")} />
+        <title>
+          Projetos - Luciano Silva UX/UI Designer - Front-End Developer
+        </title>
+        <meta
+          name="description"
+          content="Confira os projetos desenvolvidos por Luciano Silva."
+        />
       </Head>
       <div className="bg-white dark:bg-neutral-950 py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -31,19 +33,20 @@ const ProjetosPage = ({ messages }: { messages: any }) => {
                 data-aos-duration="1200"
                 className="text-3xl font-bold text-center tracking-tight dark:text-slate-200 text-slate-950 sm:text-4xl"
               >
-                {t("title")}
+                Projetos realizados
               </h2>
               <p
                 data-aos="fade-up"
                 data-aos-duration="1000"
                 className="mt-6 mb-20 text-lg text-center leading-8 dark:text-slate-200 text-slate-950"
               >
-                {t("intro")}
+                Aqui estão listados meus projetos, você pode visualizar em
+                detalhes cada um deles para saber mais.
               </p>
               <div className="flex items-center justify-center">
                 <Link href="/">
                   <button className="rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
-                    {t("backToHome")}
+                    Voltar para o inicio
                   </button>
                 </Link>
               </div>
@@ -90,16 +93,6 @@ const ProjetosPage = ({ messages }: { messages: any }) => {
       </div>
     </>
   );
-};
-
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
-  const messages = (await import(`/app/messages/${locale}.json`)).default;
-
-  return {
-    props: {
-      messages,
-    },
-  };
 };
 
 export default ProjetosPage;
