@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 import { Sora } from "next/font/google";
 import "./globals.css";
 import { SmoothScroll } from "./components/SmoothScroll";
-import Head from "next/head";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { NavigationMenu } from "./components/NavigationBar";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 
 const sora = Sora({
   weight: "400",
@@ -58,13 +60,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://lucianosilva.cc/" />
-      </Head>
       <body className={sora.className}>
+        <Header />
         <SmoothScroll>{children}</SmoothScroll>
+        <Footer />
         <Analytics />
         <SpeedInsights />
       </body>

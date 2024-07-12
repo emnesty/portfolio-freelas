@@ -7,17 +7,17 @@ export function NavigationMenu() {
   const navItems = [
     {
       name: "Luciano Silva",
-      link: "/#home",
+      link: "/",
       icon: <Home size={16} />,
     },
     {
       name: "Sobre",
-      link: "/#about",
+      link: "/",
       icon: <User size={16} />,
     },
     {
       name: "Projetos",
-      link: "/#projetos",
+      link: "/projetos",
       icon: <Briefcase size={16} />,
     },
   ];

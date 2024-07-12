@@ -10,11 +10,12 @@ import { PrimaryFeatures } from "./components/PrimaryFeatures";
 import { SecondaryFeatures } from "./components/SecondaryFeatures";
 import { Reviews } from "./components/Review";
 import Footer from "./components/Footer";
+import Header from "./components/Header";
 
 export default function Home() {
   return (
     <>
-      <NavigationMenu />
+      {/* <NavigationMenu /> */}
       <HeroSection />
       <PrimaryFeatures />
       <AboutSection />

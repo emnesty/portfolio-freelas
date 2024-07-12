@@ -1,6 +1,7 @@
+"use client";
 import React, { useState } from "react";
 import Link from "next/link";
-import { projetosData } from "../app/data/projetosData";
+import { projetosData } from "../data/projetosData";
 import { DirectionAwareHover } from "@/app/components/ui/direction-aware-hover";
 import Head from "next/head";
 import BarUnderline from "@/app/components/ui/tab-underline";

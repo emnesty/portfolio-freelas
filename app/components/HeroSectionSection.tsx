@@ -44,7 +44,7 @@ export default function HeroSection() {
                   </span>
                 </div>
               </div>
-              <h1 className="w-full text-left font-bold text-[2.85rem] leading-[3.0rem]  sm:tracking-tight  text-slate-850 sm:text-8xl">
+              <h1 className="w-full text-left font-bold text-[2.60rem] leading-[3.0rem]  sm:tracking-tight  text-slate-850 sm:text-8xl">
                 UX/UI Designer{" "}
                 <img
                   className="inline-block lg:h-16 lg:w-16 h-6 w-6 rounded-full"
