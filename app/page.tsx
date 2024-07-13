@@ -21,7 +21,6 @@ export default function Home() {
       <AboutSection />
       <InfiniteMovingCardsSection />
       <ProjectsSection />
-      <Footer />
     </>
   );
 }

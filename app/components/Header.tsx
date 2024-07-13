@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   Dialog,
   DialogPanel,
@@ -19,66 +19,88 @@ import {
   FingerPrintIcon,
   SquaresPlusIcon,
   XMarkIcon,
+  RectangleGroupIcon,
 } from "@heroicons/react/24/outline";
 import {
   ChevronDownIcon,
   PhoneIcon,
   PlayCircleIcon,
-  RectangleGroupIcon,
 } from "@heroicons/react/20/solid";
+import { Construction, Figma } from "lucide-react";
 
 const products = [
   {
-    name: "Analytics",
-    description: "Get a better understanding where your traffic is coming from",
+    name: "Templates",
+    description: "Landing Pages e Dashboards de alta qualidade para seu SAAS.",
     href: "#",
-    icon: ChartPieIcon,
+    icon: RectangleGroupIcon,
   },
   {
-    name: "Engagement",
-    description: "Speak directly to your customers with our engagement tool",
+    name: "UI Designs",
+    description: "Arquivos de design prontos para usar no seu próximo projeto",
     href: "#",
-    icon: CursorArrowRaysIcon,
+    icon: Figma,
   },
   {
-    name: "Security",
-    description: "Your customers’ data will be safe and secure",
+    name: "Icons",
+    description: "Em Breve",
     href: "#",
-    icon: FingerPrintIcon,
+    icon: Construction,
   },
-  {
-    name: "Integrations",
-    description: "Your customers’ data will be safe and secure",
-    href: "#",
-    icon: SquaresPlusIcon,
-  },
-];
-const callsToAction = [
-  { name: "Watch demo", href: "#", icon: PlayCircleIcon },
-  { name: "Contact sales", href: "#", icon: PhoneIcon },
-  { name: "View all products", href: "#", icon: RectangleGroupIcon },
 ];
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isStoreOpen, setIsStoreOpen] = useState(false);
+  const storeMenuRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (isStoreOpen) {
+        setIsStoreOpen(false);
+      }
+    };
+
+    const handleClickOutside = (event) => {
+      if (
+        storeMenuRef.current &&
+        !storeMenuRef.current.contains(event.target)
+      ) {
+        setIsStoreOpen(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isStoreOpen]);
 
   return (
-    <header className="fixed w-full bg-white border-b border-zinc-100 z-50">
+    <header className="fixed w-full bg-white border-b dark:bg-neutral-900 border-zinc-100 dark:border-zinc-800 z-50 ">
       <nav
         aria-label="Global"
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
       >
-        <div className="flex lg:flex-1">
+        <div className="flex lg:flex-1 items-center gap-2">
           <a href="/" className="-m-1.5 p-1.5">
-            <span className="sr-only">Luciano Silva</span>
-            <img alt="" src="/images/avatar-2.png" className="h-10 w-auto" />
+            <div className="flex items-center gap-2">
+              <span className="sr-only">Luciano Silva</span>
+              <img alt="" src="/images/avatar-2.png" className="h-10 w-auto" />
+              <span className="font-semibold dark:text-slate-200">
+                LUCIANO SILVA
+              </span>
+            </div>
           </a>
         </div>
         <div className="flex lg:hidden">
           <button
             type="button"
             onClick={() => setMobileMenuOpen(true)}
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 dark:text-slate-200"
           >
             <span className="sr-only">Open main menu</span>
             <Bars3Icon aria-hidden="true" className="h-6 w-6" />
@@ -86,7 +108,10 @@ export default function Header() {
         </div>
         <PopoverGroup className="hidden lg:flex lg:gap-x-12">
           <Popover>
-            <PopoverButton className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
+            <PopoverButton
+              className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900 dark:text-slate-200"
+              onClick={() => setIsStoreOpen(!isStoreOpen)}
+            >
               Loja
               <ChevronDownIcon
                 aria-hidden="true"
@@ -95,63 +120,51 @@ export default function Header() {
             </PopoverButton>
 
             <PopoverPanel
-              transition
-              className="absolute inset-x-0 top-0 -z-10 bg-white pt-14 shadow-lg ring-1 ring-gray-900/5 transition data-[closed]:-translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
+              ref={storeMenuRef}
+              static
+              className={`absolute inset-x-0 top-0 -z-10 bg-white dark:bg-neutral-900 pt-14 shadow-lg ring-1 ring-gray-900/5 transition ${
+                isStoreOpen
+                  ? "translate-y-0 opacity-100"
+                  : "-translate-y-1 opacity-0 pointer-events-none"
+              } duration-200 ease-out`}
             >
               <div className="mx-auto grid max-w-7xl grid-cols-4 gap-x-4 px-6 py-10 lg:px-8 xl:gap-x-8">
                 {products.map((item) => (
                   <div
                     key={item.name}
-                    className="group relative rounded-lg p-6 text-sm leading-6 hover:bg-gray-50"
+                    className="group relative rounded-lg p-6 text-sm leading-6 hover:bg-gray-50 dark:hover:bg-neutral-950"
                   >
-                    <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-gray-50 dark:bg-neutral-950 group-hover:bg-white dark:group-hover:bg-neutral-900">
                       <item.icon
                         aria-hidden="true"
-                        className="h-6 w-6 text-gray-600 group-hover:text-indigo-600"
+                        className="h-6 w-6 text-gray-600 dark:text-slate-200 group-hover:text-blue-500"
                       />
                     </div>
                     <a
                       href={item.href}
-                      className="mt-6 block font-semibold text-gray-900"
+                      className="mt-6 block font-semibold text-gray-900 dark:text-slate-200"
                     >
                       {item.name}
                       <span className="absolute inset-0" />
                     </a>
-                    <p className="mt-1 text-gray-600">{item.description}</p>
+                    <p className="mt-1 text-gray-600 dark:text-slate-200">
+                      {item.description}
+                    </p>
                   </div>
                 ))}
-              </div>
-              <div className="bg-gray-50">
-                <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                  <div className="grid grid-cols-3 divide-x divide-gray-900/5 border-x border-gray-900/5">
-                    {callsToAction.map((item) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100"
-                      >
-                        <item.icon
-                          aria-hidden="true"
-                          className="h-5 w-5 flex-none text-gray-400"
-                        />
-                        {item.name}
-                      </a>
-                    ))}
-                  </div>
-                </div>
               </div>
             </PopoverPanel>
           </Popover>
 
           <a
             href="/projetos"
-            className="text-sm font-semibold leading-6 text-gray-900"
+            className="text-sm font-semibold leading-6 text-gray-900 dark:text-slate-200"
           >
             Projetos
           </a>
           <a
             href="/#about"
-            className="text-sm font-semibold leading-6 text-gray-900"
+            className="text-sm font-semibold leading-6 text-gray-900 dark:text-slate-200"
           >
             Sobre
           </a>
@@ -160,10 +173,10 @@ export default function Header() {
       <Dialog
         open={mobileMenuOpen}
         onClose={setMobileMenuOpen}
-        className="lg:hidden"
+        className="lg:hidden "
       >
         <div className="fixed inset-0 z-10" />
-        <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white  px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Luciano Silva</span>
@@ -190,7 +203,7 @@ export default function Header() {
                     />
                   </DisclosureButton>
                   <DisclosurePanel className="mt-2 space-y-2">
-                    {[...products, ...callsToAction].map((item) => (
+                    {[...products].map((item) => (
                       <DisclosureButton
                         key={item.name}
                         as="a"
