@@ -49,7 +49,7 @@ const products = [
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isStoreOpen, setIsStoreOpen] = useState(false);
-  const storeMenuRef = useRef(null);
+  const storeMenuRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -58,9 +58,10 @@ export default function Header() {
       }
     };
 
-    const handleClickOutside = (event) => {
+    const handleClickOutside = (event: MouseEvent) => {
       if (
         storeMenuRef.current &&
+        event.target instanceof Node &&
         !storeMenuRef.current.contains(event.target)
       ) {
         setIsStoreOpen(false);
