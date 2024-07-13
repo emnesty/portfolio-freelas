@@ -16,6 +16,7 @@ import { CircleBackground } from "@/app/components/CircleBackground";
 import { Container } from "@/app/components/Container";
 import { PhoneFrame } from "@/app/components/PhoneFrame";
 import { FadeIn } from "./FadeIn";
+import { Badge } from "./ui/badge";
 
 const MotionImage = motion.img;
 
@@ -386,6 +387,9 @@ export function PrimaryFeatures() {
       <Container>
         <FadeIn>
           <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-3xl">
+            <Badge className="mb-2" color="zinc">
+              O que eu faço
+            </Badge>
             <h2 className="text-3xl font-medium tracking-tight text-white">
               Criando experiências consistentes e profissionais
             </h2>

@@ -4,6 +4,7 @@ import { DirectionAwareHover } from "./ui/direction-aware-hover";
 import { projetosData } from "../../app/data/projetosData";
 import Link from "next/link";
 import { FadeIn } from "./FadeIn";
+import { Badge } from "./ui/badge";
 
 export default function ProjectsSection() {
   return (
@@ -13,6 +14,9 @@ export default function ProjectsSection() {
           <FadeIn>
             <div className="w-full flex flex-col items-start">
               <div className="mx-auto max-w-2xl lg:mx-0">
+                <Badge className="mb-2" color="zinc">
+                  CASES
+                </Badge>
                 <h2 className="text-3xl text-left font-bold tracking-tight dark:text-slate-200 text-slate-950 sm:text-4xl">
                   Projetos recentes
                 </h2>

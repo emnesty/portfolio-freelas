@@ -1,5 +1,6 @@
 "use client";
 
+import avatarImage from "../../public/images/eunova.jpeg";
 import { useState, useEffect, useRef } from "react";
 import {
   Dialog,
@@ -14,10 +15,6 @@ import {
 } from "@headlessui/react";
 import {
   Bars3Icon,
-  ChartPieIcon,
-  CursorArrowRaysIcon,
-  FingerPrintIcon,
-  SquaresPlusIcon,
   XMarkIcon,
   RectangleGroupIcon,
 } from "@heroicons/react/24/outline";
@@ -80,7 +77,7 @@ export default function Header() {
   }, [isStoreOpen]);
 
   return (
-    <header className="fixed w-full bg-white border-b dark:bg-neutral-900 border-zinc-100 dark:border-zinc-800 z-50 ">
+    <header className="fixed w-full bg-white border-b border-zinc-100 dark:border-zinc-80 dark:bg-neutral-900  dark:border-zinc-800 z-50 ">
       <nav
         aria-label="Global"
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
@@ -89,7 +86,6 @@ export default function Header() {
           <a href="/" className="-m-1.5 p-1.5">
             <div className="flex items-center gap-2">
               <span className="sr-only">Luciano Silva</span>
-              <img alt="" src="/images/avatar-2.png" className="h-10 w-auto" />
               <span className="font-semibold dark:text-slate-200">
                 LUCIANO SILVA
               </span>
