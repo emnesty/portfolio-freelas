@@ -32,21 +32,21 @@ const ProjetosPage = () => {
               <h2
                 data-aos="fade-up"
                 data-aos-duration="1200"
-                className="text-3xl font-bold text-center tracking-tight dark:text-slate-200 text-slate-950 sm:text-4xl"
+                className="text-3xl font-bold text-center tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-4xl"
               >
                 Projetos realizados
               </h2>
               <p
                 data-aos="fade-up"
                 data-aos-duration="1000"
-                className="mt-6 mb-20 text-lg text-center leading-8 dark:text-slate-200 text-slate-950"
+                className="mt-6 mb-20 text-lg text-center leading-8 text-zinc-600 dark:text-zinc-400"
               >
                 Aqui estão listados meus projetos, você pode visualizar em
                 detalhes cada um deles para saber mais.
               </p>
               <div className="flex items-center justify-center">
                 <Link href="/">
-                  <button className="rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
+                  <button className="rounded-md bg-white dark:bg-neutral-800 px-3.5 py-2.5 text-sm font-semibold text-zinc-600 dark:text-zinc-400 border dark:border-neutral-600 border-neutral-200 hover:bg-gray-50 dark:hover:bg-neutral-900">
                     Voltar para o inicio
                   </button>
                 </Link>

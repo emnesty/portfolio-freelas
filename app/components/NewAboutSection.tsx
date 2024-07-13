@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Container } from "./Container";
 
 import portraitImage from "../../public/images/eunova.jpeg";
+import { Badge } from "./ui/badge";
 
 export const metadata: Metadata = {
   title: "About",
@@ -11,8 +12,8 @@ export const metadata: Metadata = {
 
 export default function NewAboutSection() {
   return (
-    <section id="about">
-      <Container className="mt-16 mb-16 sm:mb-32 sm:mt-32">
+    <section id="about" className="bg-white dark:bg-neutral-950">
+      <Container className="pt-16 pb-16 sm:pb-32 sm:pt-32 ">
         <div className="sm:flex items-center gap-y-16 lg:gap-12">
           <div className="lg:pl-20 items-center flex justify-center">
             <div className="max-w-xs px-2.5 lg:max-w-none mb-5">
@@ -25,7 +26,10 @@ export default function NewAboutSection() {
             </div>
           </div>
           <div className="lg:order-first">
-            <h1 className="text-4xl font-bold tracking-tight text-slate-95 text-slate-95 sm:text-5xl ">
+            <Badge className="mb-2" color="zinc">
+              Quem sou eu
+            </Badge>
+            <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl ">
               Olá, sou o Luciano e sou apaixonado por Design e Tecnologia
             </h1>
             <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">

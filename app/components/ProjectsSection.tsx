@@ -9,18 +9,18 @@ import { Badge } from "./ui/badge";
 export default function ProjectsSection() {
   return (
     <section id="projetos">
-      <div className="bg-white dark:bg-neutral-950 py-24 sm:py-32">
+      <div className="bg-zinc-50 dark:bg-neutral-950 py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <FadeIn>
             <div className="w-full flex flex-col items-start">
               <div className="mx-auto max-w-2xl lg:mx-0">
-                <Badge className="mb-2" color="zinc">
-                  CASES
+                <Badge className="mb-2 border-zinc-100" color="zinc">
+                  Cases
                 </Badge>
-                <h2 className="text-3xl text-left font-bold tracking-tight dark:text-slate-200 text-slate-950 sm:text-4xl">
+                <h2 className="text-3xl text-left font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-4xl">
                   Projetos recentes
                 </h2>
-                <p className="mt-6 mb-20 text-left text-lg leading-8 dark:text-slate-100 text-slate-400">
+                <p className="mt-6 mb-20 text-left text-lg leading-8 text-zinc-600 dark:text-zinc-400">
                   Aqui estão listados meus projetos, você pode visualizar em
                   detalhes cada um deles para saber mais.
                 </p>

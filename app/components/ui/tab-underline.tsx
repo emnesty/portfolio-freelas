@@ -47,7 +47,7 @@ export default function BarUnderline({
               onClick={() => setSelectedTab(tab.name)}
               className={classNames(
                 tab.name === selectedTab
-                  ? "bg-gray-200 text-gray-800"
+                  ? "rounded-md bg-white dark:bg-neutral-800 px-3.5 py-2.5 text-sm font-semibold text-zinc-600 dark:text-zinc-400 border dark:border-neutral-600 border-neutral-200 hover:bg-gray-50 dark:hover:bg-neutral-900"
                   : "text-gray-600 hover:text-gray-800",
                 "rounded-md px-3 py-2 text-sm font-medium"
               )}
