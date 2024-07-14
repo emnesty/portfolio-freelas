@@ -33,6 +33,13 @@ const products = [
     icon: RectangleGroupIcon,
   },
   {
+    name: "Cursos & Videos",
+    description:
+      "Cursos e tutoriais para para melhorar suas habilidades em UX/UI Design",
+    href: "#",
+    icon: PlayCircleIcon,
+  },
+  {
     name: "UI Designs",
     description: "Arquivos de design prontos para usar no seu próximo projeto",
     href: "#",
@@ -109,7 +116,7 @@ export default function Header() {
               className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900 dark:text-slate-200"
               onClick={() => setIsStoreOpen(!isStoreOpen)}
             >
-              Loja
+              Loja & Recursos
               <ChevronDownIcon
                 aria-hidden="true"
                 className="h-5 w-5 flex-none text-gray-400"
@@ -125,11 +132,11 @@ export default function Header() {
                   : "-translate-y-1 opacity-0 pointer-events-none"
               } duration-200 ease-out`}
             >
-              <div className="mx-auto grid max-w-7xl grid-cols-4 gap-x-4 px-6 py-10 lg:px-8 xl:gap-x-8">
+              <div className="mx-auto grid max-w-7xl grid-cols-4  gap-x-4 px-6 py-10 lg:px-8 xl:gap-x-8">
                 {products.map((item) => (
                   <div
                     key={item.name}
-                    className="group relative rounded-lg p-6 text-sm leading-6 hover:bg-gray-50 dark:hover:bg-neutral-950"
+                    className="group relative rounded-lg p-6 text-sm leading-6 hover:bg-gray-50 border border-neutral-800 dark:hover:bg-neutral-950"
                   >
                     <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-gray-50 dark:bg-neutral-950 group-hover:bg-white dark:group-hover:bg-neutral-900">
                       <item.icon
