@@ -36,7 +36,7 @@ const products = [
     name: "Cursos & Videos",
     description:
       "Cursos e tutoriais para para melhorar suas habilidades em UX/UI Design",
-    href: "#",
+    href: "/resources",
     icon: PlayCircleIcon,
   },
   {
@@ -85,7 +85,7 @@ export default function Header() {
   }, [isStoreOpen]);
 
   return (
-    <header className="fixed w-full bg-white border-b border-zinc-100 dark:border-zinc-80 dark:bg-neutral-900  dark:border-zinc-800 z-50 ">
+    <header className="fixed w-full bg-white border-b border-zinc-100 dark:bg-neutral-900  dark:border-zinc-800 z-50 ">
       <nav
         aria-label="Global"
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
@@ -136,7 +136,7 @@ export default function Header() {
                 {products.map((item) => (
                   <div
                     key={item.name}
-                    className="group relative rounded-lg p-6 text-sm leading-6 hover:bg-gray-50 border border-neutral-800 dark:hover:bg-neutral-950"
+                    className="group relative rounded-lg p-6 text-sm leading-6 hover:bg-gray-50 border border-neutral-200 dark:hover:bg-neutral-950"
                   >
                     <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-gray-50 dark:bg-neutral-950 group-hover:bg-white dark:group-hover:bg-neutral-900">
                       <item.icon
