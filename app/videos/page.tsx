@@ -69,87 +69,101 @@ export const metadata: Metadata = {
 export default function Resources() {
   return (
     <div className="bg-white dark:bg-neutral-950 py-24 sm:py-32">
-      <SimpleLayout
-        title="Curso gratuito de Figma 2024"
-        intro="Tenha acesso a diversos recursos para aprimorar suas habilidades em Design, na prática com projetos reais."
-      >
-        <ul
-          role="list"
-          className="grid grid-cols-1  gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
+      {/* Imagem de fundo */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/bg-eu.png"
+          layout="fill"
+          objectFit="cover"
+          quality={100}
+          alt="Background"
+          className="opacity-20"
+        />
+        <div className="absolute z-0 inset-0 bg-gradient-to-b from-transparent to-white dark:to-neutral-950" />
+      </div>
+      <div className="z-10">
+        <SimpleLayout
+          title="Curso gratuito de Figma 2024"
+          intro="Tenha acesso a diversos recursos para aprimorar suas habilidades em Design, na prática com projetos reais."
         >
-          {projects.map((project) => (
-            <Card
-              as="li"
-              key={project.name}
-              className="border dark:border-neutral-800 border-gray-300 rounded-2xl p-4"
-            >
-              <div className="relative w-full h-48">
-                <Image
-                  src={project.thumbnail}
-                  alt={`Thumbnail do projeto ${project.name}`}
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-2xl"
-                />
-              </div>
-              <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-                <Card.Link href={project.link.href}>{project.name}</Card.Link>
-              </h2>
-              <Card.Description>{project.description}</Card.Description>
-              <Badge className="mt-4" color="zinc">
-                {project.category}
-              </Badge>
-              <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-blue-500 dark:text-zinc-200">
-                <LinkIcon className="h-6 w-6 flex-none" target="_blank" />
-                <span className="ml-2">{project.link.label}</span>
-              </p>
-            </Card>
-          ))}
-        </ul>
-        <div className="max-w-2xl mt-16">
-          <h1 className="text-xl font-bold tracking-tight text-zinc-800 sm:text-2xl dark:text-zinc-100">
-            Mais vídeos
-          </h1>
-          <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            Vídeos sobre desenvolvimento web, design e muito mais.
-          </p>
-        </div>
-        <div className="mt-16 sm:mt-20">
           <ul
             role="list"
             className="grid grid-cols-1  gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
           >
-            {videos.map((videos) => (
+            {projects.map((project) => (
               <Card
                 as="li"
-                key={videos.name}
+                key={project.name}
                 className="border dark:border-neutral-800 border-gray-300 rounded-2xl p-4"
               >
                 <div className="relative w-full h-48">
                   <Image
-                    src={videos.thumbnail}
-                    alt={`Thumbnail do projeto ${videos.name}`}
+                    src={project.thumbnail}
+                    alt={`Thumbnail do projeto ${project.name}`}
                     layout="fill"
                     objectFit="cover"
                     className="rounded-2xl"
                   />
                 </div>
                 <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-                  <Card.Link href={videos.link.href}>{videos.name}</Card.Link>
+                  <Card.Link href={project.link.href}>{project.name}</Card.Link>
                 </h2>
-                <Card.Description>{videos.description}</Card.Description>
+                <Card.Description>{project.description}</Card.Description>
                 <Badge className="mt-4" color="zinc">
-                  {videos.category}
+                  {project.category}
                 </Badge>
                 <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-blue-500 dark:text-zinc-200">
                   <LinkIcon className="h-6 w-6 flex-none" target="_blank" />
-                  <span className="ml-2">{videos.link.label}</span>
+                  <span className="ml-2">{project.link.label}</span>
                 </p>
               </Card>
             ))}
           </ul>
-        </div>
-      </SimpleLayout>
+          <div className="max-w-2xl mt-16">
+            <h1 className="text-xl font-bold tracking-tight text-zinc-800 sm:text-2xl dark:text-zinc-100">
+              Mais vídeos
+            </h1>
+            <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
+              Vídeos sobre desenvolvimento web, design e muito mais.
+            </p>
+          </div>
+          <div className="mt-16 sm:mt-20">
+            <ul
+              role="list"
+              className="grid grid-cols-1  gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
+            >
+              {videos.map((videos) => (
+                <Card
+                  as="li"
+                  key={videos.name}
+                  className="border dark:border-neutral-800 border-gray-300 rounded-2xl p-4"
+                >
+                  <div className="relative w-full h-48">
+                    <Image
+                      src={videos.thumbnail}
+                      alt={`Thumbnail do projeto ${videos.name}`}
+                      layout="fill"
+                      objectFit="cover"
+                      className="rounded-2xl"
+                    />
+                  </div>
+                  <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
+                    <Card.Link href={videos.link.href}>{videos.name}</Card.Link>
+                  </h2>
+                  <Card.Description>{videos.description}</Card.Description>
+                  <Badge className="mt-4" color="zinc">
+                    {videos.category}
+                  </Badge>
+                  <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-blue-500 dark:text-zinc-200">
+                    <LinkIcon className="h-6 w-6 flex-none" target="_blank" />
+                    <span className="ml-2">{videos.link.label}</span>
+                  </p>
+                </Card>
+              ))}
+            </ul>
+          </div>
+        </SimpleLayout>
+      </div>
     </div>
   );
 }

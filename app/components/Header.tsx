@@ -17,11 +17,7 @@ import {
   XMarkIcon,
   RectangleGroupIcon,
 } from "@heroicons/react/24/outline";
-import {
-  ChevronDownIcon,
-  PhoneIcon,
-  PlayCircleIcon,
-} from "@heroicons/react/20/solid";
+import { ChevronDownIcon, PlayCircleIcon } from "@heroicons/react/20/solid";
 import { Construction, Figma } from "lucide-react";
 
 const products = [
@@ -35,7 +31,7 @@ const products = [
     name: "Cursos & Videos",
     description:
       "Cursos e tutoriais para para melhorar suas habilidades em UX/UI Design",
-    href: "/resources",
+    href: "/videos",
     icon: PlayCircleIcon,
   },
   {
