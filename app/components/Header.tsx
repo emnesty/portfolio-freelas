@@ -135,7 +135,7 @@ export default function Header() {
                 {products.map((item) => (
                   <div
                     key={item.name}
-                    className="group relative rounded-lg p-6 text-sm leading-6 hover:bg-gray-50 border border-neutral-200 dark:hover:bg-neutral-950"
+                    className="group relative rounded-lg p-6 text-sm leading-6 hover:bg-gray-50 border border-neutral-200 dark:border-neutral-700 dark:hover:bg-neutral-800"
                   >
                     <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-gray-50 dark:bg-neutral-950 group-hover:bg-white dark:group-hover:bg-neutral-900">
                       <item.icon
@@ -179,7 +179,7 @@ export default function Header() {
         className="lg:hidden "
       >
         <div className="fixed inset-0 z-10" />
-        <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white  px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-gray-50 dark:bg-neutral-950  px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Luciano Silva</span>
@@ -198,7 +198,7 @@ export default function Header() {
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
                 <Disclosure as="div" className="-mx-3">
-                  <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+                  <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-700 dark:text-slate-200 hover:bg-neutral-700">
                     Loja
                     <ChevronDownIcon
                       aria-hidden="true"
@@ -211,7 +211,7 @@ export default function Header() {
                         key={item.name}
                         as="a"
                         href={item.href}
-                        className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                        className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-700 dark:text-slate-200 hover:bg-gray-50 dark:bg-neutral-900"
                       >
                         {item.name}
                       </DisclosureButton>
@@ -220,13 +220,13 @@ export default function Header() {
                 </Disclosure>
                 <a
                   href="/projetos"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-700 dark:text-slate-200 hover:bg-gray-50 dark:bg-neutral-900"
                 >
                   Projetos
                 </a>
                 <a
                   href="/"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-700 dark:text-slate-200 hover:bg-gray-50 dark:bg-neutral-900"
                 >
                   Sobre
                 </a>

@@ -381,7 +381,7 @@ export function PrimaryFeatures() {
   return (
     <section
       id="features"
-      aria-label="Features for investing all your money"
+      aria-label="Desenvolvimento Web e Mobile com foco em experiência do usuário"
       className="bg-zinc-50 dark:bg-neutral-950 py-20 sm:py-32 mt-24 rounded-4xl sm:mt-32 lg:mt-56"
     >
       <Container>
