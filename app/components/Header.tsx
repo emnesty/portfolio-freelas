@@ -1,6 +1,5 @@
 "use client";
 
-import avatarImage from "../../public/images/eunova.jpeg";
 import { useState, useEffect, useRef } from "react";
 import {
   Dialog,
