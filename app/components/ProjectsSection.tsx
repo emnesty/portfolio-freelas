@@ -35,12 +35,15 @@ export default function ProjectsSection() {
                     href={`/projetos/${project.slug}`}
                   >
                     <a className="flex flex-col cursor-pointer">
-                      <div className="h-[22rem] relative flex items-center justify-center">
+                      <div className="h-[30rem] relative flex items-center justify-center">
                         <DirectionAwareHover imageUrl={project.imgsrc}>
                           <div className="pb-2">
-                            <span className="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10">
+                            <Badge
+                              color="zinc"
+                              className="mb-2 dark:bg-neutral-600"
+                            >
                               {project.category}
-                            </span>
+                            </Badge>
                           </div>
                           <p className="font-bold text-xl">{project.title}</p>
                           <p className="font-normal text-sm">

@@ -1,83 +1,81 @@
 "use client";
-import React, { useState } from "react";
-import Link from "next/link";
-import { projetosData } from "../data/projetosData";
-import { DirectionAwareHover } from "@/app/components/ui/direction-aware-hover";
-import Head from "next/head";
-import BarUnderline from "@/app/components/ui/tab-underline";
 
-const ProjetosPage = () => {
-  const [selectedTab, setSelectedTab] = useState<string>("Todos");
+import React, { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { DirectionAwareHover } from "../components/ui/direction-aware-hover";
+import { projetosData } from "../../app/data/projetosData";
+import { FadeIn } from "../components/FadeIn";
+import { Badge } from "../components/ui/badge";
+import { SimpleLayout } from "../components/SimpleLayout";
+
+export default function ProjectsSection() {
+  const [filter, setFilter] = useState("Todos");
 
   const filteredProjects =
-    selectedTab === "Todos"
+    filter === "Todos"
       ? projetosData
-      : projetosData.filter((project) => project.category === selectedTab);
+      : projetosData.filter((project) => project.category === filter);
 
   return (
-    <>
-      <Head>
-        <title>
-          Projetos - Luciano Silva UX/UI Designer - Front-End Developer
-        </title>
-        <meta
-          name="description"
-          content="Confira os projetos desenvolvidos por Luciano Silva."
+    <div className="bg-white dark:bg-neutral-950 py-24 sm:py-32">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/bg-eu2.png"
+          layout="fill"
+          objectFit="cover"
+          quality={100}
+          alt="Background"
+          className="opacity-20"
         />
-      </Head>
-      <div className="bg-white dark:bg-neutral-950 py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="flex flex-col items-center justify-center">
-            <div className="w-full max-w-xl mx-auto lg:mx-0 mb-6">
-              <h2
-                data-aos="fade-up"
-                data-aos-duration="1200"
-                className="text-3xl font-bold text-center tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-4xl"
+        <div className="absolute z-0 inset-0 bg-gradient-to-b from-transparent to-white dark:to-neutral-950" />
+      </div>
+      <div className="z-10">
+        <FadeIn>
+          <SimpleLayout
+            title="Projetos recentes"
+            intro="Aqui estão listados meus projetos, você pode visualizar em detalhes cada um deles para saber mais."
+          >
+            {/* Filtros */}
+            <div className="flex justify-center space-x-4 mb-8 relative z-30">
+              <button
+                onClick={() => setFilter("Todos")}
+                className={`px-4 py-2 rounded-md ${filter === "Todos" ? "bg-gray-800 text-white" : "bg-gray-200 text-gray-800"}`}
               >
-                Projetos realizados
-              </h2>
-              <p
-                data-aos="fade-up"
-                data-aos-duration="1000"
-                className="mt-6 mb-20 text-lg text-center leading-8 text-zinc-600 dark:text-zinc-400"
+                Todos
+              </button>
+              <button
+                onClick={() => setFilter("Design (UI)")}
+                className={`px-4 py-2 rounded-md ${filter === "Design (UI)" ? "bg-gray-800 text-white" : "bg-gray-200 text-gray-800"}`}
               >
-                Aqui estão listados meus projetos, você pode visualizar em
-                detalhes cada um deles para saber mais.
-              </p>
-              <div className="flex items-center justify-center">
-                <Link href="/">
-                  <button className="rounded-md bg-white dark:bg-neutral-800 px-3.5 py-2.5 text-sm font-semibold text-zinc-600 dark:text-zinc-400 border dark:border-neutral-600 border-neutral-200 hover:bg-gray-50 dark:hover:bg-neutral-900">
-                    Voltar para o inicio
-                  </button>
-                </Link>
-              </div>
+                Design (UI)
+              </button>
+              <button
+                onClick={() => setFilter("Frontend")}
+                className={`px-4 py-2 rounded-md ${filter === "Frontend" ? "bg-gray-800 text-white" : "bg-gray-200 text-gray-800"}`}
+              >
+                Frontend
+              </button>
             </div>
-          </div>
-          <div className="p-8 mb-12" data-aos="fade-up" data-aos-duration="900">
-            <BarUnderline
-              selectedTab={selectedTab}
-              setSelectedTab={setSelectedTab}
-            />
-          </div>
-          <div className="mx-auto max-w-2xl lg:max-w-none">
-            <dl
-              data-aos="fade-up"
-              data-aos-duration="900"
-              className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3"
-            >
-              {filteredProjects.map((project) => (
-                <Link
-                  legacyBehavior
-                  key={project.id}
-                  href={`/projetos/${project.slug}`}
-                >
-                  <a className="flex flex-col cursor-pointer">
-                    <div className="h-[22rem] relative flex items-center justify-center">
+
+            <div className="mx-auto max-w-2xl lg:max-w-none">
+              <div className="grid grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
+                {filteredProjects.map((project) => (
+                  <Link
+                    key={project.id}
+                    href={`/projetos/${project.slug}`}
+                    className="group"
+                  >
+                    <div className="relative h-[32rem] w-full overflow-hidden rounded-2xl">
                       <DirectionAwareHover imageUrl={project.imgsrc}>
                         <div className="pb-2">
-                          <span className="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10">
+                          <Badge
+                            color="zinc"
+                            className="mb-2 dark:bg-neutral-600"
+                          >
                             {project.category}
-                          </span>
+                          </Badge>
                         </div>
                         <p className="font-bold text-xl">{project.title}</p>
                         <p className="font-normal text-sm">
@@ -85,15 +83,13 @@ const ProjetosPage = () => {
                         </p>
                       </DirectionAwareHover>
                     </div>
-                  </a>
-                </Link>
-              ))}
-            </dl>
-          </div>
-        </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </SimpleLayout>
+        </FadeIn>
       </div>
-    </>
+    </div>
   );
-};
-
-export default ProjetosPage;
+}

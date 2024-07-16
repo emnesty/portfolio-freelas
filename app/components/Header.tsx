@@ -80,7 +80,7 @@ export default function Header() {
   }, [isStoreOpen]);
 
   return (
-    <header className="fixed w-full bg-white border-b border-zinc-100 dark:bg-neutral-900  dark:border-zinc-800 z-50 ">
+    <header className="fixed w-full bg-white dark:bg-neutral-900 border-t border-zinc-100 dark:border-zinc-800 z-50 ">
       <nav
         aria-label="Global"
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
