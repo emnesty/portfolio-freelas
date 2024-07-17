@@ -3,14 +3,16 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { DirectionAwareHover } from "../components/ui/direction-aware-hover";
-import { projetosData } from "../data/projetosData";
+import { SupportedLocale, getProjetosData } from "../data/projetosData";
 import { FadeIn } from "../components/FadeIn";
 import { Badge } from "../components/ui/badge";
 import { SimpleLayout } from "../components/SimpleLayout";
+import { DirectionAwareHover } from "../components/ui/direction-aware-hover";
 
-export default function ProjectsSection() {
+export default function ProjectsSection({ locale }: { locale: string }) {
   const [filter, setFilter] = useState("Todos");
+
+  const projetosData = getProjetosData(locale as SupportedLocale);
 
   const filteredProjects =
     filter === "Todos"

@@ -1,141 +1,330 @@
-export const projetosData = [
-  {
-    id: 1,
-    slug: "projeto-globalscm",
-    title: "GlobalSCM Pay",
-    projectname: "App mobile para uma nova fintech ",
-    category: "Design (UI)",
-    badge: "Figma",
-    badge2: "",
-    badge3: "",
-    description:
-      "Projeto criado para uma fintech brasileira, com diversos fluxos criados e funcionais no prototipo.",
-    imgsrc: "/images/projetos/globalscm/projeto1.jpg",
-    images: [
-      "/images/projetos/globalscm/projeto1.jpg",
-      "/images/projetos/globalscm/projeto2.jpg",
-      "/images/projetos/globalscm/projeto3.jpg",
-    ],
-    urlsite: "",
-    urlgithub: "",
-    urlfigma:
-      "https://www.figma.com/proto/EfI3d9lCop91NRK4cegxU3/Luciano-Silva---Portf%C3%B3lio?page-id=8%3A1780&node-id=8-25039&viewport=309%2C1574%2C0.15&t=ztXOu2sylxUFSZYF-1&scaling=contain&content-scaling=fixed&starting-point-node-id=8%3A25039",
-    descriptiondetails: "",
-    descriptiondetails2: "",
-    descriptiondetails3: "",
-  },
-  {
-    id: 2,
-    slug: "projeto-carango",
-    title: "Landing Page Carango",
-    projectname: "Desenvolvimento de 3 LPs",
-    category: "Design (UI)",
-    badge: "Figma",
-    badge2: "",
-    badge3: "",
-    description:
-      "Página desenvolvida no figma para um grande portal de venda de carros novos e usados do nordeste do Brasil",
-    imgsrc: "/images/projetos/carango/projeto1.jpg",
-    images: [
-      "/images/projetos/carango/projeto1.jpg",
-      "/images/projetos/carango/projeto2.jpg",
-      "/images/projetos/carango/projeto3.jpg",
-    ],
-    urlsite: "",
-    urlgithub: "",
-    urlfigma:
-      "https://www.figma.com/proto/EfI3d9lCop91NRK4cegxU3/Luciano-Silva---Portf%C3%B3lio?page-id=0%3A1&node-id=1-809&viewport=369%2C1000%2C0.33&t=Hmg74TIEmQ5ZyuDy-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1%3A809",
-    descriptiondetails: "",
-    descriptiondetails2: "",
-    descriptiondetails3: "",
-  },
-  {
-    id: 4,
-    slug: "projeto-automotivo-ads",
-    title: "Automotivo ADS",
-    projectname: "Sistema ADS para ramo Automotivo",
-    category: "Design (UI)",
-    badge: "Figma",
-    badge2: "",
-    badge3: "",
-    description:
-      "Criação de um software para gerenciamento de Ads para concessionárias, para a empresa Automotivo ADS",
-    imgsrc: "/images/projetos/automotivoads/projetos1.jpg",
-    images: [
-      "/images/projetos/automotivoads/projetos1.jpg",
-      "/images/projetos/automotivoads/projetos2.jpg",
-      "/images/projetos/automotivoads/projetos3.jpg",
-    ],
-    urlsite: "",
-    urlgithub: "",
-    urlfigma:
-      "https://www.figma.com/proto/EfI3d9lCop91NRK4cegxU3/Luciano-Silva---Portf%C3%B3lio?page-id=32%3A423&node-id=32-11306&viewport=2575%2C-1060%2C0.32&t=oxxdpgDguyAmBfbi-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=32%3A11306&share=1",
-    descriptiondetails: "",
-    descriptiondetails2: "",
-    descriptiondetails3: "",
-    videoUrl: "https://player.vimeo.com/video/861019159",
-  },
-  {
-    id: 5,
-    slug: "projeto-lpitau",
-    title: "Itaú Landing Page",
-    projectname: "Criação de LP de estudo Banco Itaú",
-    category: "Design (UI)",
-    badge: "Figma",
-    badge2: "",
-    badge3: "",
-    description:
-      "Landing Page desenvolvida durante estudos de HTML, CSS/SASS e JavaScript",
-    imgsrc: "/images/projetos/itaulp.webp",
-    images: [],
-    urlsite: "https://landing-page-itau-tailwind.vercel.app/",
-    urlgithub: "",
-    urlfigma: "",
-    descriptiondetails: "",
-    descriptiondetails2: "",
-    descriptiondetails3: "",
-    videoUrl: "",
-  },
-  {
-    id: 6,
-    slug: "projeto-america-software",
-    title: "Projeto UI - America Frota",
-    projectname: "Redesign de aplicação Web",
-    category: "Design (UI)",
-    badge: "Figma",
-    badge2: "",
-    badge3: "",
-    description:
-      "Redesign completo da aplicação, feita no Figma e totalmente navegável, com diversas interações complexas entre mais de 50 telas",
-    imgsrc: "/images/projetos/americaprojeto.jpg",
-    images: [],
-    urlsite: "",
-    urlgithub: "",
-    urlfigma: "",
-    descriptiondetails: "",
-    descriptiondetails2: "",
-    descriptiondetails3: "",
-    videoUrl:
-      "https://player.vimeo.com/video/904837560?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
-  },
-  {
-    id: 7,
-    slug: "projeto-pokemon",
-    title: "Projeto - Pokedex",
-    projectname: "Consumindo e exibindo dados de uma API",
-    category: "Frontend",
-    badge: "CSS/SASS",
-    badge2: "HTML5",
-    badge3: "JavaScript",
-    description:
-      "Projeto de uma Pokedex feita com CSS, JavaScript e HTML, consumindo API para listagem dos Pokemons dinamicamente",
-    imgsrc: "/images/projetos/pokemonlp.webp",
-    images: [],
-    urlsite: "https://projeto-pokemon-r1vm.vercel.app/",
-    urlgithub: "https://github.com/emnesty/projeto-pokemon",
-    urlfigma: "",
-    descriptiondetails: "",
-    descriptiondetails2: "",
-    descriptiondetails3: "",
-  },
-];
+import "server-only";
+
+// Defina o tipo para um projeto individual
+type Projeto = {
+  id: number;
+  slug: string;
+  title: string;
+  projectname: string;
+  category: string;
+  badge: string;
+  badge2: string;
+  badge3: string;
+  description: string;
+  imgsrc: string;
+  images: string[];
+  urlsite: string;
+  urlgithub: string;
+  urlfigma: string;
+  descriptiondetails: string;
+  descriptiondetails2: string;
+  descriptiondetails3: string;
+  videoUrl?: string;
+};
+
+// Defina o tipo para o objeto projetosData
+type ProjetosDataType = {
+  pt: Projeto[];
+  en: Projeto[];
+};
+
+// Defina os locales suportados
+export type SupportedLocale = "pt" | "en";
+const projetosData: ProjetosDataType = {
+  pt: [
+    {
+      id: 1,
+      slug: "projeto-globalscm",
+      title: "GlobalSCM Pay",
+      projectname: "App mobile para uma nova fintech ",
+      category: "Design (UI)",
+      badge: "Figma",
+      badge2: "",
+      badge3: "",
+      description:
+        "Projeto criado para uma fintech brasileira, com diversos fluxos criados e funcionais no prototipo.",
+      imgsrc: "/images/projetos/globalscm/projeto1.jpg",
+      images: [
+        "/images/projetos/globalscm/projeto1.jpg",
+        "/images/projetos/globalscm/projeto2.jpg",
+        "/images/projetos/globalscm/projeto3.jpg",
+      ],
+      urlsite: "",
+      urlgithub: "",
+      urlfigma:
+        "https://www.figma.com/proto/EfI3d9lCop91NRK4cegxU3/Luciano-Silva---Portf%C3%B3lio?page-id=8%3A1780&node-id=8-25039&viewport=309%2C1574%2C0.15&t=ztXOu2sylxUFSZYF-1&scaling=contain&content-scaling=fixed&starting-point-node-id=8%3A25039",
+      descriptiondetails: "",
+      descriptiondetails2: "",
+      descriptiondetails3: "",
+    },
+    {
+      id: 2,
+      slug: "projeto-carango",
+      title: "Landing Page Carango",
+      projectname: "Desenvolvimento de 3 LPs",
+      category: "Design (UI)",
+      badge: "Figma",
+      badge2: "",
+      badge3: "",
+      description:
+        "Página desenvolvida no figma para um grande portal de venda de carros novos e usados do nordeste do Brasil",
+      imgsrc: "/images/projetos/carango/projeto1.jpg",
+      images: [
+        "/images/projetos/carango/projeto1.jpg",
+        "/images/projetos/carango/projeto2.jpg",
+        "/images/projetos/carango/projeto3.jpg",
+      ],
+      urlsite: "",
+      urlgithub: "",
+      urlfigma:
+        "https://www.figma.com/proto/EfI3d9lCop91NRK4cegxU3/Luciano-Silva---Portf%C3%B3lio?page-id=0%3A1&node-id=1-809&viewport=369%2C1000%2C0.33&t=Hmg74TIEmQ5ZyuDy-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1%3A809",
+      descriptiondetails: "",
+      descriptiondetails2: "",
+      descriptiondetails3: "",
+    },
+    {
+      id: 4,
+      slug: "projeto-automotivo-ads",
+      title: "Automotivo ADS",
+      projectname: "Sistema ADS para ramo Automotivo",
+      category: "Design (UI)",
+      badge: "Figma",
+      badge2: "",
+      badge3: "",
+      description:
+        "Criação de um software para gerenciamento de Ads para concessionárias, para a empresa Automotivo ADS",
+      imgsrc: "/images/projetos/automotivoads/projetos1.jpg",
+      images: [
+        "/images/projetos/automotivoads/projetos1.jpg",
+        "/images/projetos/automotivoads/projetos2.jpg",
+        "/images/projetos/automotivoads/projetos3.jpg",
+      ],
+      urlsite: "",
+      urlgithub: "",
+      urlfigma:
+        "https://www.figma.com/proto/EfI3d9lCop91NRK4cegxU3/Luciano-Silva---Portf%C3%B3lio?page-id=32%3A423&node-id=32-11306&viewport=2575%2C-1060%2C0.32&t=oxxdpgDguyAmBfbi-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=32%3A11306&share=1",
+      descriptiondetails: "",
+      descriptiondetails2: "",
+      descriptiondetails3: "",
+      videoUrl: "https://player.vimeo.com/video/861019159",
+    },
+    {
+      id: 5,
+      slug: "projeto-lpitau",
+      title: "Itaú Landing Page",
+      projectname: "Criação de LP de estudo Banco Itaú",
+      category: "Design (UI)",
+      badge: "Figma",
+      badge2: "",
+      badge3: "",
+      description:
+        "Landing Page desenvolvida durante estudos de HTML, CSS/SASS e JavaScript",
+      imgsrc: "/images/projetos/itaulp.webp",
+      images: [],
+      urlsite: "https://landing-page-itau-tailwind.vercel.app/",
+      urlgithub: "",
+      urlfigma: "",
+      descriptiondetails: "",
+      descriptiondetails2: "",
+      descriptiondetails3: "",
+      videoUrl: "",
+    },
+    {
+      id: 6,
+      slug: "projeto-america-software",
+      title: "Projeto UI - America Frota",
+      projectname: "Redesign de aplicação Web",
+      category: "Design (UI)",
+      badge: "Figma",
+      badge2: "",
+      badge3: "",
+      description:
+        "Redesign completo da aplicação, feita no Figma e totalmente navegável, com diversas interações complexas entre mais de 50 telas",
+      imgsrc: "/images/projetos/americaprojeto.jpg",
+      images: [],
+      urlsite: "",
+      urlgithub: "",
+      urlfigma: "",
+      descriptiondetails: "",
+      descriptiondetails2: "",
+      descriptiondetails3: "",
+      videoUrl:
+        "https://player.vimeo.com/video/904837560?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+    },
+    {
+      id: 7,
+      slug: "projeto-pokemon",
+      title: "Projeto - Pokedex",
+      projectname: "Consumindo e exibindo dados de uma API",
+      category: "Frontend",
+      badge: "CSS/SASS",
+      badge2: "HTML5",
+      badge3: "JavaScript",
+      description:
+        "Projeto de uma Pokedex feita com CSS, JavaScript e HTML, consumindo API para listagem dos Pokemons dinamicamente",
+      imgsrc: "/images/projetos/pokemonlp.webp",
+      images: [],
+      urlsite: "https://projeto-pokemon-r1vm.vercel.app/",
+      urlgithub: "https://github.com/emnesty/projeto-pokemon",
+      urlfigma: "",
+      descriptiondetails: "",
+      descriptiondetails2: "",
+      descriptiondetails3: "",
+    },
+  ],
+  en: [
+    {
+      id: 1,
+      slug: "projeto-globalscm",
+      title: "GlobalSCM Pay",
+      projectname: "App mobile para uma nova fintech ",
+      category: "Design (UI)",
+      badge: "Figma",
+      badge2: "",
+      badge3: "",
+      description:
+        "Projeto criado para uma fintech brasileira, com diversos fluxos criados e funcionais no prototipo.",
+      imgsrc: "/images/projetos/globalscm/projeto1.jpg",
+      images: [
+        "/images/projetos/globalscm/projeto1.jpg",
+        "/images/projetos/globalscm/projeto2.jpg",
+        "/images/projetos/globalscm/projeto3.jpg",
+      ],
+      urlsite: "",
+      urlgithub: "",
+      urlfigma:
+        "https://www.figma.com/proto/EfI3d9lCop91NRK4cegxU3/Luciano-Silva---Portf%C3%B3lio?page-id=8%3A1780&node-id=8-25039&viewport=309%2C1574%2C0.15&t=ztXOu2sylxUFSZYF-1&scaling=contain&content-scaling=fixed&starting-point-node-id=8%3A25039",
+      descriptiondetails: "",
+      descriptiondetails2: "",
+      descriptiondetails3: "",
+    },
+    {
+      id: 2,
+      slug: "projeto-carango",
+      title: "Landing Page Carango",
+      projectname: "Desenvolvimento de 3 LPs",
+      category: "Design (UI)",
+      badge: "Figma",
+      badge2: "",
+      badge3: "",
+      description:
+        "Página desenvolvida no figma para um grande portal de venda de carros novos e usados do nordeste do Brasil",
+      imgsrc: "/images/projetos/carango/projeto1.jpg",
+      images: [
+        "/images/projetos/carango/projeto1.jpg",
+        "/images/projetos/carango/projeto2.jpg",
+        "/images/projetos/carango/projeto3.jpg",
+      ],
+      urlsite: "",
+      urlgithub: "",
+      urlfigma:
+        "https://www.figma.com/proto/EfI3d9lCop91NRK4cegxU3/Luciano-Silva---Portf%C3%B3lio?page-id=0%3A1&node-id=1-809&viewport=369%2C1000%2C0.33&t=Hmg74TIEmQ5ZyuDy-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1%3A809",
+      descriptiondetails: "",
+      descriptiondetails2: "",
+      descriptiondetails3: "",
+    },
+    {
+      id: 4,
+      slug: "projeto-automotivo-ads",
+      title: "Automotivo ADS",
+      projectname: "Sistema ADS para ramo Automotivo",
+      category: "Design (UI)",
+      badge: "Figma",
+      badge2: "",
+      badge3: "",
+      description:
+        "Criação de um software para gerenciamento de Ads para concessionárias, para a empresa Automotivo ADS",
+      imgsrc: "/images/projetos/automotivoads/projetos1.jpg",
+      images: [
+        "/images/projetos/automotivoads/projetos1.jpg",
+        "/images/projetos/automotivoads/projetos2.jpg",
+        "/images/projetos/automotivoads/projetos3.jpg",
+      ],
+      urlsite: "",
+      urlgithub: "",
+      urlfigma:
+        "https://www.figma.com/proto/EfI3d9lCop91NRK4cegxU3/Luciano-Silva---Portf%C3%B3lio?page-id=32%3A423&node-id=32-11306&viewport=2575%2C-1060%2C0.32&t=oxxdpgDguyAmBfbi-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=32%3A11306&share=1",
+      descriptiondetails: "",
+      descriptiondetails2: "",
+      descriptiondetails3: "",
+      videoUrl: "https://player.vimeo.com/video/861019159",
+    },
+    {
+      id: 5,
+      slug: "projeto-lpitau",
+      title: "Itaú Landing Page",
+      projectname: "Criação de LP de estudo Banco Itaú",
+      category: "Design (UI)",
+      badge: "Figma",
+      badge2: "",
+      badge3: "",
+      description:
+        "Landing Page desenvolvida durante estudos de HTML, CSS/SASS e JavaScript",
+      imgsrc: "/images/projetos/itaulp.webp",
+      images: [],
+      urlsite: "https://landing-page-itau-tailwind.vercel.app/",
+      urlgithub: "",
+      urlfigma: "",
+      descriptiondetails: "",
+      descriptiondetails2: "",
+      descriptiondetails3: "",
+      videoUrl: "",
+    },
+    {
+      id: 6,
+      slug: "projeto-america-software",
+      title: "Projeto UI - America Frota",
+      projectname: "Redesign de aplicação Web",
+      category: "Design (UI)",
+      badge: "Figma",
+      badge2: "",
+      badge3: "",
+      description:
+        "Redesign completo da aplicação, feita no Figma e totalmente navegável, com diversas interações complexas entre mais de 50 telas",
+      imgsrc: "/images/projetos/americaprojeto.jpg",
+      images: [],
+      urlsite: "",
+      urlgithub: "",
+      urlfigma: "",
+      descriptiondetails: "",
+      descriptiondetails2: "",
+      descriptiondetails3: "",
+      videoUrl:
+        "https://player.vimeo.com/video/904837560?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+    },
+    {
+      id: 7,
+      slug: "projeto-pokemon",
+      title: "Projeto - Pokedex",
+      projectname: "Consumindo e exibindo dados de uma API",
+      category: "Frontend",
+      badge: "CSS/SASS",
+      badge2: "HTML5",
+      badge3: "JavaScript",
+      description:
+        "Projeto de uma Pokedex feita com CSS, JavaScript e HTML, consumindo API para listagem dos Pokemons dinamicamente",
+      imgsrc: "/images/projetos/pokemonlp.webp",
+      images: [],
+      urlsite: "https://projeto-pokemon-r1vm.vercel.app/",
+      urlgithub: "https://github.com/emnesty/projeto-pokemon",
+      urlfigma: "",
+      descriptiondetails: "",
+      descriptiondetails2: "",
+      descriptiondetails3: "",
+    },
+  ],
+};
+
+export const getProjetosData = (locale: SupportedLocale): Projeto[] => {
+  return projetosData[locale];
+};
+
+export const getAllProjectSlugs = (): string[] => {
+  const slugs = new Set<string>();
+  Object.values(projetosData).forEach((projects) => {
+    projects.forEach((project) => {
+      slugs.add(project.slug);
+    });
+  });
+  return Array.from(slugs);
+};
