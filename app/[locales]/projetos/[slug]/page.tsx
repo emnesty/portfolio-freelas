@@ -1,4 +1,4 @@
-import { projetosData } from "../../[locales]/data/projetosData";
+import { projetosData } from "../../data/projetosData";
 import { notFound } from "next/navigation";
 import ProjetoDetalhesClient from "./ProjetoDetalhesClient";
 
