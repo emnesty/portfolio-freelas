@@ -1,6 +1,6 @@
 import { useId } from "react";
 
-import { Container } from "@/app/components/Container";
+import { Container } from "../../[locales]/components/Container";
 
 const features = [
   {
