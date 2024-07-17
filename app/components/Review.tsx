@@ -4,7 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import clsx from "clsx";
 import { useInView } from "framer-motion";
 
-import { Container } from "./Container";
+import { Container } from "@/app/components/Container";
 
 interface Review {
   title: string;

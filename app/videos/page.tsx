@@ -96,7 +96,7 @@ export default function Resources() {
                 <Card
                   as="li"
                   key={project.name}
-                  className="border dark:border-neutral-800 border-gray-300 hover:border-blue-300 rounded-2xl p-4"
+                  className="border dark:border-neutral-800 border-gray-300 rounded-2xl p-4"
                 >
                   <div className="relative w-full h-48">
                     <Image

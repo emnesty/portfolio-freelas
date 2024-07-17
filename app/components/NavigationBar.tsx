@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { NavigationBar } from "./ui/floating-navbar";
+import { NavigationBar } from "../components/ui/floating-navbar";
 import { Home, User, Briefcase, BookOpen, MessageCircle } from "lucide-react";
 
 export function NavigationMenu() {
