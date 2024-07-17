@@ -1,7 +1,7 @@
 "use client";
 
 import { DirectionAwareHover } from "./ui/direction-aware-hover";
-import { projetosData } from "../../[locales]/data/projetosData";
+import { projetosData } from "../data/projetosData";
 import Link from "next/link";
 import { FadeIn } from "./FadeIn";
 import { Badge } from "./ui/badge";

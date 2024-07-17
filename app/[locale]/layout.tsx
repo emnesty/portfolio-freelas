@@ -53,16 +53,18 @@ export const metadata: Metadata = {
 };
 
 export function generateStaticParams() {
-  return [{ locale: "en" }, { locale: "pt" }];
+  return [{ locale: "pt" }, { locale: "en" }];
 }
 
 export default function RootLayout({
   children,
-}: Readonly<{
+  params: { locale },
+}: {
   children: React.ReactNode;
-}>) {
+  params: { locale: string };
+}) {
   return (
-    <html lang="pt-BR">
+    <html lang={locale}>
       <body className={sora.className}>
         <Header />
         <SmoothScroll>{children}</SmoothScroll>
