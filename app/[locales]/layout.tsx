@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import { Sora } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 import { SmoothScroll } from "./components/SmoothScroll";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { NavigationMenu } from "./components/NavigationBar";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 
@@ -52,6 +51,10 @@ export const metadata: Metadata = {
     ],
   },
 };
+
+export function generateStaticParams() {
+  return [{ locale: "en" }, { locale: "pt" }];
+}
 
 export default function RootLayout({
   children,

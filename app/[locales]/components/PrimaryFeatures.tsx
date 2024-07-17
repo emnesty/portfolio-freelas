@@ -12,9 +12,9 @@ import {
 } from "framer-motion";
 import { useDebouncedCallback } from "use-debounce";
 
-import { CircleBackground } from "@/app/components/CircleBackground";
-import { Container } from "@/app/components/Container";
-import { PhoneFrame } from "@/app/components/PhoneFrame";
+import { CircleBackground } from "../components/CircleBackground";
+import { Container } from "../components/Container";
+import { PhoneFrame } from "../components/PhoneFrame";
 import { FadeIn } from "./FadeIn";
 import { Badge } from "./ui/badge";
 

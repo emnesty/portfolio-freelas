@@ -2,7 +2,7 @@ import { type Metadata } from "next";
 import Image from "next/image";
 import { Container } from "./Container";
 
-import portraitImage from "../../public/images/eunova.jpeg";
+import portraitImage from "../../../public/images/eunova.jpeg";
 import { Badge } from "./ui/badge";
 
 export const metadata: Metadata = {

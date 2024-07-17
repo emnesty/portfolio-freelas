@@ -1,5 +1,3 @@
-"use client";
-
 import { useState } from "react";
 import { Container } from "./Container";
 import { FadeIn } from "./FadeIn";
@@ -22,8 +20,10 @@ const navigation = [
   { name: "Company", href: "#" },
 ];
 
+import { useTranslations } from "next-intl";
+
 export default function HeroSection() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const t = useTranslations("Index");
 
   return (
     <section id="home">
@@ -44,21 +44,19 @@ export default function HeroSection() {
                   </span>
                 </div>
               </div>
-              <h1 className="w-full text-left font-bold text-[2.60rem] leading-[3.0rem]  sm:tracking-tight  text-slate-850 sm:text-8xl">
-                UX/UI Designer{" "}
+              <h1 className="w-full text-left font-bold text-[2.60rem] leading-[3.0rem]  sm:tracking-tight  text-slate-850 sm:text-6xl">
+                {t("title")}{" "}
                 <img
                   className="inline-block lg:h-16 lg:w-16 h-6 w-6 rounded-full"
                   src="/images/avatar-novo.png"
                   alt=""
                 />
-                <span className="text-blue-500"> Desenvolvedor Front-End</span>
+                <span className="text-blue-500"> {t("title2")}</span>
               </h1>
               <div className="flex w-full gap-4 items-center justify-start mt-4">
                 <div className="flex items-start justify-start">
                   <p className="w-full max-w-[50rem] md:text-left max-sm:text-left text-lg leading-8 text-slate-400">
-                    Com 10+ anos de experiência em empresas tech, conquistei
-                    grande experiência mantendo e construindo produtos digitais
-                    com consistência, clareza e inovação.
+                    {t("description")}
                   </p>
                 </div>
               </div>
@@ -84,7 +82,9 @@ export default function HeroSection() {
                     src="../images/xandepic.jpeg"
                     alt=""
                   />
-                  <span className="pl-6 text-slate-400">+45 Recomendações</span>
+                  <span className="pl-6 text-slate-400">
+                    {t("recommendations")}
+                  </span>
                 </div>
               </div>
             </Container>

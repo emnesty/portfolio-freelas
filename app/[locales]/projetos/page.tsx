@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { DirectionAwareHover } from "../components/ui/direction-aware-hover";
-import { projetosData } from "../../app/data/projetosData";
+import { projetosData } from "../[locales]/data/projetosData";
 import { FadeIn } from "../components/FadeIn";
 import { Badge } from "../components/ui/badge";
 import { SimpleLayout } from "../components/SimpleLayout";
