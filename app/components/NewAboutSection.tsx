@@ -21,7 +21,7 @@ export default function NewAboutSection() {
                 src={portraitImage}
                 alt=""
                 sizes="(min-width: 1024px) 36rem, 24rem"
-                className="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
+                className="aspect-square rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
               />
             </div>
           </div>

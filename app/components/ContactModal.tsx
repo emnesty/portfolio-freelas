@@ -1,6 +1,10 @@
+"use client"
+
 import React, { useState } from "react"
 import { FadeIn } from "./FadeIn"
-import { X, Mail, ChevronDown, Loader2, CheckCircle, AlertCircle } from "lucide-react"
+import { X, Mail, Loader2, CheckCircle, AlertCircle } from "lucide-react"
+import { Listbox, Label } from "@headlessui/react"
+import { Check, ChevronDown } from "lucide-react"
 
 interface ContactModalProps {
   isOpen: boolean
@@ -104,7 +108,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
         <div
           // Prevent clicks inside the modal from closing it
           onClick={(e) => e.stopPropagation()}
-          className="relative max-w-[640px] w-full max-h-[90vh] overflow-y-auto bg-white rounded-xl shadow-[0_20px_24px_-4px_rgba(16,24,40,0.08),0_8px_8px_-4px_rgba(16,24,40,0.03)]">
+          className="relative max-w-[640px] w-full max-h-[90vh] overflow-visible bg-white rounded-xl shadow-[0_20px_24px_-4px_rgba(16,24,40,0.08),0_8px_8px_-4px_rgba(16,24,40,0.03)]">
           {/* Modal header */}
           <div className="flex flex-col items-center relative">
             <div className="flex flex-col items-start gap-4 self-stretch p-4 sm:p-6 pb-0">
@@ -176,18 +180,78 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                   <label className="text-text-secondary font-inter text-sm font-medium leading-5">
                     Serviço
                   </label>
-                  <div className="relative flex p-[10px_14px] items-center gap-2 self-stretch rounded-lg border border-border-primary bg-white shadow-[0_1px_2px_0_rgba(16,24,40,0.05)]">
-                    <select
-                      value={formData.service}
-                      onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                      disabled={submissionState === "loading"}
-                      className="flex-1 text-text-placeholder font-inter text-sm font-normal leading-6 outline-none appearance-none bg-transparent disabled:opacity-50 disabled:cursor-not-allowed">
-                      <option value="">Selecione o serviço desejado</option>
-                      <option value="desenvolvimento">Desenvolvimento Web</option>
-                      <option value="design">Design UI/UX</option>
-                      <option value="consultoria">Consultoria</option>
-                    </select>
-                    <ChevronDown className="w-5 h-5 text-text-placeholder" strokeWidth={1.67} />
+                  <div className="relative w-full">
+                    {(() => {
+                      const services = [
+                        {
+                          value: "desenvolvimento",
+                          title: "Desenvolvimento Web",
+                          description:
+                            "Criação de sites e aplicações responsivas, integrações e APIs; foco em performance e SEO.",
+                        },
+                        {
+                          value: "design",
+                          title: "Design UI/UX",
+                          description:
+                            "Pesquisa, prototipagem e interfaces acessíveis e intuitivas para produtos digitais.",
+                        },
+                        {
+                          value: "consultoria",
+                          title: "Consultoria",
+                          description:
+                            "Avaliação de produto, auditoria de UX e planejamento para melhorias estratégicas.",
+                        },
+                      ]
+
+                      const selected = services.find((s) => s.value === formData.service) || null
+
+                      return (
+                        <Listbox
+                          value={selected}
+                          onChange={(option) => setFormData({ ...formData, service: option?.value || "" })}>
+                          <Label className="sr-only">Selecionar serviço</Label>
+                          <div className="flex divide-x outline-none w-full border border-border-primary overflow-hidden rounded-lg">
+                            <div className="flex items-center gap-x-2 flex-1 px-3 py-2 bg-white">
+                              <span className="text-sm font-semibold text-gray-900">
+                                {selected ? selected.title : "Selecione o serviço desejado"}
+                              </span>
+                            </div>
+                            <Listbox.Button className="inline-flex items-center justify-center w-12 bg-white p-2 hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-300">
+                              <span className="sr-only">Abrir opções de serviço</span>
+                              <ChevronDown className="h-5 w-5 text-gray-600" aria-hidden />
+                            </Listbox.Button>
+                          </div>
+
+                          <Listbox.Options className="absolute left-0 right-0 z-50 mt-2 origin-top-left divide-y divide-gray-200 rounded-md bg-white shadow-lg outline outline-1 outline-black/5">
+                            {services.map((option) => (
+                              <Listbox.Option
+                                key={option.value}
+                                value={option}
+                                className={({ active }) =>
+                                  `group cursor-default select-none p-4 text-sm text-gray-900 ${active ? "bg-blue-50 text-blue-900" : ""}`
+                                }>
+                                {({ selected: isSelected, active }) => (
+                                  <div className="flex flex-col">
+                                    <div className="flex justify-between items-center">
+                                      <p className={`${isSelected ? "font-semibold" : "font-normal"}`}>
+                                        {option.title}
+                                      </p>
+                                      <span
+                                        className={`${!isSelected ? "hidden" : ""} ${active ? "text-blue-700" : "text-blue-600"}`}>
+                                        <Check className="h-5 w-5" aria-hidden />
+                                      </span>
+                                    </div>
+                                    <p className={`mt-2 ${active ? "text-blue-600" : "text-gray-500"}`}>
+                                      {option.description}
+                                    </p>
+                                  </div>
+                                )}
+                              </Listbox.Option>
+                            ))}
+                          </Listbox.Options>
+                        </Listbox>
+                      )
+                    })()}
                   </div>
                 </div>
 
