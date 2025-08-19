@@ -63,12 +63,11 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
       })()
 
       if (response.ok && result.success) {
+        // Show success state and keep modal open until user clicks the explicit close button
         setSubmissionState("success")
-        setTimeout(() => {
-          setFormData({ name: "", email: "", service: "", description: "" })
-          setSubmissionState("idle")
-          onClose()
-        }, 1600)
+        setErrorMessage("")
+        // clear the form visually (the form will be hidden while in success state)
+        setFormData({ name: "", email: "", service: "", description: "" })
       } else {
         setErrorMessage(result.message || `Erro ${response.status}: ${response.statusText}`)
         setSubmissionState("error")
@@ -126,7 +125,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
           {/* Close button */}
           <button
             onClick={handleClose}
-            disabled={submissionState === "loading"}
+            disabled={submissionState === "loading" || submissionState === "success"}
             className="absolute right-3 top-3 sm:right-4 sm:top-4 flex w-11 h-11 p-2 justify-center items-center rounded-lg hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
             <X className="w-6 h-6 text-gray-400" strokeWidth={2} />
           </button>
@@ -136,71 +135,75 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
 
         {/* Content */}
         <div className="flex flex-col items-start gap-5 self-stretch px-4 sm:px-6">
-          <form onSubmit={handleSubmit} className="flex flex-col items-start gap-4 self-stretch">
-            {/* Name input */}
-            <div className="flex flex-col items-start gap-1.5 self-stretch">
-              <label className="text-text-secondary font-inter text-sm font-medium leading-5">Nome</label>
-              <div className="flex p-[10px_14px] items-center gap-2 self-stretch rounded-lg border border-border-primary bg-white shadow-[0_1px_2px_0_rgba(16,24,40,0.05)]">
-                <input
-                  type="text"
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  placeholder="Como posso te chamar?"
-                  disabled={submissionState === "loading"}
-                  className="flex-1 text-text-placeholder font-inter text-base font-normal leading-6 outline-none placeholder:text-text-placeholder disabled:opacity-50 disabled:cursor-not-allowed"
-                />
+          {submissionState !== "success" && (
+            <form onSubmit={handleSubmit} className="flex flex-col items-start gap-4 self-stretch">
+              {/* Name input */}
+              <div className="flex flex-col items-start gap-1.5 self-stretch">
+                <label className="text-text-secondary font-inter text-sm font-medium leading-5">Nome</label>
+                <div className="flex p-[10px_14px] items-center gap-2 self-stretch rounded-lg border border-border-primary bg-white shadow-[0_1px_2px_0_rgba(16,24,40,0.05)]">
+                  <input
+                    type="text"
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    placeholder="Como posso te chamar?"
+                    disabled={submissionState === "loading"}
+                    className="flex-1 text-text-placeholder font-inter text-base font-normal leading-6 outline-none placeholder:text-text-placeholder disabled:opacity-50 disabled:cursor-not-allowed"
+                  />
+                </div>
               </div>
-            </div>
 
-            {/* Email input */}
-            <div className="flex flex-col items-start gap-1.5 self-stretch">
-              <label className="text-text-secondary font-inter text-sm font-medium leading-5">Email</label>
-              <div className="flex p-[10px_14px] items-center gap-2 self-stretch rounded-lg border border-border-primary bg-white shadow-[0_1px_2px_0_rgba(16,24,40,0.05)]">
-                <input
-                  type="email"
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  placeholder="seu-email@exemplo.com"
-                  disabled={submissionState === "loading"}
-                  className="flex-1 text-text-placeholder font-inter text-base font-normal leading-6 outline-none placeholder:text-text-placeholder disabled:opacity-50 disabled:cursor-not-allowed"
-                />
+              {/* Email input */}
+              <div className="flex flex-col items-start gap-1.5 self-stretch">
+                <label className="text-text-secondary font-inter text-sm font-medium leading-5">Email</label>
+                <div className="flex p-[10px_14px] items-center gap-2 self-stretch rounded-lg border border-border-primary bg-white shadow-[0_1px_2px_0_rgba(16,24,40,0.05)]">
+                  <input
+                    type="email"
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    placeholder="seu-email@exemplo.com"
+                    disabled={submissionState === "loading"}
+                    className="flex-1 text-text-placeholder font-inter text-base font-normal leading-6 outline-none placeholder:text-text-placeholder disabled:opacity-50 disabled:cursor-not-allowed"
+                  />
+                </div>
               </div>
-            </div>
 
-            {/* Service dropdown */}
-            <div className="flex flex-col items-start gap-1.5 self-stretch">
-              <label className="text-text-secondary font-inter text-sm font-medium leading-5">Serviço</label>
-              <div className="relative flex p-[10px_14px] items-center gap-2 self-stretch rounded-lg border border-border-primary bg-white shadow-[0_1px_2px_0_rgba(16,24,40,0.05)]">
-                <select
-                  value={formData.service}
-                  onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                  disabled={submissionState === "loading"}
-                  className="flex-1 text-text-placeholder font-inter text-sm font-normal leading-6 outline-none appearance-none bg-transparent disabled:opacity-50 disabled:cursor-not-allowed">
-                  <option value="">Selecione o serviço desejado</option>
-                  <option value="desenvolvimento">Desenvolvimento Web</option>
-                  <option value="design">Design UI/UX</option>
-                  <option value="consultoria">Consultoria</option>
-                </select>
-                <ChevronDown className="w-5 h-5 text-text-placeholder" strokeWidth={1.67} />
+              {/* Service dropdown */}
+              <div className="flex flex-col items-start gap-1.5 self-stretch">
+                <label className="text-text-secondary font-inter text-sm font-medium leading-5">
+                  Serviço
+                </label>
+                <div className="relative flex p-[10px_14px] items-center gap-2 self-stretch rounded-lg border border-border-primary bg-white shadow-[0_1px_2px_0_rgba(16,24,40,0.05)]">
+                  <select
+                    value={formData.service}
+                    onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+                    disabled={submissionState === "loading"}
+                    className="flex-1 text-text-placeholder font-inter text-sm font-normal leading-6 outline-none appearance-none bg-transparent disabled:opacity-50 disabled:cursor-not-allowed">
+                    <option value="">Selecione o serviço desejado</option>
+                    <option value="desenvolvimento">Desenvolvimento Web</option>
+                    <option value="design">Design UI/UX</option>
+                    <option value="consultoria">Consultoria</option>
+                  </select>
+                  <ChevronDown className="w-5 h-5 text-text-placeholder" strokeWidth={1.67} />
+                </div>
               </div>
-            </div>
 
-            {/* Description textarea */}
-            <div className="flex h-28 sm:h-36 flex-col items-start gap-1.5 self-stretch">
-              <label className="text-text-secondary font-inter text-sm font-medium leading-5">
-                Breve descrição
-              </label>
-              <div className="flex p-[12px_14px] items-start gap-2 flex-1 self-stretch rounded-lg border border-border-primary bg-white shadow-[0_1px_2px_0_rgba(16,24,40,0.05)]">
-                <textarea
-                  value={formData.description}
-                  onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-                  placeholder="Insira uma breve descrição do que você precisa :D"
-                  disabled={submissionState === "loading"}
-                  className="flex-1 self-stretch text-text-placeholder font-inter text-base font-normal leading-6 outline-none resize-none placeholder:text-text-placeholder disabled:opacity-50 disabled:cursor-not-allowed"
-                />
+              {/* Description textarea */}
+              <div className="flex h-28 sm:h-36 flex-col items-start gap-1.5 self-stretch">
+                <label className="text-text-secondary font-inter text-sm font-medium leading-5">
+                  Breve descrição
+                </label>
+                <div className="flex p-[12px_14px] items-start gap-2 flex-1 self-stretch rounded-lg border border-border-primary bg-white shadow-[0_1px_2px_0_rgba(16,24,40,0.05)]">
+                  <textarea
+                    value={formData.description}
+                    onChange={(e) => setFormData({ ...formData, description: e.target.value })}
+                    placeholder="Insira uma breve descrição do que você precisa :D"
+                    disabled={submissionState === "loading"}
+                    className="flex-1 self-stretch text-text-placeholder font-inter text-base font-normal leading-6 outline-none resize-none placeholder:text-text-placeholder disabled:opacity-50 disabled:cursor-not-allowed"
+                  />
+                </div>
               </div>
-            </div>
-          </form>
+            </form>
+          )}
 
           {/* Feedback section */}
           {(submissionState === "success" || submissionState === "error") && (
@@ -247,7 +250,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
             <button
               type="button"
               onClick={handleClose}
-              disabled={submissionState === "loading"}
+              disabled={submissionState === "loading" || submissionState === "success"}
               className="flex p-[10px_16px] justify-center items-center gap-1.5 w-full sm:flex-1 rounded-lg border border-gray-300 bg-white hover:bg-gray-50 transition duration-200 ease-linear order-2 sm:order-1 disabled:opacity-50 disabled:cursor-not-allowed">
               <span className="text-gray-700 font-inter text-base font-semibold leading-6">Cancelar</span>
             </button>
