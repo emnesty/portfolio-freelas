@@ -1,34 +1,30 @@
-"use client";
+"use client"
 
-import { useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
+import { useState } from "react"
+import Image from "next/image"
+import Link from "next/link"
 
 interface Projeto {
-  title: string;
-  images: string[];
-  description: string;
-  descriptiondetails: string;
-  descriptiondetails2?: string;
-  descriptiondetails3?: string;
-  badge?: string;
-  badge2?: string;
-  badge3?: string;
-  urlsite?: string;
-  urlgithub?: string;
-  urlfigma?: string;
+  title: string
+  images: string[]
+  description: string
+  descriptiondetails: string
+  descriptiondetails2?: string
+  descriptiondetails3?: string
+  badge?: string
+  badge2?: string
+  badge3?: string
+  urlsite?: string
+  urlgithub?: string
+  urlfigma?: string
 }
 
-export default function ProjetoDetalhesClient({
-  projeto,
-}: {
-  projeto: Projeto;
-}) {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+export default function ProjetoDetalhesClient({ projeto }: { projeto: Projeto }) {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
   const handleThumbnailClick = (index: number) => {
-    setCurrentImageIndex(index);
-  };
+    setCurrentImageIndex(index)
+  }
 
   return (
     <div className="bg-white dark:bg-neutral-950 py-24 sm:py-32">
@@ -37,8 +33,8 @@ export default function ProjetoDetalhesClient({
           <Image
             src={projeto.images[currentImageIndex]}
             alt={projeto.title}
-            width={600}
-            height={400}
+            width={800}
+            height={800}
             className="rounded-md object-contain"
           />
           <div className="absolute bottom-0 bg-white dark:bg-neutral-950 h-40 w-full [mask-image:linear-gradient(to_bottom,transparent,white)]" />
@@ -61,9 +57,7 @@ export default function ProjetoDetalhesClient({
           ))}
         </div>
         <div className="flex lg:flex-row gap-4 items-start flex-col mt-20">
-          <h1 className="text-zinc-800 dark:text-zinc-100 text-2xl">
-            {projeto.title}
-          </h1>
+          <h1 className="text-zinc-800 dark:text-zinc-100 text-2xl">{projeto.title}</h1>
           <div className="flex">
             {projeto.badge && (
               <span className="text-xs md:text-xs lg:text-xs bg-gray-100 px-4 py-2 rounded-lg">
@@ -83,9 +77,7 @@ export default function ProjetoDetalhesClient({
           </div>
         </div>
         <div>
-          <p className="w-full mt-4 text-zinc-600 dark:text-zinc-400">
-            {projeto.description}
-          </p>
+          <p className="w-full mt-4 text-zinc-600 dark:text-zinc-400">{projeto.description}</p>
         </div>
         <div className="prose prose-sm md:prose-base max-w-none text-zinc-600 dark:text-zinc-400 mt-4">
           <p>{projeto.descriptiondetails}</p>
@@ -105,8 +97,7 @@ export default function ProjetoDetalhesClient({
               href={projeto.urlsite}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-md flex gap-2 items-center bg-white px-3.5 py-2.5 text-sm font-semibold text-zinc-600 dark:text-zinc-400 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
-            >
+              className="rounded-md flex gap-2 items-center bg-white px-3.5 py-2.5 text-sm font-semibold text-zinc-600 dark:text-zinc-400 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
               Live Preview
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -118,8 +109,7 @@ export default function ProjetoDetalhesClient({
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform"
-              >
+                className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform">
                 <path d="M5 12h14"></path>
                 <path d="M13 18l6-6"></path>
                 <path d="M13 6l6 6"></path>
@@ -131,8 +121,7 @@ export default function ProjetoDetalhesClient({
               href={projeto.urlgithub}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-md bg-white dark:bg-neutral-800 px-3.5 py-2.5 text-sm font-semibold text-zinc-600 dark:text-zinc-400 border dark:border-neutral-600 border-neutral-200 hover:bg-gray-50 dark:hover:bg-neutral-900"
-            >
+              className="rounded-md bg-white dark:bg-neutral-800 px-3.5 py-2.5 text-sm font-semibold text-zinc-600 dark:text-zinc-400 border dark:border-neutral-600 border-neutral-200 hover:bg-gray-50 dark:hover:bg-neutral-900">
               GitHub Repo
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -144,8 +133,7 @@ export default function ProjetoDetalhesClient({
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform"
-              >
+                className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform">
                 <path d="M5 12h14"></path>
                 <path d="M13 18l6-6"></path>
                 <path d="M13 6l6 6"></path>
@@ -157,8 +145,7 @@ export default function ProjetoDetalhesClient({
               href={projeto.urlfigma}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-md flex items-center justify-center gap-2 bg-white dark:bg-neutral-800 px-3.5 py-2.5 text-sm font-semibold text-zinc-600 dark:text-zinc-400 border dark:border-neutral-600 border-neutral-200 hover:bg-gray-50 dark:hover:bg-neutral-900"
-            >
+              className="rounded-md flex items-center justify-center gap-2 bg-white dark:bg-neutral-800 px-3.5 py-2.5 text-sm font-semibold text-zinc-600 dark:text-zinc-400 border dark:border-neutral-600 border-neutral-200 hover:bg-gray-50 dark:hover:bg-neutral-900">
               Figma Prototype
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -170,8 +157,7 @@ export default function ProjetoDetalhesClient({
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform"
-              >
+                className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform">
                 <path d="M5 12h14"></path>
                 <path d="M13 18l6-6"></path>
                 <path d="M13 6l6 6"></path>
@@ -181,5 +167,5 @@ export default function ProjetoDetalhesClient({
         </div>
       </div>
     </div>
-  );
+  )
 }
