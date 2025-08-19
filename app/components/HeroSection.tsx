@@ -1,10 +1,10 @@
-"use client";
+"use client"
 
-import { useState } from "react";
-import { Container } from "./Container";
-import { FadeIn } from "./FadeIn";
-import { GridPattern } from "./GridPattern";
-import { MapPin } from "lucide-react";
+import { useState } from "react"
+import { Container } from "./Container"
+import { FadeIn } from "./FadeIn"
+import { GridPattern } from "./GridPattern"
+import { MapPin } from "lucide-react"
 
 const people = [
   {
@@ -13,17 +13,17 @@ const people = [
     designation: "Designer de Produto",
     image: "/images/avatar.png",
   },
-];
+]
 
 const navigation = [
   { name: "Product", href: "#" },
   { name: "Features", href: "#" },
   { name: "Marketplace", href: "#" },
   { name: "Company", href: "#" },
-];
+]
 
 export default function HeroSection() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
     <section id="home">
@@ -39,16 +39,14 @@ export default function HeroSection() {
               <div className="max-w-4xl w-full">
                 <div className="flex items-center mb-4">
                   <MapPin className="w-5 h-5 mr-2" />
-                  <span className="text-sm uppercase tracking-wider">
-                    Santa Catarina - Brasil
-                  </span>
+                  <span className="text-sm uppercase tracking-wider">Santa Catarina - Brasil</span>
                 </div>
               </div>
               <h1 className="w-full text-left font-bold text-[2.60rem] leading-[3.0rem]  sm:tracking-tight  text-slate-850 sm:text-8xl">
                 UX/UI Designer{" "}
                 <img
                   className="inline-block lg:h-16 lg:w-16 h-6 w-6 rounded-full"
-                  src="/images/avatar-novo.png"
+                  src="/images/avatar-2.png"
                   alt=""
                 />
                 <span className="text-blue-500"> Desenvolvedor Front-End</span>
@@ -56,9 +54,8 @@ export default function HeroSection() {
               <div className="flex w-full gap-4 items-center justify-start mt-4">
                 <div className="flex items-start justify-start">
                   <p className="w-full max-w-[50rem] md:text-left max-sm:text-left text-lg leading-8 text-slate-400">
-                    Com 10+ anos de experiência em empresas tech, conquistei
-                    grande experiência mantendo e construindo produtos digitais
-                    com consistência, clareza e inovação.
+                    Com 10+ anos de experiência em empresas tech, conquistei grande experiência mantendo e
+                    construindo produtos digitais com consistência, clareza e inovação.
                   </p>
                 </div>
               </div>
@@ -92,5 +89,5 @@ export default function HeroSection() {
         </FadeIn>
       </div>
     </section>
-  );
+  )
 }

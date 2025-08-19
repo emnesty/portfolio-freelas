@@ -1,14 +1,14 @@
-import { type Metadata } from "next";
-import Image from "next/image";
-import { Container } from "./Container";
+import { type Metadata } from "next"
+import Image from "next/image"
+import { Container } from "./Container"
 
-import portraitImage from "../../public/images/eunova.jpeg";
-import { Badge } from "./ui/badge";
+import portraitImage from "../../public/images/profile.jpeg"
+import { Badge } from "./ui/badge"
 
 export const metadata: Metadata = {
   title: "About",
   description: "Olá, sou o Luciano e sou apaixonado por Design e Tecnologia",
-};
+}
 
 export default function NewAboutSection() {
   return (
@@ -34,22 +34,15 @@ export default function NewAboutSection() {
             </h1>
             <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
               <p>
-                Há mais de 10 anos no mercado de tecnologia, conquiestei meu
-                espaço e adiquiri experiência em grandes empresas de tecnologia.
-                Atualmente, sou UX/UI Designer a mais de 3 anos e aspirante
-                Desenvolvedor Frontend, com foco em criar experiências digitais
-                inovadoras e acessíveis para todos os usuários.
+                Há mais de 10 anos no mercado de tecnologia, conquiestei meu espaço e adiquiri experiência em
+                grandes empresas de tecnologia. Atualmente, sou UX/UI Designer a mais de 3 anos e aspirante
+                Desenvolvedor Frontend, com foco em criar experiências digitais inovadoras e acessíveis para
+                todos os usuários. Vamos compartilhar ideias e aprender juntos?
               </p>
-              <p>
-                Recifense, morando atualmente em Blumenau-SC pai do Arthur e
-                marido da Madlyn, curto um fifinha de vez em quando e boa
-                música.
-              </p>
-              <p>Vamos compartilhar ideias e aprender juntos? </p>
             </div>
           </div>
         </div>
       </Container>
     </section>
-  );
+  )
 }
