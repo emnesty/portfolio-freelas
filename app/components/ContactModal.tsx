@@ -97,8 +97,8 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
     <div
       className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"
       onClick={() => {
-        // Close when clicking outside the modal, unless we're loading
-        if (submissionState !== "loading") handleClose()
+        // Close when clicking outside the modal, unless we're loading or we have a success message showing
+        if (submissionState !== "loading" && submissionState !== "success") handleClose()
       }}>
       <div
         // Prevent clicks inside the modal from closing it
@@ -205,23 +205,38 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
           {/* Feedback section */}
           {(submissionState === "success" || submissionState === "error") && (
             <div
-              className="flex items-center gap-3 p-4 rounded-lg border mt-4"
+              className="flex items-center justify-between gap-3 p-4 rounded-lg border mt-4 self-stretch w-full"
               style={{
                 backgroundColor: submissionState === "success" ? "#f0f9ff" : "#fef2f2",
                 borderColor: submissionState === "success" ? "#0ea5e9" : "#ef4444",
               }}>
-              {submissionState === "success" ? (
-                <CheckCircle className="w-5 h-5 text-blue-600" />
-              ) : (
-                <AlertCircle className="w-5 h-5 text-red-600" />
+              <div className="flex items-center gap-3">
+                {submissionState === "success" ? (
+                  <CheckCircle className="w-5 h-5 text-blue-600" />
+                ) : (
+                  <AlertCircle className="w-5 h-5 text-red-600" />
+                )}
+                <p
+                  className="text-sm font-medium"
+                  style={{
+                    color: submissionState === "success" ? "#0c4a6e" : "#7f1d1d",
+                  }}>
+                  {submissionState === "success"
+                    ? "Seu email foi enviado com sucesso, em breve retornarei o seu contato."
+                    : errorMessage}
+                </p>
+              </div>
+
+              {submissionState === "success" && (
+                <div className="flex-shrink-0">
+                  <button
+                    type="button"
+                    onClick={handleClose}
+                    className="inline-flex items-center px-3 py-2 rounded-md bg-blue-500 hover:bg-blue-600 text-white font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+                    Fechar
+                  </button>
+                </div>
               )}
-              <p
-                className="text-sm font-medium"
-                style={{
-                  color: submissionState === "success" ? "#0c4a6e" : "#7f1d1d",
-                }}>
-                {submissionState === "success" ? "Mensagem enviada com sucesso!" : errorMessage}
-              </p>
             </div>
           )}
         </div>
