@@ -94,29 +94,16 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
   if (!isOpen) return null
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-      <div className="relative max-w-[640px] w-full max-h-[90vh] overflow-y-auto bg-white rounded-xl shadow-[0_20px_24px_-4px_rgba(16,24,40,0.08),0_8px_8px_-4px_rgba(16,24,40,0.03)]">
-        {/* Background pattern decorative - hidden on mobile for cleaner look */}
-        <div className="absolute -left-[120px] -top-[120px] w-[336px] h-[336px] pointer-events-none overflow-hidden hidden md:block">
-          <div className="relative w-full h-full">
-            <div className="absolute inset-0 bg-gradient-radial from-black to-transparent opacity-[0.02]" />
-            <svg
-              className="absolute inset-0 w-full h-full"
-              width="336"
-              height="336"
-              viewBox="0 0 216 216"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg">
-              <circle cx="48" cy="48" r="47.5" stroke="#EAECF0" />
-              <circle cx="48" cy="48" r="71.5" stroke="#EAECF0" />
-              <circle cx="48" cy="48" r="95.5" stroke="#EAECF0" />
-              <circle cx="48" cy="48" r="119.5" stroke="#EAECF0" />
-              <circle cx="48" cy="48" r="143.5" stroke="#EAECF0" />
-              <circle cx="48" cy="48" r="167.5" stroke="#EAECF0" />
-            </svg>
-          </div>
-        </div>
-
+    <div
+      className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"
+      onClick={() => {
+        // Close when clicking outside the modal, unless we're loading
+        if (submissionState !== "loading") handleClose()
+      }}>
+      <div
+        // Prevent clicks inside the modal from closing it
+        onClick={(e) => e.stopPropagation()}
+        className="relative max-w-[640px] w-full max-h-[90vh] overflow-y-auto bg-white rounded-xl shadow-[0_20px_24px_-4px_rgba(16,24,40,0.08),0_8px_8px_-4px_rgba(16,24,40,0.03)]">
         {/* Modal header */}
         <div className="flex flex-col items-center relative">
           <div className="flex flex-col items-start gap-4 self-stretch p-4 sm:p-6 pb-0">
@@ -246,16 +233,14 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
               type="button"
               onClick={handleClose}
               disabled={submissionState === "loading"}
-              className="flex p-[10px_16px] justify-center items-center gap-1.5 w-full sm:flex-1 rounded-lg border border-button-secondary-border bg-button-secondary-bg shadow-[0_1px_2px_0_rgba(16,24,40,0.05)] hover:bg-gray-50 transition-colors order-2 sm:order-1 disabled:opacity-50 disabled:cursor-not-allowed">
-              <span className="text-button-secondary-fg font-inter text-base font-semibold leading-6">
-                Cancelar
-              </span>
+              className="flex p-[10px_16px] justify-center items-center gap-1.5 w-full sm:flex-1 rounded-lg border border-gray-300 bg-white hover:bg-gray-50 transition duration-200 ease-linear order-2 sm:order-1 disabled:opacity-50 disabled:cursor-not-allowed">
+              <span className="text-gray-700 font-inter text-base font-semibold leading-6">Cancelar</span>
             </button>
             <button
               type="submit"
               onClick={handleSubmit}
               disabled={submissionState === "loading" || submissionState === "success"}
-              className="flex p-[10px_16px] justify-center items-center gap-1.5 w-full sm:flex-1 rounded-lg border border-button-primary bg-button-primary shadow-[0_1px_2px_0_rgba(16,24,40,0.05)] hover:bg-blue-600 transition-colors order-1 sm:order-2 disabled:opacity-50 disabled:cursor-not-allowed">
+              className="flex p-[10px_16px] justify-center items-center gap-1.5 w-full sm:flex-1 rounded-md px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-light transition duration-200 ease-linear order-1 sm:order-2 disabled:opacity-50 disabled:cursor-not-allowed">
               {submissionState === "loading" && <Loader2 className="w-4 h-4 text-white animate-spin" />}
               <span className="text-white font-inter text-base font-semibold leading-6">
                 {submissionState === "loading" ? "Enviando..." : "Enviar"}

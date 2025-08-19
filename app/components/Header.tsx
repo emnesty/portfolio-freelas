@@ -11,11 +11,7 @@ export default function Header() {
   const [contactOpen, setContactOpen] = useState(false)
 
   return (
-    <header
-      className="fixed w-full bg-white dark:bg-neutral-900 border-t border-b border-gray-200 dark:border-gray-700 z-50"
-      style={{
-        height: "72px",
-      }}>
+    <header className="fixed w-full  bg-white dark:bg-neutral-900 border-t border-b border-gray-200 dark:border-gray-700 z-50">
       <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
         <div className="flex lg:flex-1 items-center gap-2">
           <a href="/" className="-m-1.5 p-1.5">
@@ -41,9 +37,11 @@ export default function Header() {
           <a href="/#about" className="text-sm font-semibold leading-6 text-gray-900 dark:text-slate-200">
             Sobre
           </a>
-          <Button color="blue" onClick={() => setContactOpen(true)} className="ml-4">
+          <button
+            onClick={() => setContactOpen(true)}
+            className="hover:bg-blue-600 px-8 py-4 bg-blue-500 rounded-md text-white font-light transition duration-200 ease-linear ml-4">
             Entrar em contato
-          </Button>
+          </button>
         </div>
       </nav>
       <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden ">
@@ -76,9 +74,11 @@ export default function Header() {
                   Sobre
                 </a>
                 <div className="-mx-3 px-3 py-2">
-                  <Button color="blue" onClick={() => setContactOpen(true)} className="w-full justify-center">
+                  <button
+                    onClick={() => setContactOpen(true)}
+                    className="hover:bg-blue-600 px-8 py-4 bg-blue-500 rounded-md text-white font-light transition duration-200 ease-linear w-full justify-center">
                     Entrar em contato
-                  </Button>
+                  </button>
                 </div>
               </div>
             </div>
