@@ -3,9 +3,12 @@
 import { useState } from "react"
 import { Dialog, DialogPanel } from "@headlessui/react"
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline"
+import ContactModal from "./ContactModal"
+import { Button } from "./ui/button"
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [contactOpen, setContactOpen] = useState(false)
 
   return (
     <header
@@ -31,13 +34,16 @@ export default function Header() {
             <Bars3Icon aria-hidden="true" className="h-6 w-6" />
           </button>
         </div>
-        <div className="hidden lg:flex lg:gap-x-12">
+        <div className="hidden lg:flex lg:gap-x-6 items-center">
           <a href="/projetos" className="text-sm font-semibold leading-6 text-gray-900 dark:text-slate-200">
             Projetos
           </a>
           <a href="/#about" className="text-sm font-semibold leading-6 text-gray-900 dark:text-slate-200">
             Sobre
           </a>
+          <Button color="blue" onClick={() => setContactOpen(true)} className="ml-4">
+            Entrar em contato
+          </Button>
         </div>
       </nav>
       <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden ">
@@ -69,11 +75,18 @@ export default function Header() {
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-700 dark:text-slate-200 hover:bg-gray-50 dark:bg-neutral-900">
                   Sobre
                 </a>
+                <div className="-mx-3 px-3 py-2">
+                  <Button color="blue" onClick={() => setContactOpen(true)} className="w-full justify-center">
+                    Entrar em contato
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
         </DialogPanel>
       </Dialog>
+
+      <ContactModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
     </header>
   )
 }
