@@ -17,7 +17,16 @@ export default function Header() {
           <a href="/" className="-m-1.5 p-1.5">
             <div className="flex items-center gap-2">
               <span className="sr-only">Luciano Silva</span>
-              <span className="font-semibold dark:text-slate-200">LUCIANO SILVA</span>
+              <img
+                src="/images/Logo Luciano - Horizontal.svg"
+                alt="Luciano Silva"
+                className="h-16 w-auto hidden sm:block"
+              />
+              <img
+                src="/images/Logo Luciano - Vertical.svg"
+                alt="Luciano Silva"
+                className="h-20 w-auto block sm:hidden"
+              />
             </div>
           </a>
         </div>
@@ -50,7 +59,7 @@ export default function Header() {
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Luciano Silva</span>
-              <img alt="" src="/images/avatar-2.png" className="h-10 w-auto" />
+              <img src="/images/Logo Luciano - Vertical.svg" alt="Luciano Silva" className="h-10 w-auto" />
             </a>
             <button
               type="button"
@@ -62,7 +71,7 @@ export default function Header() {
           </div>
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
-              <div className="space-y-2 py-6">
+              <div className="space-y-2 py-20">
                 <a
                   href="/projetos"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-700 dark:text-slate-200 hover:bg-gray-50 dark:bg-neutral-900">
