@@ -1,6 +1,5 @@
-import { cn } from "@/utils/cn";
-import React from "react";
-import { BentoGrid, BentoGridItem } from "../components/ui/bento-grid";
+import React from "react"
+import { BentoGrid, BentoGridItem } from "../components/ui/bento-grid"
 import {
   IconArrowWaveRightUp,
   IconBoxAlignRightFilled,
@@ -9,7 +8,7 @@ import {
   IconFileBroken,
   IconSignature,
   IconTableColumn,
-} from "@tabler/icons-react";
+} from "@tabler/icons-react"
 
 export function BentoGridDemo() {
   return (
@@ -25,11 +24,11 @@ export function BentoGridDemo() {
         />
       ))}
     </BentoGrid>
-  );
+  )
 }
 const Skeleton = () => (
   <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100"></div>
-);
+)
 const items = [
   {
     title: "The Dawn of Innovation",
@@ -51,8 +50,7 @@ const items = [
   },
   {
     title: "The Power of Communication",
-    description:
-      "Understand the impact of effective communication in our lives.",
+    description: "Understand the impact of effective communication in our lives.",
     header: <Skeleton />,
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
   },
@@ -74,4 +72,4 @@ const items = [
     header: <Skeleton />,
     icon: <IconBoxAlignRightFilled className="h-4 w-4 text-neutral-500" />,
   },
-];
+]

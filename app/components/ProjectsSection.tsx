@@ -1,10 +1,10 @@
-"use client";
+"use client"
 
-import { DirectionAwareHover } from "./ui/direction-aware-hover";
-import { projetosData } from "../../app/data/projetosData";
-import Link from "next/link";
-import { FadeIn } from "./FadeIn";
-import { Badge } from "./ui/badge";
+import { DirectionAwareHover } from "./ui/direction-aware-hover"
+import { projetosData } from "../../app/data/projetosData"
+import Link from "next/link"
+import { FadeIn } from "./FadeIn"
+import { Badge } from "./ui/badge"
 
 export default function ProjectsSection() {
   return (
@@ -21,34 +21,25 @@ export default function ProjectsSection() {
                   Projetos recentes
                 </h2>
                 <p className="mt-6 mb-20 text-left text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-                  Aqui estão listados meus projetos, você pode visualizar em
-                  detalhes cada um deles para saber mais.
+                  Aqui estão listados meus projetos, você pode visualizar em detalhes cada um deles para saber
+                  mais.
                 </p>
               </div>
             </div>
             <div className="mx-auto max-w-2xl lg:max-w-none">
               <div className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
-                {projetosData.map((project) => (
-                  <Link
-                    legacyBehavior
-                    key={project.id}
-                    href={`/projetos/${project.slug}`}
-                  >
+                {projetosData.slice(0, 6).map((project) => (
+                  <Link legacyBehavior key={project.id} href={`/projetos/${project.slug}`}>
                     <a className="flex flex-col cursor-pointer">
                       <div className="h-[30rem] relative flex items-center justify-center">
                         <DirectionAwareHover imageUrl={project.imgsrc}>
                           <div className="pb-2">
-                            <Badge
-                              color="zinc"
-                              className="mb-2 dark:bg-neutral-600"
-                            >
+                            <Badge color="zinc" className="mb-2 dark:bg-neutral-600">
                               {project.category}
                             </Badge>
                           </div>
                           <p className="font-bold text-xl">{project.title}</p>
-                          <p className="font-normal text-sm">
-                            {project.projectname}
-                          </p>
+                          <p className="font-normal text-sm">{project.projectname}</p>
                         </DirectionAwareHover>
                       </div>
                     </a>
@@ -67,5 +58,5 @@ export default function ProjectsSection() {
         </div>
       </div>
     </section>
-  );
+  )
 }

@@ -58,19 +58,19 @@ export default function ProjetoDetalhesClient({ projeto }: { projeto: Projeto })
         </div>
         <div className="flex lg:flex-row gap-4 items-start flex-col mt-20">
           <h1 className="text-zinc-800 dark:text-zinc-100 text-2xl">{projeto.title}</h1>
-          <div className="flex">
+          <div className="flex gap-4 justify-center align-center">
             {projeto.badge && (
-              <span className="text-xs md:text-xs lg:text-xs bg-gray-100 px-4 py-2 rounded-lg">
+              <span className="text-xs md:text-xs lg:text-xs flex justify-center align-center bg-gray-100 px-4 py-2 rounded-lg">
                 {projeto.badge}
               </span>
             )}
             {projeto.badge2 && (
-              <span className="text-xs md:text-xs lg:text-xs bg-gray-100 px-2 py-1 rounded-lg">
+              <span className="text-xs md:text-xs lg:text-xs flex justify-center align-center bg-gray-100 px-4 py-2 rounded-lg">
                 {projeto.badge2}
               </span>
             )}
             {projeto.badge3 && (
-              <span className="text-xs md:text-xs lg:text-xs bg-gray-100 px-2 py-1 rounded-lg">
+              <span className="text-xs md:text-xs lg:text-xs flex justify-center content-center bg-gray-100 px-4 py-2 rounded-lg">
                 {projeto.badge3}
               </span>
             )}
