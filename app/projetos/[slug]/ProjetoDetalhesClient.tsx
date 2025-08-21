@@ -97,7 +97,7 @@ export default function ProjetoDetalhesClient({ projeto }: { projeto: Projeto })
               href={projeto.urlsite}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-md flex gap-2 items-center bg-white px-3.5 py-2.5 text-sm font-semibold text-zinc-600 dark:text-zinc-400 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
+              className="rounded-md flex justify-center items-center gap-2 bg-white dark:bg-neutral-800 px-3.5 py-2.5 text-sm font-semibold text-zinc-600 dark:text-zinc-400 border dark:border-neutral-600 border-neutral-200 hover:bg-gray-50 dark:hover:bg-neutral-900">
               Live Preview
               <svg
                 xmlns="http://www.w3.org/2000/svg"
