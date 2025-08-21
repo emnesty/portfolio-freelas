@@ -31,15 +31,27 @@ export default function Header() {
           <a href="/" className="-m-1.5 p-1.5">
             <div className="flex items-center gap-2">
               <span className="sr-only">Luciano Silva</span>
+              {/* Logo horizontal para desktop/tablet */}
               <img
                 src="/images/Logo Luciano - Horizontal.svg"
                 alt="Luciano Silva"
-                className="h-16 w-auto hidden sm:block"
+                className="h-16 w-auto hidden sm:block dark:hidden"
               />
+              <img
+                src="/images/Logo Luciano - Horizontal-White.svg"
+                alt="Luciano Silva"
+                className="h-16 w-auto hidden dark:sm:block"
+              />
+              {/* Logo vertical para mobile */}
               <img
                 src="/images/Logo Luciano - Vertical.svg"
                 alt="Luciano Silva"
-                className="h-20 w-auto block sm:hidden"
+                className="h-20 w-auto block sm:hidden dark:hidden"
+              />
+              <img
+                src="/images/Logo Luciano - Vertical - White.svg"
+                alt="Luciano Silva"
+                className="h-20 w-auto hidden dark:block dark:sm:hidden"
               />
             </div>
           </a>
@@ -96,7 +108,12 @@ export default function Header() {
                   <img
                     src="/images/Logo Luciano - Vertical.svg"
                     alt="Luciano Silva"
-                    className="h-10 w-auto"
+                    className="h-10 w-auto dark:hidden"
+                  />
+                  <img
+                    src="/images/Logo Luciano - Vertical - White.svg"
+                    alt="Luciano Silva"
+                    className="h-10 w-auto hidden dark:block"
                   />
                 </a>
                 <button
